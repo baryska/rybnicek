@@ -3,6 +3,7 @@ import styles from './page.module.css';
 import { FaInstagram, FaFacebook } from 'react-icons/fa';
 import { profiles } from '../data/profiles';
 import ProfileCard from './profileCard';
+import FadeInOnScroll from './fadeInScroll';
 
 
 export default function HomePage() {
@@ -18,29 +19,32 @@ export default function HomePage() {
         <section>
           <p className={`${styles.fadeIn} ${styles.gradientText}`}>Budujeme komunitu lidí, kteří se zajímají o dění v Berouně a okolí.</p>
         </section>
-        <section className={styles.socialIcons}>
-          <a
-            href="https://www.instagram.com/berounsky_rybnicek/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-          >
-            <FaInstagram className={styles.icon} />
-          </a>
+        <FadeInOnScroll>
+          <section className={styles.socialIcons}>
+            <a
+              href="https://www.instagram.com/berounsky_rybnicek/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <FaInstagram className={styles.icon} />
+            </a>
 
-          <a
-            href="https://www.facebook.com/berounsky.rybnicek"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Facebook"
-          >
-            <FaFacebook className={styles.icon} />
-          </a>
-        </section>
-
+            <a
+              href="https://www.facebook.com/berounsky.rybnicek"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
+              <FaFacebook className={styles.icon} />
+            </a>
+          </section>
+        </FadeInOnScroll>
         <section className={styles.profiles}>
           {profiles.map((profile) => (
-            <ProfileCard key={profile.name} profile={profile} />
+            <FadeInOnScroll key={profile.name}>
+              <ProfileCard key={profile.name} profile={profile} />
+            </FadeInOnScroll>
           ))}
         </section>
       </main>
