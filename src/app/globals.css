@@ -19,8 +19,142 @@
   }
 }
 
+@font-face {
+  font-family: 'Rebond Grotesque';
+  src: url('/fonts/Rebond Grotesque.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rebond Grotesque';
+  src: url('/fonts/Rebond Grotesque Thin.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rebond Grotesque';
+  src: url('/fonts/Rebond Grotesque Hairline.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rebond Grotesque';
+  src: url('/fonts/Rebond Grotesque Extralight.otf') format('opentype');
+  font-weight: 250;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rebond Grotesque';
+  src: url('/fonts/Rebond Grotesque Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rebond Grotesque';
+  src: url('/fonts/Rebond Grotesque Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rebond Grotesque';
+  src: url('/fonts/Rebond Grotesque Semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rebond Grotesque';
+  src: url('/fonts/Rebond Grotesque Semibold Italic.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Rebond Grotesque';
+  src: url('/fonts/Rebond Grotesque Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rebond Grotesque';
+  src: url('/fonts/Rebond Grotesque Extrabold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Malinton';
+  src: url('/fonts/Malinton-Thin.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Malinton';
+  src: url('/fonts/Malinton-ExtraLight.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Malinton';
+  src: url('/fonts/Malinton-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Malinton';
+  src: url('/fonts/Malinton-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Malinton';
+  src: url('/fonts/Malinton-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Malinton';
+  src: url('/fonts/Malinton-SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Malinton';
+  src: url('/fonts/Malinton-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Malinton';
+  src: url('/fonts/Malinton-ExtraBold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Malinton';
+  src: url('/fonts/Malinton-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Rebond Grotesque', sans-serif;
+  font-weight: 400;
 }
