@@ -2,6 +2,7 @@
 import styles from './style.module.css';
 
 import MapComponent from "@/components/MapComponent";
+export const dynamic = "force-dynamic";
 
 export default function Page() {
   return (
