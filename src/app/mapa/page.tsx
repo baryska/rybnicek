@@ -1,12 +1,11 @@
-"use client";
-// import styles from './style.module.css';
-import MapComponent from "@/components/MapComponent";
+import MapClientPage from "../../components/MapClientPage";
+import styles from './style.module.css';
 
 export default function Page() {
   return (
     <main>
-      <MapComponent />
-      <h1>Letní berounská šifrovačka</h1>
+      <MapClientPage />
+      <h1 className={styles.title}>Letní berounská šifrovačka</h1>
     </main>
   );
 }
