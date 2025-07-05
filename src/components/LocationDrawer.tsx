@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { SwipeableDrawer, useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import styles from "./LocationDrawer.module.css";
+import styles from "./locationDrawer.module.css";
 
 export interface Location {
   number: number;
