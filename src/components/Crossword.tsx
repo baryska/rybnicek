@@ -29,7 +29,7 @@ const Crossword = ({ locations, answers, onClear }: Props) => {
         <p>Soutěž probíhá do <strong>konce srpna</strong>, správnou tajenku nám pošlete na email <strong style={{ fontSize: '1.7rem' }}>tajenka@berounskyrybnicek.cz</strong></p>
         <p>Všechny výherce budeme losovat v <strong>prvním zářijovém týdnu</strong>, sledujte náš IG a FB!</p>
       </div>
-      <p>(Křížovku vyplňte kliknutím na konkrétní místo přímo v mapě.)</p>
+      <p className={styles.note}>(Křížovku vyplňte kliknutím na konkrétní místo přímo v mapě.)</p>
       <button
         onClick={onClear}
         className={styles.button}
