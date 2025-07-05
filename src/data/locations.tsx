@@ -188,7 +188,7 @@ export const locations: Location[] = [
     question: "Jaký film se natáčel v prostorách, kde se dnes nachází knihovna?",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     answer: "Tankový prapor",
-    index: 1,
+    index: 10,
   },
   {
     name: "Hospůdka U Krobiána",

@@ -15,7 +15,7 @@ const Crossword = ({ locations, answers, onClear }: Props) => {
   return (
     <div className={styles.container}>
       <div className={styles.description}>
-        <p style={{ fontSize: '3rem' }}>Vítejte na <strong>Berounské letní šifrovačce!</strong></p>
+        <p className={styles.title}>Vítejte na <strong>Berounské letní šifrovačce!</strong></p>
         <p>Zjistěte <strong>tajenku</strong> a vyhrajte jednu z <strong>tematických cen</strong>.</p>
         <p>Každá z <strong>berounských lokalit</strong> na mapě má u sebe <strong>otázku</strong>, na níž musíte odpovědět.</p>
         <p><strong>Odpovědi</strong> si můžete zapisovat po staru na papír (ke stažení zde), nebo je můžete vyplňovat přímo tady.
@@ -36,99 +36,49 @@ const Crossword = ({ locations, answers, onClear }: Props) => {
       >
         Vymazat křížovku
       </button>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "0.5rem",
-          marginTop: "1rem"
-        }}
-      >
-        {sortedLocations.map((loc) => {
-          const storedAnswer = answers[loc.number]?.toUpperCase() || "";
-          const fullAnswer = storedAnswer.padEnd(loc.answer.length, " ");
+        <div className={styles.crossword}>
+          {sortedLocations.map((loc) => {
+            const storedAnswer = answers[loc.number]?.toUpperCase() || "";
+            const fullAnswer = storedAnswer.padEnd(loc.answer.length, " ");
 
-          const leftPad = maxIndex - (loc.index);
+            const leftPad = maxIndex - loc.index;
 
-          const displayChars = [
-            ...Array(leftPad).fill({ char: "", isPadding: true }),
-            ...fullAnswer.split("").map((c, idx) => ({
-              char: c,
-              isPadding: false,
-              // pokud v loc.answer je mezera na této pozici, je to vizuální mezera
-              isRealSpace: loc.answer[idx] === " "
-            }))
-          ];
+            const displayChars = [
+              ...Array(leftPad).fill({ char: "", isPadding: true }),
+              ...fullAnswer.split("").map((c, idx) => ({
+                char: c,
+                isPadding: false,
+                isRealSpace: loc.answer[idx] === " ",
+              })),
+            ];
 
+            return (
+              <div key={loc.number} className={styles.row}>
+                <div className={styles.number}>{loc.number}</div>
+                <div className={styles.cells}>
+                  {displayChars.map((cell, i) => {
+                    if (cell.isPadding || cell.isRealSpace) {
+                      return <div key={i} className={styles.empty}></div>;
+                    }
 
-          return (
-            <div
-              key={loc.number}
-              style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
-            >
-              <div
-                style={{
-                  width: "20px",
-                  textAlign: "right",
-                  fontWeight: "bold"
-                }}
-              >
-                {loc.number}
-              </div>
+                    const isTajenky = i === maxIndex;
 
-              <div style={{ display: "flex", gap: "0.25rem" }}>
-                {displayChars.map((cell, i) => {
-                  if (cell.isPadding) {
                     return (
                       <div
                         key={i}
-                        style={{
-                          width: "30px",
-                          height: "30px"
-                        }}
-                      ></div>
+                        className={`${styles.cell} ${isTajenky ? styles.tajenky : ""
+                          }`}
+                      >
+                        {cell.char.trim()}
+                      </div>
                     );
-                  }
-
-                  if (cell.isRealSpace) {
-                    return (
-                      <div
-                        key={i}
-                        style={{
-                          width: "30px",
-                          height: "30px"
-                        }}
-                      ></div>
-                    );
-                  }
-
-                  const isTajenky = i === maxIndex;
-
-                  return (
-                    <div
-                      key={i}
-                      style={{
-                        width: "30px",
-                        height: "30px",
-                        border: "1px solid #aaa",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        fontWeight: "bold",
-                        fontSize: "16px",
-                        backgroundColor: isTajenky ? "#90caf9" : "#f0f0f0"
-                      }}
-                    >
-                      {cell.char.trim()}
-                    </div>
-                  );
-                })}
+                  })}
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
-    </div>
   );
 };
 
