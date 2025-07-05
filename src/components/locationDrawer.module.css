@@ -73,3 +73,14 @@
   border: 1px solid #ddd;
 }
 
+.map {
+  height: 40rem;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .map {
+    height: 50vh;
+  }
+}
+

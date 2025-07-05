@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { Location } from "./LocationDrawer";
 import Crossword from "./Crossword";
 import LocationDrawer from "./LocationDrawer";
+import styles from './locationDrawer.module.css';
 
 const MapComponent = () => {
   const [activeLocationId, setActiveLocationId] = useState<number | null>(null);
@@ -39,7 +40,7 @@ const MapComponent = () => {
       <MapContainer
         center={center}
         zoom={14}
-        style={{ height: "40rem", width: "100%" }}
+        className={styles.map}
       >
         <TileLayer
           attribution="&copy; OpenStreetMap contributors"
@@ -71,13 +72,6 @@ const MapComponent = () => {
           )
         })}
       </MapContainer>
-      {/* <LocationDetail
-          location={activeLocation || null}
-          savedAnswer={
-            activeLocation ? answers[activeLocation.number] || "" : ""
-          }
-          onAnswerSave={handleAnswerSave}
-        /> */}
       <LocationDrawer
         open={drawerOpen}
         onOpen={() => setDrawerOpen(true)}
