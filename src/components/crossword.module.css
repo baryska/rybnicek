@@ -1,0 +1,53 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.crossword {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.button {
+  padding: 0.5rem 1rem;
+  background-color: #346f70;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.button:hover {
+  background-color: #346f70;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+.button:active {
+  transform: scale(0.97);
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2);
+}
+
+.text {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.description {
+  margin: 2rem;
+  width: 1000px;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  p {
+    font-size: 1.5rem;
+    color: #1b4a4c;
+    margin: 1rem 0;
+  }
+}

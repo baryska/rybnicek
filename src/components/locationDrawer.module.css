@@ -1,0 +1,75 @@
+.button {
+  padding: 0.5rem 1rem;
+  background-color: #346f70;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.button:hover {
+  background-color: #346f70;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+.button:active {
+  transform: scale(0.97);
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 1rem auto;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.description {
+  margin-bottom: 2rem;
+}
+
+.question {
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  color: #346f70;
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.input {
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  background-color: white;
+  border-radius: 8px;
+  width: 100%;
+  border: solid 1px #346f70;
+}
+
+.correct {
+  color: green;
+}
+
+.wrong {
+  color: red;
+  margin-top: 0.5rem;
+}
+
+.emptyState {
+  padding: 1rem;
+  border: 1px solid #ddd;
+}
+

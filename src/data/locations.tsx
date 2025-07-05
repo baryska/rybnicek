@@ -1,36 +1,68 @@
-import { Location } from "../components/LocationDetail";
+import { Location } from "../components/LocationDrawer";
 
 export const locations: Location[] = [
+  {
+    name: "Komunitní park Na Paloučku",
+    position: [49.958536, 14.047572],
+    number: 1,
+    question: "Na Paloučku jsou součástí komunitních záhonů také tři, které jsou vyrobeny ze skruží. Na prostředním, v zelené barvě, je napsané jedno ženské jméno. Které?",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. At molestias rem doloribus deleniti autem deserunt, possimus quia? Accusantium fugit velit rem ducimus, repudiandae est possimus corporis at doloribus mollitia sed ipsum ut voluptas libero quaerat atque eum? Error, vel enim obcaecati aperiam dolorum debitis fugiat rem! In, culpa facere natus magni hic voluptate totam suscipit blanditiis praesentium fugiat eos eligendi cumque doloribus magnam reiciendis modi laboriosam iure ipsum? Ipsam reiciendis minus esse repudiandae ullam nulla illum nihil et unde ex delectus eaque quia, explicabo culpa nostrum. Sequi voluptatum corrupti obcaecati.",
+    answer: "Eliška",
+    index: 3,
+  },
+  {
+    name: "Amfiteátr Autokemp Beroun",
+    position: [49.969081, 14.074668],
+    number: 2,
+    question: "Vlevo za hlavním vstupem do kempu je tajemná postava zanořená do země. Vedle ní je strom označený zelenou cedulí. Co je na ní napsáno?",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    answer: "Památný strom",
+    index: 9,
+  },
+  {
+    name: "Just Bake Pekařství a Zajíčkův mlýn",
+    position: [49.96446, 14.076459],
+    number: 4,
+    question: "Jaký tvar je na vyjízděcím sloupku, který brání vjezdu do dvora mlýna?",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    answer: "Ozubené kolo",
+    index: 8,
+  },
+  {
+    name: "Plácek",
+    position: [49.962647, 14.070827],
+    number: 5,
+    question: "Náměstí Marie Poštové nazývají starousedlíci spíše jako Plácek. Jakou hlavní součást sortimentu má prodejna v rohu náměstí?",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    answer: "Ryby",
+    index: 3,
+  },
+  {
+    name: "Hvězda",
+    position: [49.956905, 14.050819],
+    number: 6,
+    question: "Na Velkém sídlišti býval společenský a kulturní dům. Budova stojí dodnes, ale již kultuře neslouží. Jak se kulturní dům jmenoval?",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    answer: "Hvězda",
+    index: 5,
+  },
   {
     name: "✅ Nádraží Beroun",
     position: [49.957172, 14.076492],
     number: 7,
-    question: "Lorem ipsum dolor sit",
+    question: "Na skleněné mozaice nad východem z nádraží jsou v levém dolním rohu dvě ženy u rybníčku. Jakou netypickou barvu vlasů má jedna z nich?",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    answer: "Lorem"
+    answer: "Modrou",
+    index: 0,
   },
   {
-    name: "Městské lázně",
-    position: [49.962782, 14.076861],
-    number: 12,
-    question: "Lorem ipsum dolor sit",
+    name: "U tří korun",
+    position: [49.963334, 14.07227],
+    number: 10,
+    question: " domě U tří korun, na místě, kam si dnes můžete dojít na manikúru, byl dříve jistý druh potravin/občerstvení. Jak se říká osvěžovně, kde si koupíte třeba jahodový koktejl?",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    answer: "Lorem"
-  },
-  // {
-  //   name: "Ateliéry FAMU",
-  //   position: [49.95345, 14.07222],
-  //   question: "Lorem ipsum dolor sit",
-  //   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  //   answer: "Lorem"
-  // },
-  {
-    name: "✅ Sportovní hala na Zavadilce",
-    position: [49.954519, 14.069474],
-    number: 19,
-    question: "Lorem ipsum dolor sit",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    answer: "Lorem"
+    answer: "Mléčný bar",
+    index: 4,
   },
   {
     name: "Jarov náves",
@@ -38,7 +70,125 @@ export const locations: Location[] = [
     number: 11,
     question: "Lorem ipsum dolor sit",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    answer: "Lorem"
+    answer: "Lorem",
+    index: 0,
+  },
+  {
+    name: "Městské lázně",
+    position: [49.962782, 14.076861],
+    number: 12,
+    question: "Město mělo i své lázně. Budova stále stojí, avšak v bazénu (dnes pod zemí) jsou jiné tekutiny. Jak jim souhrnným názvem říkáme?",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    answer: "Pohonné hmoty",
+    index: 12,
+  },
+  {
+    name: "Radnice Beroun",
+    position: [49.964389, 14.074696],
+    number: 13,
+    question: "Ve vstupní hale radnice najdete vlevo pod stropem skřítka. Jak se skřítek jmenuje?",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    answer: "Klepáček",
+    index: 5,
+  },
+  {
+    name: "Třešňovka",
+    position: [49.97423, 14.081148],
+    number: 15,
+    question: "Hezký výhled na Beroun při západu Slunce nabízí jedna lokalita na stráni pod Golfovým areálem. Název má podle ovocných stromů, které tam rostou. Jak se lolalita jmenuje?",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas enim dolor aut odio tenetur, obcaecati minus sint molestias, possimus blanditiis aliquam explicabo aperiam hic fugiat quaerat, nemo porro adipisci laboriosam. Aperiam maiores sed harum. Corporis voluptates rem veritatis ipsum officia adipisci possimus tenetur maxime quos earum modi blanditiis unde consectetur rerum magnam sit cum, facere fuga minus tempora! Earum fugit suscipit accusantium? Sint incidunt temporibus, natus non aspernatur itaque ex, molestias ipsum, ipsa ab delectus sit! Nam sequi distinctio ipsum eaque illum blanditiis odit animi, repellendus nostrum numquam saepe excepturi.",
+    answer: "Třešňovka",
+    index: 1,
+  },
+  {
+    name: "Plzeňská brána",
+    position: [49.963153, 14.07105],
+    number: 16,
+    question: "Nad nápisem na Plzeňské (horní) bráně je freska s mužem, ženou a stromem. Jaký je to strom?",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    answer: "Lípa",
+    index: 1,
+  },
+  {
+    name: "Pražská brána",
+    position: [49.964141, 14.075348],
+    number: 17,
+    question: "Pražskou, tedy dolní branou prochází turistická značka. Která?",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    answer: "Modrá",
+    index: 3,
+  },
+  {
+    name: "Sportovní hala na Zavadilce",
+    position: [49.954519, 14.069474],
+    number: 19,
+    question: "Sportovní halu na Zavadilce využívá sportovní klub, který má v logu dvě písmena. Která to jsou?",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    answer: "LB",
+    index: 1,
+  },
+  {
+    name: "JOJOkava",
+    position: [49.979631, 14.038316],
+    number: 20,
+    question: "V osadě Zdejcina je kavárna, která kromě krásných výhledů na Berounku nabízí zážitky se zvířaty. Jaká zvířata máme na mysli?",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    answer: "Koně",
+    index: 2,
+  },
+  {
+    name: "Zábranský park",
+    position: [49.9608, 14.067557],
+    number: 22,
+    question: "Park býval hřbitovem a dodnes tam jsou náhrobní kameny. Odkud byl rod Švíků, kterým jeden z náhrobních kamenů náleží?",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    answer: "Perče",
+    index: 3,
+  },
+  {
+    name: "Parkoviště Václavské náměstí = Bývalý autobusák",
+    position: [49.965982, 14.078592],
+    number: 23,
+    question: "Lávka přes Berounku u bývalého autobusového nádraží má jednu zvláštnost. Co lávka udělá v případě velké vody?",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    answer: "zvedne se",
+    index: 4,
+  },
+  {
+    name: "Místo exploze bomby (nálet na Beroun 1945)",
+    position: [49.96704, 14.08464],
+    number: 24,
+    question: "Pokud se k pamětní desce otočíte zády, uvidíte jednu specifickou budovu. Kterou?",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    answer: "Nádraží",
+    index: 6,
+  },
+  {
+    name: "Masna u Šmejkala",
+    position: [49.9637981, 14.0740275],
+    number: 25,
+    question: "Masna se objevuje v klipu písně JIřího Schellingera o jednom mraženém ovoci. O jaké ovoce jde?",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    answer: "Jahody",
+    index: 2,
+  },
+  {
+    name: "Brdatka",
+    position: [49.976897, 14.056209],
+    number: 26,
+    question: "Na ostrůvku s vrbou uprostřed rybníčku bylo dříve vodní zvíře z plechu. V českých vodách ho ale nenajdeme. Jaký plaz to byl?",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    answer: "Krokodýl",
+    index: 8,
+  },
+  {
+    name: "Městská knihovna Beroun",
+    position: [49.967283, 14.070308],
+    number: 27,
+    question: "Jaký film se natáčel v prostorách, kde se dnes nachází knihovna?",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    answer: "Tankový prapor",
+    index: 1,
   },
   {
     name: "Hospůdka U Krobiána",
@@ -46,221 +196,106 @@ export const locations: Location[] = [
     number: 28,
     question: "Lorem ipsum dolor sit",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    answer: "Lorem"
+    answer: "Lorem",
+    index: 0,
   },
   {
-    name: "Třešňovka",
-    position: [49.97423, 14.081148],
-    number: 15,
-    question: "Lorem ipsum dolor sit",
+    name: "Jenštejnský dům a Muzeum",
+    position: [49.963431, 14.072772],
+    number: 30,
+    question: "Na fasádě Jenštějnského domu jsou dvě cedulky označující hladinu povodní v letech 1872 a 2002. Do tajenky napište měsíc ze spodní tabulky.",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    answer: "Lorem"
+    answer: "srpen",
+    index: 4,
   },
   {
-    name: "Komunitní park Na Paloučku",
-    position: [49.958536, 14.047572],
-    number: 1,
-    question: "Lorem ipsum dolor sit",
+    name: "Obchodní akademie Beroun",
+    position: [49.961308, 14.074744],
+    number: 31,
+    question: "Plastiky na budově znázorňují profese, ve kterých se studenti při otevření školy mohli vzdělávat. Jaká postava (obecně) je na všech čtyřech plastikách?",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    answer: "Lorem"
+    answer: "Muž",
+    index: 1,
   },
-  {
-    name: "Hvězda",
-    position: [49.956905, 14.050819],
-    number: 6,
-    question: "Lorem ipsum dolor sit",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    answer: "Lorem"
-  },
-  {
-    name: "Amfiteátr Autokemp Beroun",
-    position: [49.969081, 14.074668],
-    number: 2,
-    question: "Lorem ipsum dolor sit",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    answer: "Lorem"
-  },
+  // ZAKOMENTOVANÉ
+  // {
+  //   name: "Ateliéry FAMU",
+  //   position: [49.95345, 14.07222],
+  //   question: "Lorem ipsum dolor sit",
+  //   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  //   answer: "",
+  //   index: 0,
+  // },
   // {
   //   name: "Malá vodní elektrárna Beroun",
   //   position: [49.967597, 14.075004],
   //   question: "Lorem ipsum dolor sit",
   //   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  //   answer: "Lorem"
+  //   answer: "",
+  //   index: 0,
   // },
-  {
-    name: "Místo exploze bomby (nálet na Beroun 1945)",
-    position: [49.96704, 14.08464],
-    number: 24,
-    question: "Lorem ipsum dolor sit",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    answer: "Lorem"
-  },
-  {
-    name: "Just Bake Pekařství a Zajíčkův mlýn",
-    position: [49.96446, 14.076459],
-    number: 4,
-    question: "Lorem ipsum dolor sit",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    answer: "Lorem"
-  },
   // {
   //   name: "Hospůdka U Šacha",
   //   position: [49.967637, 14.064662],
   //   question: "Lorem ipsum dolor sit",
   //   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  //   answer: "Lorem"
+  //   answer: "",
+  //   index: 0,
   // },
   // {
   //   name: "Bývalý Měšťanský pivovar",
   //   position: [49.967153, 14.071894],
   //   question: "Lorem ipsum dolor sit",
   //   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  //   answer: "Lorem"
+  //   answer: "",
+  //   index: 0,
   // },
   // {
   //   name: "Štulovna",
   //   position: [49.969319, 14.072042],
   //   question: "Lorem ipsum dolor sit",
   //   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  //   answer: "Lorem"
+  //   answer: "",
+  //   index: 0,
   // },
-  {
-    name: "Městská knihovna Beroun",
-    position: [49.967283, 14.070308],
-    number: 27,
-    question: "Lorem ipsum dolor sit",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    answer: "Lorem"
-  },
-  {
-    name: "JOJOkava",
-    position: [49.979631, 14.038316],
-    number: 20,
-    question: "Lorem ipsum dolor sit",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    answer: "Lorem"
-  },
-  {
-    name: "Brdatka",
-    position: [49.976897, 14.056209],
-    number: 26,
-    question: "Lorem ipsum dolor sit",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    answer: "Lorem"
-  },
   // {
   //   name: "Kaplička a studánka na Dědu",
   //   position: [49.97149, 14.060262],
   //   question: "Lorem ipsum dolor sit",
   //   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  //   answer: "Lorem"
+  //   answer: "",
+  //   index: 0,
   // },
   // {
   //   name: "Rozhledna Děd u Berouna",
   //   position: [49.967571, 14.03424],
   //   question: "Lorem ipsum dolor sit",
   //   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  //   answer: "Lorem"
+  //   answer: "",
+  //   index: 0,
   // },
-  {
-    name: "U tří korun",
-    position: [49.963334, 14.07227],
-    number: 10,
-    question: "Lorem ipsum dolor sit",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    answer: "Lorem"
-  },
-  {
-    name: "Parkoviště Václavské náměstí = Bývalý autobusák",
-    position: [49.965982, 14.078592],
-    number: 23,
-    question: "Lorem ipsum dolor sit",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    answer: "Lorem"
-  },
-  {
-    name: "Jenštejnský dům a Muzeum",
-    position: [49.963431, 14.072772],
-    number: 30,
-    question: "Lorem ipsum dolor sit",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    answer: "Lorem"
-  },
-  {
-    name: "Plácek",
-    position: [49.962647, 14.070827],
-    number: 5,
-    question: "Lorem ipsum dolor sit",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    answer: "Lorem"
-  },
   // {
   //   name: "Lookout tower Městská hora in Beroun",
   //   position: [49.962635, 14.065113],
   //   question: "Lorem ipsum dolor sit",
   //   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  //   answer: "Lorem"
+  //   answer: "",
+  //   index: 0,
   // },
   // {
   //   name: "Medvědárium Beroun",
   //   position: [49.963217, 14.066071],
   //   question: "Lorem ipsum dolor sit",
   //   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  //   answer: "Lorem"
+  //   answer: "",
+  //   index: 0,
   // },
-  {
-    name: "Plzeňská brána",
-    position: [49.963153, 14.07105],
-    number: 16,
-    question: "Lorem ipsum dolor sit",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    answer: "Lorem"
-  },
-  {
-    name: "Radnice Beroun",
-    position: [49.964389, 14.074696],
-    number: 13,
-    question: "Lorem ipsum dolor sit",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    answer: "Lorem"
-  },
   // {
   //   name: "Městské kulturní centrum Beroun - Městské informační centrum",
   //   position: [49.964169, 14.074815],
   //   question: "Lorem ipsum dolor sit",
   //   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  //   answer: "Lorem"
+  //   answer: "",
+  //   index: 0,
   // },
-  {
-    name: "Pražská brána",
-    position: [49.964141, 14.075348],
-    number: 17,
-    question: "Lorem ipsum dolor sit",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    answer: "Lorem"
-  },
-  {
-    name: "Obchodní akademie Beroun",
-    position: [49.961308, 14.074744],
-    number: 31,
-    question: "Lorem ipsum dolor sit",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    answer: "Lorem"
-  },
-  {
-    name: "Zábranský park",
-    position: [49.9608, 14.067557],
-    number: 22,
-    question: "Lorem ipsum dolor sit",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    answer: "Lorem"
-  },
-  {
-    name: "Masna u Šmejkala",
-    position: [49.9637981, 14.0740275],
-    number: 25,
-    question: "Lorem ipsum dolor sit",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    answer: "Lorem"
-  }
 ];

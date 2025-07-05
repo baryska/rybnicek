@@ -1,9 +1,9 @@
 import MapClientPage from "../../components/MapClientPage";
-// import styles from './style.module.css';
+import styles from './style.module.css';
 
 export default function Page() {
   return (
-    <main>
+    <main className={styles.main}>
       <MapClientPage />
     </main>
   );

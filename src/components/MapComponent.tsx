@@ -4,11 +4,13 @@ import "leaflet/dist/leaflet.css";
 import L, { LatLngTuple } from "leaflet";
 import { locations } from '../data/locations'
 import { useEffect, useState } from "react";
-import LocationDetail, { Location } from "./LocationDetail";
+import { Location } from "./LocationDrawer";
 import Crossword from "./Crossword";
+import LocationDrawer from "./LocationDrawer";
 
 const MapComponent = () => {
   const [activeLocationId, setActiveLocationId] = useState<number | null>(null);
+  const [drawerOpen, setDrawerOpen] = useState(false);
   const [answers, setAnswers] = useState<Record<number, string>>({});
 
   useEffect(() => {
@@ -57,7 +59,10 @@ const MapComponent = () => {
               position={loc.position as LatLngTuple}
               icon={numberedIcon}
               eventHandlers={{
-                click: () => setActiveLocationId(loc.number),
+                click: () => {
+                  setActiveLocationId(loc.number)
+                  setDrawerOpen(true);
+                }
               }}
 
             >
@@ -66,16 +71,23 @@ const MapComponent = () => {
           )
         })}
       </MapContainer>
-      <div style={{ flex: "1 1 40%", minWidth: "300px" }}>
-        <LocationDetail
+      {/* <LocationDetail
           location={activeLocation || null}
           savedAnswer={
             activeLocation ? answers[activeLocation.number] || "" : ""
           }
           onAnswerSave={handleAnswerSave}
-        />
-      </div>
-      <Crossword locations={locations} answers={answers} onClear={handleClear}/>
+        /> */}
+      <LocationDrawer
+        open={drawerOpen}
+        onOpen={() => setDrawerOpen(true)}
+        onClose={() => setDrawerOpen(false)}
+        location={activeLocation}
+        savedAnswer={activeLocation ? answers[activeLocation.number] || "" : ""}
+        onAnswerSave={handleAnswerSave}
+      />
+
+      <Crossword locations={locations} answers={answers} onClear={handleClear} />
     </>
   );
 }
