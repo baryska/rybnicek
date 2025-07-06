@@ -72,7 +72,7 @@ const CrosswordSubmitForm = () => {
   return (
     <div className={styles.form}>
       {solution === null ? (
-        <p>Tajenku jste nevyplnili kompletně. Pokud ji znáte, zapište ji sem:</p>
+        <p>Tajenku jste nevyplnili kompletně. Pokud jste ji i tak uhádli, vyplňte ji níže:</p>
       ) : (
         <p>Gratulujeme! Odpověděli jste správně na všechny otázky.</p>
       )}

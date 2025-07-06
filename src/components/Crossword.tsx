@@ -26,7 +26,7 @@ const Crossword = ({ locations, answers, onClear }: Props) => {
         <p>Zvláštní cenu dostane i ten, kdo vyluští <strong>všech 31 lokalit</strong>, a speciální
           odměna čeká i na úspěšného luštitele <strong>bonusové noční otázky</strong>.
         </p>
-        <p>Soutěž probíhá do <strong>konce srpna</strong>, správnou tajenku nám pošlete na email <strong className={styles.email}>tajenka@berounskyrybnicek.cz</strong></p>
+        <p>Soutěž probíhá do <strong>konce srpna</strong>, správnou tajenku odešlete ve formuláři pod křížovkou nebo nám ji i se svým jménem a příjmením pošlete na email <strong className={styles.email}>tajenka@berounskyrybnicek.cz</strong></p>
         <p>Všechny výherce budeme losovat v <strong>prvním zářijovém týdnu</strong>, sledujte náš IG a FB!</p>
       </div>
       <p className={styles.note}>(Křížovku vyplňte kliknutím na konkrétní místo přímo v mapě.)</p>
