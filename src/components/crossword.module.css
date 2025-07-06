@@ -43,6 +43,14 @@
 
 .note {
   text-align: center;
+  padding: 0.5rem;
+}
+
+.email {
+  font-size: 1.7rem;
+  @media (max-width: 1024px) {
+    font-size: 1.3rem;
+  }
 }
 
 .description {
@@ -76,7 +84,7 @@
     padding: 1rem;
   }
   .description p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin: 0.75rem 0;
   }
 }
@@ -89,6 +97,7 @@
   .description .title {
     font-size: 2rem;
     text-align: center;
+    line-height: 1.1;
   } 
 }
 
