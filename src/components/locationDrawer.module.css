@@ -84,3 +84,19 @@
   }
 }
 
+/* These are styles for submit form */
+.form {
+  margin: 2rem 35%;
+}
+
+@media (max-width: 1024px) {
+  .form {
+    margin: 1rem 25%;
+  }
+}
+
+@media (max-width: 768px) {
+  .form {
+    margin: 1rem 10%;
+  }
+}

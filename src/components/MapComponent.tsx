@@ -8,6 +8,7 @@ import { Location } from "./LocationDrawer";
 import Crossword from "./Crossword";
 import LocationDrawer from "./LocationDrawer";
 import styles from './locationDrawer.module.css';
+import CrosswordSubmitForm from "./CrosswordSubmitForm";
 
 const MapComponent = () => {
   const [activeLocationId, setActiveLocationId] = useState<number | null>(null);
@@ -82,6 +83,7 @@ const MapComponent = () => {
       />
 
       <Crossword locations={locations} answers={answers} onClear={handleClear} />
+      <CrosswordSubmitForm />
     </>
   );
 }
