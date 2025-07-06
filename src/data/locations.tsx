@@ -79,8 +79,8 @@ export const locations: Location[] = [
     number: 12,
     question: "Město mělo i své lázně. Budova stále stojí, avšak v bazénu (dnes pod zemí) jsou jiné tekutiny. Jak jim souhrnným názvem říkáme?",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    answer: "Pohonné hmoty",
-    index: 12,
+    answer: "Hmoty",
+    index: 4,
   },
   {
     name: "Radnice Beroun",
