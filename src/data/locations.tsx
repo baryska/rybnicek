@@ -188,7 +188,7 @@ export const locations: Location[] = [
     question: "Na ostrůvku s vrbou uprostřed rybníčku bylo dříve vodní zvíře z plechu. V českých vodách ho ale nenajdeme. Jaký plaz to byl?",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     answer: "Krokodýl",
-    index: 8,
+    index: 7,
   },
   {
     name: "Městská knihovna Beroun",
