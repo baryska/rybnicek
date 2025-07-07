@@ -137,6 +137,15 @@ export const locations: Location[] = [
     index: 2,
   },
   {
+    name: "Hostím",
+    position: [49.960886, 14.130407],
+    number: 21,
+    question: "Na návsi pod památnou lípou stojí zvonička, kterou zde instaloval místní umělecký řezbář Jiří Kobr. Zvon je věnován jednomu světci, který je spojen s okolím Hostíma. Jaký světec je uveden přímo na zvonu?",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    answer: "Ivan",
+    index: 0,
+  },
+  {
     name: "Zábranský park",
     position: [49.9608, 14.067557],
     number: 22,
@@ -189,15 +198,6 @@ export const locations: Location[] = [
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     answer: "Tankový prapor",
     index: 10,
-  },
-  {
-    name: "Hospůdka U Krobiána",
-    position: [49.960886, 14.130407],
-    number: 28,
-    question: "Lorem ipsum dolor sit",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    answer: "Lorem",
-    index: 0,
   },
   {
     name: "Jenštejnský dům a Muzeum",

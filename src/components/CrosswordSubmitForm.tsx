@@ -51,7 +51,8 @@ const CrosswordSubmitForm = () => {
           email,
           firstName,
           lastName,
-          message: `Tajenka: ${finalSolution}`,
+          message: `Tajenka: ${finalSolution}
+          Má všechny odpovědi: ${solution !== null ? "Ano" : "Ne"}`,
         }),
       });
 
@@ -94,7 +95,7 @@ const CrosswordSubmitForm = () => {
           className={styles.input}
         />
       </div>
-      
+
       <div>
         <input
           type="text"
@@ -104,7 +105,7 @@ const CrosswordSubmitForm = () => {
           className={styles.input}
         />
       </div>
-      
+
       <div>
         <input
           type="email"
@@ -118,7 +119,7 @@ const CrosswordSubmitForm = () => {
         onClick={handleSubmit}
         disabled={status === "sending"}
         className={styles.button}
-        style={{marginTop: '1rem'}}
+        style={{ marginTop: '1rem' }}
       >
         Odeslat tajenku
       </button>
