@@ -200,6 +200,15 @@ export const locations: Location[] = [
     index: 10,
   },
   {
+    name: "Ateliéry FAMU",
+    position: [49.95345, 14.07222],
+    question: "V budově bývalé základní školy na Zavadilce dnes sídlí ateliéry FAMU. Který druh uměeckého díla tam studenti tvoří?",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    answer: "Fotografie",
+    number: 29,
+    index: 8,
+  },
+  {
     name: "Jenštejnský dům a Muzeum",
     position: [49.963431, 14.072772],
     number: 30,
