@@ -202,7 +202,7 @@ export const locations: Location[] = [
   {
     name: "Ateliéry FAMU",
     position: [49.95345, 14.07222],
-    question: "V budově bývalé základní školy na Zavadilce dnes sídlí ateliéry FAMU. Který druh uměeckého díla tam studenti tvoří?",
+    question: "V budově bývalé základní školy na Zavadilce dnes sídlí ateliéry FAMU. Který druh uměleckého díla tam studenti tvoří?",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     answer: "Fotografie",
     number: 29,
