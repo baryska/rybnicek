@@ -45,7 +45,7 @@ const LocationDetailDrawer = ({
 
   if (!location) return null;
 
- const handleSubmit = () => {
+  const handleSubmit = () => {
     if (input.trim().toUpperCase() === location.answer.toUpperCase()) {
       onAnswerSave(location.number, location.answer.toUpperCase());
       setStatus("correct");
@@ -55,13 +55,21 @@ const LocationDetailDrawer = ({
     }
   };
 
+  const displayChars = location.answer.split("").map((char, idx) => {
+    const inputChar = (input[idx] ?? "").toUpperCase();
+    return {
+      expected: char,
+      display: inputChar,
+    };
+  });
+
   return (
     <SwipeableDrawer
       anchor={isMobile ? "bottom" : "left"}
       open={open}
       onClose={onClose}
       onOpen={onOpen}
-      transitionDuration={{enter: 500, exit: 500}}	
+      transitionDuration={{ enter: 500, exit: 500 }}
       slotProps={{
         paper: {
           sx: {
@@ -73,34 +81,51 @@ const LocationDetailDrawer = ({
         },
       }}
     >
-      
-        <h2 className={styles.title}>{location.name}</h2>
-        <p className={styles.description}>{location.description}</p>
-        <p className={styles.question}>
-          <strong>Otázka:</strong> {location.question}
-        </p>
-        {savedAnswer ? (
-          <p className={styles.correct}>✅ Odpověď správně vyplněna!</p>
-        ) : (
-          <div className={styles.inputWrapper}>
-            <input
-              type="text"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") handleSubmit();
-              }}
-              placeholder="Vaše odpověď"
-              className={styles.input}
-            />
-            <button onClick={handleSubmit} className={styles.button}>
-              Odeslat
-            </button>
-            {status === "wrong" && (
-              <p className={styles.wrong}>❌ Odpověď není správná.</p>
-            )}
-          </div>
-        )}
+
+      <h2 className={styles.title}>{location.name}</h2>
+      <p className={styles.description}>{location.description}</p>
+      <p className={styles.question}>
+        <strong>Otázka:</strong> {location.question}
+      </p>
+      {savedAnswer ? (
+        <p className={styles.correct}>✅ Odpověď správně vyplněna!</p>
+      ) : (
+        <div className={styles.inputWrapper}>
+          <input
+            type="text"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") handleSubmit();
+            }}
+            placeholder="Vaše odpověď"
+            className={styles.input}
+          />
+          <button onClick={handleSubmit} className={styles.button}>
+            Odeslat
+          </button>
+          {status === "wrong" && (
+            <p className={styles.wrong}>❌ Odpověď není správná.</p>
+          )}
+        </div>
+      )}
+      {!savedAnswer && (
+        <div className={styles.preview}>
+          {displayChars.map((cell, idx) => {
+            if (cell.expected === " ") {
+              return (
+                <div key={idx} className={styles.space}></div>
+              );
+            }
+
+            return (
+              <div key={idx} className={styles.box}>
+                {cell.display}
+              </div>
+            );
+          })}
+        </div>
+      )}
     </SwipeableDrawer>
   );
 };
