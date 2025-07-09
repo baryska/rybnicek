@@ -228,15 +228,7 @@ export const locations: Location[] = [
   },
   // ZAKOMENTOVANÉ
   // {
-  //   name: "Ateliéry FAMU",
-  //   position: [49.95345, 14.07222],
-  //   question: "Lorem ipsum dolor sit",
-  //   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  //   answer: "",
-  //   index: 0,
-  // },
-  // {
-  //   name: "Malá vodní elektrárna Beroun",
+  //   name: "Talichova vila",
   //   position: [49.967597, 14.075004],
   //   question: "Lorem ipsum dolor sit",
   //   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
@@ -252,7 +244,7 @@ export const locations: Location[] = [
   //   index: 0,
   // },
   // {
-  //   name: "Bývalý Měšťanský pivovar",
+  //   name: "Židovský hřbitov",
   //   position: [49.967153, 14.071894],
   //   question: "Lorem ipsum dolor sit",
   //   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
