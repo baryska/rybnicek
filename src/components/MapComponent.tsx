@@ -10,7 +10,7 @@ import LocationDrawer from "./LocationDrawer";
 import styles from './locationDrawer.module.css';
 import CrosswordSubmitForm from "./CrosswordSubmitForm";
 
-const MapComponent = () => {
+const MapComponent = ({ showCrossword }: { showCrossword: boolean }) => {
   const [activeLocationId, setActiveLocationId] = useState<number | null>(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [answers, setAnswers] = useState<Record<number, string>>({});
@@ -36,12 +36,15 @@ const MapComponent = () => {
     localStorage.removeItem("answers");
   };
 
+  console.log(showCrossword)
+
   return (
     <>
       <MapContainer
         center={center}
         zoom={14}
         className={styles.map}
+        style={showCrossword ? undefined : { height: '100vh' }}
       >
         <TileLayer
           attribution="&copy; OpenStreetMap contributors"
@@ -81,9 +84,13 @@ const MapComponent = () => {
         savedAnswer={activeLocation ? answers[activeLocation.number] || "" : ""}
         onAnswerSave={handleAnswerSave}
       />
+      {showCrossword && (
+        <>
+          <Crossword locations={locations} answers={answers} onClear={handleClear} />
+          <CrosswordSubmitForm />
+        </>
+      )}
 
-      <Crossword locations={locations} answers={answers} onClear={handleClear} />
-      <CrosswordSubmitForm />
     </>
   );
 }

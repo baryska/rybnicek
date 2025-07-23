@@ -19,9 +19,8 @@ export default function Page() {
   else {
     return (
       <main className={styles.main}>
-        <MapClientPage />
+        <MapClientPage showCrossword={true}/>
       </main>
     );
   }
-
 }

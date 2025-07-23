@@ -7,7 +7,7 @@ const MapComponent = dynamic(() => import("./MapComponent"), {
   loading: () => <p>Načítám mapu...</p>,
 });
 
-export default function MapClientPage() {
-  return <MapComponent />;
+export default function MapClientPage({ showCrossword = true }: { showCrossword: boolean }) {
+  return <MapComponent showCrossword={showCrossword} />;
 }
 
