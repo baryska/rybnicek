@@ -99,6 +99,9 @@
   color: #1b4a4c;
   font-weight: bold;
   font-size: clamp(1.2rem, 1.2vw + 1rem, 2.5rem);
+  @media (max-width: 1500px) {
+    margin: 6rem 0.5rem;
+  }
 }
 .fadeIn {
   opacity: 0;
@@ -130,7 +133,6 @@
   @media (max-width: 768px) {
     font-size: 4rem;
   }
-
 }
 
 .icon:hover {

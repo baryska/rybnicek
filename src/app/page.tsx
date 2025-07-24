@@ -4,17 +4,19 @@ import { FaInstagram, FaFacebook } from 'react-icons/fa';
 import { profiles } from '../data/profiles';
 import ProfileCard from './profileCard';
 import FadeInOnScroll from './fadeInScroll';
+import FloatingLink from '@/components/FloatingLink';
 
 
 export default function HomePage() {
   return (
     <>
       <main className={styles.main}>
-        <section className={styles.banner}>
+        <section className={styles.banner} style={{ position: "relative" }}>
           <picture>
             <source srcSet="/banner_mobil.png" media="(max-width: 768px)" />
             <img src="/banner.png" alt="Banner" className={styles.bannerImage} />
           </picture>
+          <FloatingLink />
         </section>
         <section>
           <p className={`${styles.fadeIn} ${styles.gradientText}`}>Budujeme komunitu lidí, kteří se zajímají o dění v Berouně a okolí.</p>
