@@ -26,7 +26,8 @@ const Crossword = ({ locations, answers, onClear }: Props) => {
         </p>
         <p>Není nutné vyluštit všechna slova, podstatné je odevzdat <strong>správně vyluštěnou tajenku</strong>.</p>
         <p>Ten, kdo vyluští <strong>všech 31 lokalit</strong>, však může vyhrát zvláštní cenu.</p>
-        <p>Soutěž probíhá do <strong>konce srpna</strong>, správnou tajenku odešlete ve formuláři pod křížovkou nebo nám ji i se svým jménem a příjmením pošlete na email <strong className={styles.email}>info@berounskyrybnicek.cz</strong></p>
+        <p>Soutěž probíhá do <strong>konce srpna</strong>, správnou tajenku odešlete ve formuláři pod křížovkou nebo nám ji i se svým jménem a příjmením pošlete na email:</p>
+        <p style={{textAlign: 'center'}}><strong className={styles.email}>info@berounskyrybnicek.cz</strong></p>
         <p>Všechny výherce budeme losovat v <strong>prvním zářijovém týdnu</strong>, sledujte náš IG a FB!</p>
         <section className={styles.socialIcons}>
             <a
