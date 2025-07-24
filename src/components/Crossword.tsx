@@ -47,7 +47,7 @@ const Crossword = ({ locations, answers, onClear }: Props) => {
               <FaFacebook className={styles.icon} />
             </a>
           </section>
-        <p>Pravidla hry ke stažení <a href="/pravidla_sifra.pdf" download style={{textDecoration: 'underline'}}>zde</a>.</p>
+        
       </div>
       <p className={styles.note}>(Křížovku vyplňte kliknutím na konkrétní místo přímo v mapě.)</p>
       <button

@@ -128,3 +128,9 @@
   flex-shrink: 0;
 }
 
+.rules {
+  font-size: 1.2rem;
+  color: #1b4a4c;
+  text-align: center;
+}
+

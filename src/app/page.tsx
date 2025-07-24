@@ -50,11 +50,7 @@ export default function HomePage() {
           ))}
         </section>
       </main>
-      <footer className={styles.footer}>
-        © {new Date().getFullYear()} Berounský rybníček
-      </footer>
     </>
-
   );
 }
 

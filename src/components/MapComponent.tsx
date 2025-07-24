@@ -90,7 +90,7 @@ const MapComponent = ({ showCrossword }: { showCrossword: boolean }) => {
           <CrosswordSubmitForm />
         </>
       )}
-
+      <p className={styles.rules}>Pravidla hry ke stažení <a href="/pravidla_sifra.pdf" download style={{textDecoration: 'underline'}}>zde</a>.</p>
     </>
   );
 }
