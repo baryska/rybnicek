@@ -83,7 +83,6 @@ const LocationDetailDrawer = ({
     >
 
       <h2 className={styles.title}>{location.name}</h2>
-      <p className={styles.description}>{location.description}</p>
       <p className={styles.question}>
         <strong>Otázka:</strong> {location.question}
       </p>
@@ -117,7 +116,6 @@ const LocationDetailDrawer = ({
                 <div key={idx} className={styles.space}></div>
               );
             }
-
             return (
               <div key={idx} className={styles.box}>
                 {cell.display}
@@ -126,6 +124,10 @@ const LocationDetailDrawer = ({
           })}
         </div>
       )}
+      <div className={styles.description}>
+      <strong>Legenda:</strong>
+      <p >{location.description}</p>
+      </div>
     </SwipeableDrawer>
   );
 };
