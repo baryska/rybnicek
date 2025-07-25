@@ -78,6 +78,22 @@
   margin: 0 1.5rem;
 }
 
+.logosWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logosWrapper_mobile {
+  display: none;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media (min-width: 769px) and (max-width: 1024px) {
   .description {
     width: 90%;
@@ -105,6 +121,18 @@
   .logoContainer {
     width: 4rem;
     margin: 0 1.5rem;
+  }
+
+  .logosWrapper {
+    display: none;
+  }
+
+  .logosWrapper_mobile {
+    display: block;
+  }
+
+  .logo {
+    width: 64px;
   }
 }
 
@@ -174,26 +202,5 @@
 
   .number {
     font-size: 12px;
-  }
-}
-
-.socialIcons {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin: 2rem 0;
-}
-
-.icon {
-  font-size: 6rem;
-  color: #346f70;
-  transition: transform 0.2s ease, color 0.3s ease;
-
-  @media (max-width: 1024px) {
-    font-size: 5rem;
-  }
-
-  @media (max-width: 768px) {
-    font-size: 4rem;
   }
 }

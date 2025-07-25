@@ -31,7 +31,7 @@ const Crossword = ({ locations, answers, onClear }: Props) => {
         <p>Soutěž probíhá do <strong>konce srpna</strong>, správnou tajenku odešlete ve formuláři pod křížovkou nebo nám ji i se svým jménem a příjmením pošlete na email:</p>
         <p style={{ textAlign: 'center' }}><strong className={styles.email}>info@berounskyrybnicek.cz</strong></p>
         <p>Všechny výherce budeme losovat v <strong>prvním zářijovém týdnu</strong>, sledujte náš IG a FB!</p>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <div className={styles.logosWrapper}>
           <div className={styles.logoContainer}>
             <Link
               href="/"
@@ -51,6 +51,28 @@ const Crossword = ({ locations, answers, onClear }: Props) => {
             >
               <Image src="/via.png" alt="Logo" width={150} height={80} className={styles.logo} />
             </a>
+          </div>
+        </div>
+        <div className={styles.logosWrapper_mobile}>
+          <Socials />
+          <div className={styles.wrapper}>
+            <Link
+              href="/"
+              rel="noopener noreferrer"
+              aria-label="Homepage"
+            >
+              <Image src="/logo_orange.svg" alt="Logo" width={100} height={100} className={styles.logo} />
+            </Link>
+            <div className={styles.logoContainer}>
+              <a
+                href="https://www.nadacevia.cz"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Nadace Via"
+              >
+                <Image src="/via.png" alt="Logo" width={150} height={80} className={styles.logo} style={{ marginLeft: '1rem' }}/>
+              </a>
+            </div>
           </div>
         </div>
       </div>
