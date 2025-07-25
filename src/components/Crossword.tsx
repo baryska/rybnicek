@@ -61,7 +61,7 @@ const Crossword = ({ locations, answers, onClear }: Props) => {
               rel="noopener noreferrer"
               aria-label="Homepage"
             >
-              <Image src="/logo_orange.svg" alt="Logo" width={100} height={100} className={styles.logo} />
+              <Image src="/logo_orange.svg" alt="Logo" width={100} height={100} className={styles.logo} style={{ marginLeft: '0.8rem' }}/>
             </Link>
             <div className={styles.logoContainer}>
               <a
