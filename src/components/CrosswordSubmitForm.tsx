@@ -25,7 +25,7 @@ const CrosswordSubmitForm = () => {
         const key = String(loc.number);
         return parsed.hasOwnProperty(key) && parsed[key].trim() !== "";
       });
-      setSolution(hasAllAnswers ? 'Štiky a mřenky' : null);
+      setSolution(hasAllAnswers ? 'Štiky a mřenky čeří rybniční hladinu' : null);
     } catch (e) {
       console.error("Chyba při načítání uložených odpovědí:", e);
     }
