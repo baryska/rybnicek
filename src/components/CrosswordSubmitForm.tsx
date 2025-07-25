@@ -10,6 +10,8 @@ const CrosswordSubmitForm = () => {
   const [manualSolution, setManualSolution] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [solution, setSolution] = useState<string | null>(null);
+  const [comment, setComment] = useState('');
+  const [teamSize, setTeamSize] = useState('');
   const data = localStorage.getItem("answers");
 
   useEffect(() => {
@@ -53,6 +55,8 @@ const CrosswordSubmitForm = () => {
           lastName,
           message: `Tajenka: ${finalSolution}
           Má všechny odpovědi: ${solution !== null ? "Ano" : "Ne"}`,
+          comment,
+          teamSize,
         }),
       });
 
@@ -61,6 +65,8 @@ const CrosswordSubmitForm = () => {
         setFirstName("");
         setLastName("");
         setEmail("");
+        setComment("");
+        setTeamSize('');
       } else {
         setStatus("error");
       }
@@ -112,6 +118,23 @@ const CrosswordSubmitForm = () => {
           placeholder="Váš e-mail"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          className={styles.input}
+        />
+      </div>
+      <div>
+        <input
+          type="number"
+          placeholder="Kolik vás luštilo?"
+          value={teamSize}
+          onChange={(e) => setTeamSize(e.target.value)}
+          className={styles.input}
+        />
+      </div>
+      <div>
+        <textarea
+          placeholder="Chcete nám něco vzkázat?"
+          value={comment}
+          onChange={(e) => setComment(e.target.value)}
           className={styles.input}
         />
       </div>

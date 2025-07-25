@@ -36,46 +36,46 @@ const MapComponent = ({ showCrossword }: { showCrossword: boolean }) => {
     localStorage.removeItem("answers");
   };
 
-  console.log(showCrossword)
-
   return (
     <>
-      <MapContainer
-        center={center}
-        zoom={14}
-        className={styles.map}
-        style={showCrossword ? undefined : { height: '100vh' }}
-      >
-        <TileLayer
-          attribution="&copy; OpenStreetMap contributors"
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        {locations.map((loc) => {
-          const iconUrl = `/${loc.number}.png`;
-          const numberedIcon = new L.Icon({
-            iconUrl,
-            iconSize: [60, 60],
-            iconAnchor: [16, 32], // bod kotvení (střed dole)
-            popupAnchor: [0, -32]
-          });
-          return (
-            <Marker
-              key={loc.number}
-              position={loc.position as LatLngTuple}
-              icon={numberedIcon}
-              eventHandlers={{
-                click: () => {
-                  setActiveLocationId(loc.number)
-                  setDrawerOpen(true);
-                }
-              }}
+      <div style={{ position: 'relative' }}>
+        <MapContainer
+          center={center}
+          zoom={14}
+          className={styles.map}
+          style={showCrossword ? undefined : { height: '100vh' }}
+        >
+          <TileLayer
+            attribution="&copy; OpenStreetMap contributors"
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+          {locations.map((loc) => {
+            const iconUrl = `/${loc.number}.png`;
+            const numberedIcon = new L.Icon({
+              iconUrl,
+              iconSize: [60, 60],
+              iconAnchor: [16, 32], // bod kotvení (střed dole)
+              popupAnchor: [0, -32]
+            });
+            return (
+              <Marker
+                key={loc.number}
+                position={loc.position as LatLngTuple}
+                icon={numberedIcon}
+                eventHandlers={{
+                  click: () => {
+                    setActiveLocationId(loc.number)
+                    setDrawerOpen(true);
+                  }
+                }}
 
-            >
-              <Popup>{loc.name}</Popup>
-            </Marker>
-          )
-        })}
-      </MapContainer>
+              >
+                <Popup>{loc.name}</Popup>
+              </Marker>
+            )
+          })}
+        </MapContainer>
+      </div>
       <LocationDrawer
         open={drawerOpen}
         onOpen={() => setDrawerOpen(true)}
@@ -90,7 +90,7 @@ const MapComponent = ({ showCrossword }: { showCrossword: boolean }) => {
           <CrosswordSubmitForm />
         </>
       )}
-      <p className={styles.rules}>Pravidla hry ke stažení <a href="/pravidla_sifra.pdf" download style={{textDecoration: 'underline'}}>zde</a>.</p>
+      <p className={styles.rules}>Pravidla hry ke stažení <a href="/pravidla_sifra.pdf" download style={{ textDecoration: 'underline' }}>zde</a>.</p>
     </>
   );
 }
