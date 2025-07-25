@@ -1,0 +1,23 @@
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.icon {
+  font-size: 6rem;
+  color: #346f70;
+  transition: transform 0.2s ease, color 0.3s ease;
+  @media (max-width: 1024px) {
+    font-size: 5rem;
+  }
+  @media (max-width: 768px) {
+    font-size: 4rem;
+  }
+}
+
+.icon:hover {
+  transform: scale(1.1);
+  color: #e58160;
+}

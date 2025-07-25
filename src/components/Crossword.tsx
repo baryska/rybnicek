@@ -1,7 +1,7 @@
 "use client";
 import { Location } from "./LocationDrawer";
-import { FaInstagram, FaFacebook } from 'react-icons/fa';
 import styles from './crossword.module.css'
+import Socials from "./Socials";
 
 interface Props {
   locations: Location[];
@@ -29,26 +29,7 @@ const Crossword = ({ locations, answers, onClear }: Props) => {
         <p>Soutěž probíhá do <strong>konce srpna</strong>, správnou tajenku odešlete ve formuláři pod křížovkou nebo nám ji i se svým jménem a příjmením pošlete na email:</p>
         <p style={{textAlign: 'center'}}><strong className={styles.email}>info@berounskyrybnicek.cz</strong></p>
         <p>Všechny výherce budeme losovat v <strong>prvním zářijovém týdnu</strong>, sledujte náš IG a FB!</p>
-        <section className={styles.socialIcons}>
-            <a
-              href="https://www.instagram.com/berounsky_rybnicek/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-            >
-              <FaInstagram className={styles.icon} />
-            </a>
-
-            <a
-              href="https://www.facebook.com/berounsky.rybnicek"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Facebook"
-            >
-              <FaFacebook className={styles.icon} />
-            </a>
-          </section>
-        
+        <Socials />
       </div>
       <p className={styles.note}>(Křížovku vyplňte kliknutím na konkrétní místo přímo v mapě.)</p>
       <button
