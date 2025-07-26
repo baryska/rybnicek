@@ -23,9 +23,9 @@ export const locations: Location[] = [
     name: "Štulovna",
     position: [49.969319, 14.072042],
     number: 3,
-    question: "Na Štulovně najdeme strom a lavičku věnované jednomu českému spisovateli, který velkou část života prožil v Berouně. Jak se autor jednoho z nejoblíbenějších Večerníčků jmenoval?",
+    question: "Na Štulovně najdeme strom a lavičku věnované jednomu českému spisovateli, který velkou část života prožil v Berouně. Jaké je křestní jméno autora jednoho z nejoblíbenějších Večerníčků?",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    answer: "Jiří Kahoun",
+    answer: "Jiří",
     index: 1,
   },
   {

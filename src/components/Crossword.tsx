@@ -70,7 +70,7 @@ const Crossword = ({ locations, answers, onClear }: Props) => {
                 rel="noopener noreferrer"
                 aria-label="Nadace Via"
               >
-                <Image src="/via.png" alt="Logo" width={150} height={80} className={styles.logo} style={{ marginLeft: '1rem' }}/>
+                <Image src="/via.png" alt="Logo" width={150} height={80} className={styles.logo} style={{ marginLeft: '0.5rem' }}/>
               </a>
             </div>
           </div>
