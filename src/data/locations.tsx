@@ -186,7 +186,7 @@ export const locations: Location[] = [
     position: [49.960886, 14.130407],
     number: 21,
     question: "Na návsi pod památnou lípou stojí zvonička, kterou zde instaloval místní umělecký řezbář Jiří Kobr. Zvon je věnován jednomu světci, který je spojen s okolím Hostíma. Jaký světec je uveden přímo na zvonu?",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description: 'Hostim nebo Hostím (místní se neshodnou ani na rodu ani na délce "I") je malebná berounská čtvrť v úplném srdci Českého krasu, hned v sousedství legendárního Svatého Jana pod Skalou. I Hostím je tak trochu pod skalou - přímo nad obcí se tyčí majestátní skalní masiv Třesina. Hostím je znám především díky hospůdce u Krobiána s prvorepublikovou atmosférou a prvotřídním kulturním programem (doporučejeme sledovat krobiánský Facebook nebo Instragram).',
     answer: "Ivan",
     index: 0,
   },
