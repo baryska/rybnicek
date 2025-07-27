@@ -123,7 +123,7 @@ export const locations: Location[] = [
     number: 14,
     position: [49.963217, 14.066071],
     question: "Na Městské hoře mají svou základnu skautské oddíly. Jak se jmenuje oddíl pro rodiny s dětmi?",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description: "Území Městské hory se historicky nacházelo bezprostředně za hradbami města a byly zde pastviny a ovocné zahrady, jednalo se o holý kopec. V roce zde 1936 byla postavena železobetonová rozhledna, která vznikla při stavbě městského vodojemu. Kdysi na Městské hoře bývala i vyhlášená výletní restaurace U Vybralů a právě v její budově až do 90. let sídlili skauti, než se přestěhovali do sousedního objektu.",
     answer: "Včelky",
     index: 2,
   },
