@@ -60,7 +60,7 @@ export const locations: Location[] = [
     position: [49.957172, 14.076492],
     number: 7,
     question: "Na skleněné mozaice nad východem z nádraží jsou v levém dolním rohu dvě ženy u rybníčku. Jakou netypickou barvu vlasů má jedna z nich?",
-    description: "První nádraží bylo v Berpuně postaveno v roce 1876. Typizovanou budovu o sto let později nahradila nová s krásnou vitráží od Jiřího Kovaříka. Celá budova i s vitríží prošla v posledních letech kompletní rekonstrukcí. Dříve zde byla nádražní restaurace, kam se chodilo na jahodový koktejl, a po revoluci jste si v hale mohli nechat ostříhat vlasy nebo si dát chlebíček u maminky později velmi známého moderátora, Leoše Mareše.",
+    description: "První nádraží bylo v Berouně postaveno v roce 1876. Typizovanou budovu o sto let později nahradila nová s krásnou vitráží od Jiřího Kovaříka. Celá budova i s vitríží prošla v posledních letech kompletní rekonstrukcí. Dříve zde byla nádražní restaurace, kam se chodilo na jahodový koktejl, a po revoluci jste si v hale mohli nechat ostříhat vlasy nebo si dát chlebíček u maminky později velmi známého moderátora, Leoše Mareše.",
     answer: "Modrou",
     index: 0,
   },
