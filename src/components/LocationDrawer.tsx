@@ -113,7 +113,7 @@ const LocationDetailDrawer = ({
           {displayChars.map((cell, idx) => {
             if (cell.expected === " ") {
               return (
-                <div key={idx} className={styles.space}></div>
+                <div key={idx} className={styles.break}></div>
               );
             }
             return (
