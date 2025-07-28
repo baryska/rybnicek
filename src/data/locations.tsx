@@ -69,7 +69,7 @@ export const locations: Location[] = [
     position: [49.9596975, 14.0636669],
     number: 8,
     question: "Křižovatka ulic Bratří Nejedlých a Plzeňská má mezi usedlíky jeden ustálený název. Nápis na blízkém autoservisu (ale v jiné ulici) vám napoví, jak se místu říká.",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description: 'Když se nějaké místo jmenuje podle osoby, která je pro místo významná (v Berouně například U Šacha, nebo U Šmejkala), říká se takovému místnímu názvu eponymum. Místo z naší šifrovačky se také jmenuje po původním majiteli provozovny - založil ji již v roce 1937 pradědeček současného provozovatele a pokračovatele živnosti. A vy z otázky a z návštěvy místa už víte, čím se rodina, která křižovatce dala název, zabývá.',
     answer: "U Hřebíčka",
     index: 3,
   },
