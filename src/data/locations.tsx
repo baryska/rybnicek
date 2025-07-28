@@ -158,7 +158,7 @@ export const locations: Location[] = [
     name: "Rozhledna Děd",
     position: [49.967571, 14.03424],
     number: 18,
-    question: "U rozhledny jsou dvě cedule s grafikou a nápisy od berounského knihkupce a grafika Kamila Macharta. Horní tabulka slovně specifikuje, kdy bude rozhledna opravena a znovu přístupná. Napište ho do křížovky.",
+    question: "U rozhledny jsou dvě cedule s grafikou a nápisy od berounského nakladatele a grafika Kamila Macharta. Horní tabulka slovně specifikuje, kdy bude rozhledna opravena a znovu přístupná. Napište toto slovo do křížovky.",
     description: "Děd se říká nejen nejvyššímu vrcholu s rozhlednou, ale celému hřebeni, který se táhne od Zahořan až ke kapli Bolestné Panny Marie (U studánky).",
     answer: "Brzy",
     index: 3,
