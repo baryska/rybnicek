@@ -11,7 +11,7 @@ export interface Location {
   name: string;
   description: string;
   question: string;
-  answer: string;
+  answer: string[];
   index: number;
 }
 
@@ -46,8 +46,11 @@ const LocationDetailDrawer = ({
   if (!location) return null;
 
   const handleSubmit = () => {
-    if (input.trim().toUpperCase() === location.answer.toUpperCase()) {
-      onAnswerSave(location.number, location.answer.toUpperCase());
+    const normalizedInput = input.trim().toUpperCase();
+    const normalizedAnswers = location.answer.map(a => a.toUpperCase());
+
+    if (normalizedAnswers.includes(normalizedInput)) {
+      onAnswerSave(location.number, normalizedAnswers[0]);
       setStatus("correct");
       setInput("");
     } else {
@@ -55,7 +58,8 @@ const LocationDetailDrawer = ({
     }
   };
 
-  const displayChars = location.answer.split("").map((char, idx) => {
+  const correctAnswer = location.answer[0];
+  const displayChars = correctAnswer.split("").map((char, idx) => {
     const inputChar = (input[idx] ?? "").toUpperCase();
     return {
       expected: char,
@@ -125,8 +129,8 @@ const LocationDetailDrawer = ({
         </div>
       )}
       <div className={styles.description}>
-      <strong>Legenda:</strong>
-      <p >{location.description}</p>
+        <strong>Legenda:</strong>
+        <p >{location.description}</p>
       </div>
     </SwipeableDrawer>
   );

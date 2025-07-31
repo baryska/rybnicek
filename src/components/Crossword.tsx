@@ -61,7 +61,7 @@ const Crossword = ({ locations, answers, onClear }: Props) => {
               rel="noopener noreferrer"
               aria-label="Homepage"
             >
-              <Image src="/logo_orange.svg" alt="Logo" width={100} height={100} className={styles.logo} style={{ marginLeft: '0.8rem' }}/>
+              <Image src="/logo_orange.svg" alt="Logo" width={100} height={100} className={styles.logo} style={{ marginLeft: '0.8rem' }} />
             </Link>
             <div className={styles.logoContainer}>
               <a
@@ -70,7 +70,7 @@ const Crossword = ({ locations, answers, onClear }: Props) => {
                 rel="noopener noreferrer"
                 aria-label="Nadace Via"
               >
-                <Image src="/via.png" alt="Logo" width={150} height={80} className={styles.logo} style={{ marginLeft: '0.5rem' }}/>
+                <Image src="/via.png" alt="Logo" width={150} height={80} className={styles.logo} style={{ marginLeft: '0.5rem' }} />
               </a>
             </div>
           </div>
@@ -86,7 +86,8 @@ const Crossword = ({ locations, answers, onClear }: Props) => {
       <div className={styles.crossword}>
         {sortedLocations.map((loc) => {
           const storedAnswer = answers[loc.number]?.toUpperCase() || "";
-          const fullAnswer = storedAnswer.padEnd(loc.answer.length, " ");
+          const answerLength = loc.answer[0].length;
+          const fullAnswer = storedAnswer.padEnd(answerLength, " ");
 
           const leftPad = maxIndex - loc.index;
 
@@ -95,7 +96,7 @@ const Crossword = ({ locations, answers, onClear }: Props) => {
             ...fullAnswer.split("").map((c, idx) => ({
               char: c,
               isPadding: false,
-              isRealSpace: loc.answer[idx] === " ",
+              isRealSpace: loc.answer[0][idx] === " ",
             })),
           ];
 
