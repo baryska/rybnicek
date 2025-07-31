@@ -201,7 +201,7 @@ export const locations: Location[] = [
   },
   {
     name: "Parkoviště Václavské náměstí = bývalý autobusák",
-    position: [49.965982, 14.078592],
+    position: [49.9655436, 14.0779539],
     number: 23,
     question: "Lávka přes Berounku u bývalého autobusového nádraží má jednu zvláštnost. Co lávka udělá v případě velké vody?",
     description: "Autobusové nádraží v Berouně měnilo několikrát svoji polohu. Nejdříve bylo na Husově náměstí, potom u bývalé Tiby (dnes ulice U Archivu). Pak se přesunulo na Závodí, kde je dnes parkoviště. Dnes ho najdeme u nádraží vlakového. Zdejší lávku při velkých povodních strhla v řece plovoucí nákladní Avie. Nová lávka má jednu technickou zajímavost, kterou je třeba uvést v tajence. Při jejím křtu, kterého se zúčastnil i tehdejší prezident Klaus, ale mechanismus selhal a veřejná prezentace této technologické zvláštnosti se nepovedla.",
