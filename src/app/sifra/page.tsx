@@ -3,7 +3,7 @@ import Image from 'next/image';
 import styles from './style.module.css';
 
 export default function Page() {
-  const isPlaceholder = true;
+  const isPlaceholder = false;
   if (isPlaceholder) {
     return (
       <main className={styles.main_placeholder}>
