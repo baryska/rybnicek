@@ -21,7 +21,7 @@ const Crossword = ({ locations, answers, onClear }: Props) => {
         <p className={styles.title}>Vítejte na <strong>Berounské letní šifrovačce!</strong></p>
         <p>Zjistěte <strong>tajenku</strong> a vyhrajte jednu z <strong>tematických cen</strong>.</p>
         <p>Každá z <strong>berounských lokalit</strong> na mapě má u sebe <strong>otázku</strong>, na níž musíte odpovědět.</p>
-        <p><strong>Odpovědi</strong> si můžete zapisovat po staru na papír (ke stažení <a href="/Berounska letni sifrovacka.pdf" download style={{ textDecoration: 'underline' }}>zde</a>), nebo je můžete vyplňovat přímo tady na webu.
+        <p><strong>Odpovědi</strong> si můžete zapisovat po staru na papír (ke stažení <a href="/Berounska letni sifrovacka.pdf" download style={{ textDecoration: 'underline' }}>zde</a>), nebo je můžete vyplňovat přímo <Link href="#krizovka" scroll={true} style={{textDecoration:'underline'}}>tady na webu</Link>.
         </p>
         <p>Odpovědi na některé otázky zjistíte snadno z domova, ale u některých se budete
           muset <strong>vydat přímo na místo</strong>, případně se zeptat místních.
@@ -80,6 +80,7 @@ const Crossword = ({ locations, answers, onClear }: Props) => {
       <button
         onClick={onClear}
         className={styles.button}
+        id="krizovka"
       >
         Vymazat křížovku
       </button>

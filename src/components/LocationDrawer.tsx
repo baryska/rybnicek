@@ -1,8 +1,10 @@
 "use client";
-
+import Link from "next/link";
 import { useState, useEffect } from "react";
 import { SwipeableDrawer, useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
 import styles from "./locationDrawer.module.css";
 
 export interface Location {
@@ -91,7 +93,10 @@ const LocationDetailDrawer = ({
         <strong>Otázka:</strong> {location.question}
       </p>
       {savedAnswer ? (
-        <p className={styles.correct}>✅ Odpověď správně vyplněna!</p>
+        <>
+          <p className={styles.correct}>✅ Odpověď správně vyplněna!</p>
+          <Link href="/sifra_private#krizovka" scroll={true} style={{ textDecoration: 'underline', fontSize: '1.1rem' }} onClick={onClose}>K tajence! <FontAwesomeIcon icon={faArrowRightLong} /></Link>
+        </>
       ) : (
         <div className={styles.inputWrapper}>
           <input
