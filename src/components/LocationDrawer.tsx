@@ -95,7 +95,7 @@ const LocationDetailDrawer = ({
       {savedAnswer ? (
         <>
           <p className={styles.correct}>✅ Odpověď správně vyplněna!</p>
-          <Link href="/sifra_private#krizovka" scroll={true} style={{ textDecoration: 'underline', fontSize: '1.1rem' }} onClick={onClose}>K tajence! <FontAwesomeIcon icon={faArrowRightLong} /></Link>
+          <Link href="/sifra#krizovka" scroll={true} style={{ textDecoration: 'underline', fontSize: '1.1rem' }} onClick={onClose}>K tajence! <FontAwesomeIcon icon={faArrowRightLong} /></Link>
         </>
       ) : (
         <div className={styles.inputWrapper}>
