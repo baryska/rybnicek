@@ -222,7 +222,7 @@ export const locations: Location[] = [
     position: [49.9637981, 14.0740275],
     number: 25,
     question: "Masna se objevuje v klipu písně Jiřího Schellingera o jednom mraženém ovoci. O jaké ovoce jde?",
-    description: 'V době, kdy se provozovny nejmenovaly podle jejich majitele, protože "všechno patřilo všem" se masně říkalo - asi podle výklenku - "Na výstupku". V klipu, na který se ptáme v otázce, je vidět i legendární Berounská postava - Jarda Šerif.',
+    description: 'V době, kdy se provozovny nejmenovaly podle jejich majitele, protože "všechno patřilo všem", se masně říkalo - asi podle výklenku - "Na výstupku". V klipu, na který se ptáme v otázce, je vidět i legendární berounská postava - Jarda Šerif.',
     answer: ["Jahody"],
     index: 2,
   },
