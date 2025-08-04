@@ -13,7 +13,6 @@ export interface Location {
   name: string;
   description: string;
   question: string;
-  answer: string[];
   index: number;
 }
 
@@ -39,6 +38,13 @@ const LocationDetailDrawer = ({
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const [input, setInput] = useState("");
   const [status, setStatus] = useState<"idle" | "correct" | "wrong">("idle");
+  const [structure, setStructure] = useState<Record<number, { length: number; spaceIndexes: number[] }>>({});
+
+  useEffect(() => {
+    fetch("/api/answer-structure")
+      .then((res) => res.json())
+      .then((data) => setStructure(data));
+  }, []);
 
   useEffect(() => {
     setInput("");
@@ -47,27 +53,50 @@ const LocationDetailDrawer = ({
 
   if (!location) return null;
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     const normalizedInput = input.trim().toUpperCase();
-    const normalizedAnswers = location.answer.map(a => a.toUpperCase());
+    try {
+      const response = await fetch("/api/check-answers", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          id: location.number,
+          userAnswer: normalizedInput.toUpperCase(),
+        })
+      });
 
-    if (normalizedAnswers.includes(normalizedInput)) {
-      onAnswerSave(location.number, normalizedAnswers[0]);
-      setStatus("correct");
-      setInput("");
-    } else {
+      const data = await response.json();
+
+      if (data.correct) {
+        setStatus("correct");
+        setInput("");
+        onAnswerSave(location.number, normalizedInput);
+      } else {
+        setStatus("wrong");
+      }
+    } catch (error) {
+      console.error("Chyba při odesílání odpovědi:", error);
       setStatus("wrong");
     }
   };
 
-  const correctAnswer = location.answer[0];
-  const displayChars = correctAnswer.split("").map((char, idx) => {
-    const inputChar = (input[idx] ?? "").toUpperCase();
-    return {
-      expected: char,
-      display: inputChar,
-    };
-  });
+  const meta = structure[location.number];
+
+if (!meta) return null;
+const answerLength = meta.length;
+const spaceIndexes = meta.spaceIndexes;
+const base = (savedAnswer || input.toUpperCase()).slice(0, answerLength);
+
+const padded = base.padEnd(answerLength, " ");
+
+const displayChars = padded.split("").map((char, idx) => ({
+  display: char,
+  isRealSpace: spaceIndexes.includes(idx),
+}));
+
+
 
   return (
     <SwipeableDrawer
@@ -119,18 +148,13 @@ const LocationDetailDrawer = ({
       )}
       {!savedAnswer && (
         <div className={styles.preview}>
-          {displayChars.map((cell, idx) => {
-            if (cell.expected === " ") {
-              return (
-                <div key={idx} className={styles.break}></div>
-              );
-            }
-            return (
-              <div key={idx} className={styles.box}>
-                {cell.display}
-              </div>
-            );
-          })}
+          {displayChars.map((cell, idx) =>
+            cell.isRealSpace ? (
+              <div key={idx} className={styles.break}></div>
+            ) : (
+              <div key={idx} className={styles.box}>{cell.display}</div>
+            )
+          )}
         </div>
       )}
       <div className={styles.description}>

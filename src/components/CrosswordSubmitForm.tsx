@@ -70,9 +70,9 @@ const CrosswordSubmitForm = () => {
       } else {
         setStatus("error");
       }
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (err) {
       setStatus("error");
-      console.log(err);
     }
   };
 
