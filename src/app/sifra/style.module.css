@@ -11,7 +11,7 @@
   padding-bottom: 1rem;
 }
 
-.main > * {
+.main>* {
   position: relative;
   z-index: 1;
 }
@@ -22,9 +22,18 @@
   inset: 0;
   background: url('/Vrstevnice.svg') no-repeat bottom right;
   background-size: cover;
-  opacity: 0.2; 
+  opacity: 0.2;
   pointer-events: none;
   z-index: 0;
+}
+
+.placeholderThankyou {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: #346f70;
 }
 
 .main_placeholder {
@@ -37,7 +46,7 @@
   justify-content: center;
 }
 
-.main_placeholder > * {
+.main_placeholder>* {
   position: relative;
   z-index: 1;
 }
@@ -48,7 +57,7 @@
   inset: 0;
   background: url('/Vrstevnice.svg') no-repeat bottom right;
   background-size: cover;
-  opacity: 0.2; 
+  opacity: 0.2;
   pointer-events: none;
   z-index: 0;
 }
@@ -99,6 +108,12 @@
 
   .placeholderSmallText {
     font-size: 1rem;
+    margin: 0 1rem;
+  }
+
+  .placeholderThankyou {
+    display: block;
+    text-align: center;
   }
 
   .logo {
@@ -107,4 +122,3 @@
     width: 100px;
   }
 }
-

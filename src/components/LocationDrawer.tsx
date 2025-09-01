@@ -84,17 +84,17 @@ const LocationDetailDrawer = ({
 
   const meta = structure[location.number];
 
-if (!meta) return null;
-const answerLength = meta.length;
-const spaceIndexes = meta.spaceIndexes;
-const base = (savedAnswer || input.toUpperCase()).slice(0, answerLength);
+  if (!meta) return null;
+  const answerLength = meta.length;
+  const spaceIndexes = meta.spaceIndexes;
+  const base = (savedAnswer || input.toUpperCase()).slice(0, answerLength);
 
-const padded = base.padEnd(answerLength, " ");
+  const padded = base.padEnd(answerLength, " ");
 
-const displayChars = padded.split("").map((char, idx) => ({
-  display: char,
-  isRealSpace: spaceIndexes.includes(idx),
-}));
+  const displayChars = padded.split("").map((char, idx) => ({
+    display: char,
+    isRealSpace: spaceIndexes.includes(idx),
+  }));
 
 
 
