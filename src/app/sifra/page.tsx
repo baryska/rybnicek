@@ -15,7 +15,7 @@ export default function Page() {
             <div className={styles.placeholderSmallText}>Děkujeme všem za účast a krásné vzkazy </div>
             <FontAwesomeIcon icon={faHeart} size="lg" beat />
           </div>
-          <div className={styles.placeholderSmallText}>Výherce cen budeme losovat <strong>7. září</strong>, sledujte naše sociální sítě!</div>
+          <div className={styles.placeholderSmallText}>Výherce cen budeme losovat <strong>10. září</strong>, sledujte naše sociální sítě!</div>
           <Image src="/logo_orange.svg" alt="Logo" width={200}
             height={200} className={styles.logo} />
         </div>
