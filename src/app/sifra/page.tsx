@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 export default function Page() {
-  const isPlaceholder = true;
+  const isPlaceholder = false;
   if (isPlaceholder) {
     return (
       <main className={styles.main_placeholder}>

@@ -5,6 +5,8 @@ import styles from './crossword.module.css';
 import Image from "next/image";
 import Socials from "./Socials";
 import Link from "next/link";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 interface Props {
   locations: Location[];
@@ -38,15 +40,16 @@ const Crossword = ({ locations, answers, onClear }: Props) => {
     <div className={styles.container}>
       <div className={styles.description}>
         <p className={styles.title}>Vítejte na <strong>Berounské letní šifrovačce!</strong></p>
-        <p>Zjistěte <strong>tajenku</strong> a vyhrajte jednu z <strong>tematických cen</strong>.</p>
+        <p>Zjistěte <strong>zajímavosti o Berouně</strong> a vyluštěte <strong>tajenku</strong>.</p>
         <p>Každá z <strong>berounských lokalit</strong> na mapě má u sebe <strong>otázku</strong>, na níž musíte odpovědět.</p>
         <p><strong>Odpovědi</strong> si můžete zapisovat po staru na papír (ke stažení <a href="/Berounska letni sifrovacka.pdf" download style={{ textDecoration: 'underline' }}>zde</a>) nebo je můžete vyplňovat přímo <Link href="#krizovka" scroll={true} style={{ textDecoration: 'underline' }}>tady na webu</Link>.</p>
         <p>Odpovědi na některé otázky zjistíte snadno z domova, ale u některých se budete muset <strong>vydat přímo na místo</strong>, případně se zeptat místních.</p>
-        <p>Není nutné vyluštit všechna slova, podstatné je odevzdat <strong>správně vyluštěnou tajenku</strong>.</p>
+        {/* <p>Není nutné vyluštit všechna slova, podstatné je odevzdat <strong>správně vyluštěnou tajenku</strong>.</p>
         <p>Ten, kdo vyluští <strong>všech 31 lokalit</strong>, však může vyhrát zvláštní cenu.</p>
         <p>Soutěž probíhá do <strong>konce srpna</strong>, správnou tajenku odešlete ve formuláři pod křížovkou nebo nám ji i se svým jménem a příjmením pošlete na email:</p>
         <p style={{ textAlign: 'center' }}><strong className={styles.email}>info@berounskyrybnicek.cz</strong></p>
-        <p>Všechny výherce budeme losovat v <strong>prvním zářijovém týdnu</strong>, sledujte náš IG a FB!</p>
+        <p>Všechny výherce budeme losovat v <strong>prvním zářijovém týdnu</strong>, sledujte náš IG a FB!</p> */}
+        <p>Letní soutež o ceny už skončila, ale můžete luštit jen tak <strong>pro radost</strong><FontAwesomeIcon style={{ marginLeft: '0.5rem' }} icon={faHeart} size="lg" beat /></p>
         <div className={styles.logosWrapper}>
           <div className={styles.logoContainer}>
             <Link href="/" rel="noopener noreferrer" aria-label="Homepage">
