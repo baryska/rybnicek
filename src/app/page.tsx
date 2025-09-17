@@ -26,6 +26,7 @@ export default function HomePage() {
           <Socials />
           <NewsletterForm />
         </FadeInOnScroll>
+        <h2 className={styles.subtitle}>Kdo jsme</h2>
         <section className={styles.profiles}>
           {profiles.map((profile) => (
             <FadeInOnScroll key={profile.name}>
