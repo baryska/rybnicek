@@ -5,6 +5,7 @@ import ProfileCard from './profileCard';
 import FadeInOnScroll from './fadeInScroll';
 import FloatingLink from '@/components/FloatingLink';
 import Socials from '@/components/Socials';
+import NewsletterForm from '@/components/NewsletterForm';
 
 
 export default function HomePage() {
@@ -23,6 +24,7 @@ export default function HomePage() {
         </section>
         <FadeInOnScroll>
           <Socials />
+          <NewsletterForm />
         </FadeInOnScroll>
         <section className={styles.profiles}>
           {profiles.map((profile) => (
@@ -32,6 +34,7 @@ export default function HomePage() {
           ))}
         </section>
       </main>
+
     </>
   );
 }

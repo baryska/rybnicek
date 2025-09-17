@@ -1,0 +1,110 @@
+/* In: components/NewsletterForm.module.css */
+
+.wrapper {
+  background: #ebe8e4;
+  padding: 2rem 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  max-width: 600px;
+  margin: 4rem auto;
+  text-align: center;
+}
+
+.title {
+  color: #1b4a4c;
+  font-size: clamp(1rem, 1.5rem, 2rem);
+  font-weight: bold;
+  margin: 0 0 0.5rem 0;
+}
+
+.subtitle {
+  color: #346f70;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.inputGroup {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.input {
+  flex-grow: 1;
+  padding: 0.8rem 1.2rem;
+  border: 1px solid #c9c5bd;
+  border-radius: 999px;
+  font-size: 1rem;
+  background: #fff;
+  color: #333;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #346f70;
+  box-shadow: 0 0 0 3px rgba(52, 111, 112, 0.2);
+}
+
+.submitButton {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 999px;
+  background-color: #1b4a4c;
+  color: #ebe8e4;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.submitButton:hover:not(:disabled) {
+  background-color: #346f70;
+  transform: translateY(-2px);
+}
+
+.submitButton:disabled {
+  background-color: #a0a0a0;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.statusMessage {
+  margin-top: 1rem;
+  font-weight: 500;
+  padding: 0.75rem;
+  border-radius: 999px;
+  animation: fadeIn 0.5s ease;
+}
+
+.success {
+  background-color: rgba(52, 111, 112, 0.1);
+  color: #1b4a4c;
+}
+
+.error {
+  background-color: rgba(220, 53, 69, 0.1);
+  color: #b02a37;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+    padding: 1.5rem;
+    margin: 2rem 1rem;
+  }
+
+  .inputGroup {
+    flex-direction: column;
+  }
+}
