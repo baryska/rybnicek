@@ -1,0 +1,265 @@
+.map {
+  height: 70vh;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.info {
+  margin: 2rem auto;
+  text-align: center;
+  max-width: 1200px;
+  padding: 0 1rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #1b434c;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.infoText {
+  font-size: 1.3rem;
+  color: #346f70;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.adventCalendar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 140px));
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.window {
+  aspect-ratio: 1;
+  position: relative;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #1b434c 0%, #183434 100%);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  perspective: 1000px;
+  overflow: hidden;
+}
+
+.windowClosed {
+  cursor: not-allowed;
+}
+
+.windowOpen {
+  cursor: pointer;
+}
+
+.windowDoorLeft,
+.windowDoorRight {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #d98f82 0%, #c58160 100%);
+  border: 2px solid #c58160;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+  z-index: 2;
+}
+
+.windowOpen .windowDoorLeft,
+.windowOpen .windowDoorRight {
+  background: linear-gradient(135deg, #51b395 0%, #346f70 100%);
+  border-color: #346f70;
+}
+
+.windowDoorLeft {
+  left: 0;
+  border-radius: 8px 0 0 8px;
+  border-right: 1px solid #c58160;
+  transform-origin: left center;
+}
+
+.windowDoorRight {
+  right: 0;
+  border-radius: 0 8px 8px 0;
+  border-left: 1px solid #c58160;
+  transform-origin: right center;
+}
+
+.windowNumber {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #dfdbbd;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  pointer-events: none;
+}
+
+.windowLock {
+  font-size: 1.5rem;
+  position: absolute;
+  left: 50%;
+  top: 65%;
+  transform: translate(-50%, -50%);
+  opacity: 0.9;
+  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3));
+  z-index: 3;
+  pointer-events: none;
+}
+
+.windowOpen:hover .windowDoorLeft {
+  transform: rotateY(-120deg);
+}
+
+.windowOpen:hover .windowDoorRight {
+  transform: rotateY(120deg);
+}
+
+/* For touch devices, add active state */
+.windowOpen:active .windowDoorLeft {
+  transform: rotateY(-120deg);
+}
+
+.windowOpen:active .windowDoorRight {
+  transform: rotateY(120deg);
+}
+
+.windowContent {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.25rem;
+  text-align: center;
+  z-index: 1;
+}
+
+.windowClosed .windowContent {
+  visibility: hidden;
+}
+
+.windowIcon {
+  font-size: 2rem;
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.3));
+  flex-shrink: 0;
+}
+
+.windowStar {
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+  animation: twinkle 2s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.8));
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1) rotate(180deg);
+  }
+}
+
+.windowTitle {
+  font-size: 0.75rem;
+  color: #dfdbbd;
+  font-weight: bold;
+  line-height: 1.1;
+  margin: 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  flex-shrink: 0;
+}
+
+@media (max-width: 1024px) {
+  .map {
+    height: 60vh;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .infoText {
+    font-size: 1.1rem;
+  }
+
+  .adventCalendar {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 120px));
+    gap: 0.75rem;
+  }
+
+  .windowNumber {
+    font-size: 2rem;
+  }
+
+  .windowIcon {
+    font-size: 1.5rem;
+  }
+
+  .windowStar {
+    font-size: 1.5rem;
+  }
+
+  .windowTitle {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .map {
+    height: 50vh;
+    border-radius: 0;
+  }
+
+  .info {
+    margin: 1.5rem auto;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .infoText {
+    font-size: 1rem;
+  }
+
+  .adventCalendar {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 100px));
+    gap: 0.5rem;
+  }
+
+  .windowNumber {
+    font-size: 1.8rem;
+  }
+
+  .windowLock {
+    font-size: 1.2rem;
+  }
+
+  .windowIcon {
+    font-size: 1.3rem;
+  }
+
+  .windowStar {
+    font-size: 1.3rem;
+  }
+
+  .windowTitle {
+    font-size: 0.65rem;
+  }
+}

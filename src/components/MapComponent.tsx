@@ -14,6 +14,7 @@ const MapComponent = ({ showCrossword }: { showCrossword: boolean }) => {
   const [activeLocationId, setActiveLocationId] = useState<number | null>(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [answers, setAnswers] = useState<Record<number, string>>({});
+  const [mapKey] = useState(() => `sifra-map-${Date.now()}`);
 
   useEffect(() => {
     const saved = localStorage.getItem("answers");
@@ -40,6 +41,7 @@ const MapComponent = ({ showCrossword }: { showCrossword: boolean }) => {
     <>
       <div style={{ position: 'relative' }}>
         <MapContainer
+          key={mapKey}
           center={center}
           zoom={14}
           className={styles.map}
