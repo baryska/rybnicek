@@ -28,47 +28,36 @@ const AdventMapComponent = ({ currentDate }: AdventMapComponentProps) => {
     setShuffledLocations(shuffled);
   }, []);
 
-  // Handle client-side mounting to avoid hydration mismatch
   useEffect(() => {
     setMounted(true);
 
-    // Check for test date in URL query params
     const testDateParam = searchParams.get('testDate');
     let now: Date;
 
     if (testDateParam) {
-      // Use test date if provided (format: YYYY-MM-DD)
       now = new Date(testDateParam);
       console.log('🧪 Test mode active! Simulating date:', now.toLocaleDateString('cs-CZ'));
     } else {
-      // Use current date or provided date
       now = currentDate || new Date();
     }
 
-    // Helper function to check if a location should be revealed
     const isLocationRevealed = (location: AdventLocation): boolean => {
       const revealDate = new Date(location.revealDate);
       return now >= revealDate;
     };
 
-    // Get all locations that should be visible
     const visible = adventLocations.filter(isLocationRevealed);
-    console.log('Current date:', now);
-    console.log('Total locations:', adventLocations.length);
-    console.log('Visible locations:', visible.length);
-    console.log('First location reveal date:', adventLocations[0]?.revealDate);
     setVisibleLocations(visible);
   }, [currentDate, searchParams]);
 
   const handleLocationClick = (locationId: number) => {
     setActiveLocationId(locationId);
 
-    // On touch devices, delay opening drawer to show door animation
     const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
     if (isTouchDevice) {
       setTimeout(() => {
         setDrawerOpen(true);
-      }, 600); // Match the door animation duration
+      }, 600);
     } else {
       setDrawerOpen(true);
     }
@@ -137,9 +126,9 @@ const AdventMapComponent = ({ currentDate }: AdventMapComponentProps) => {
         location={activeLocation}
       />
       <div className={styles.info}>
-        <h1 className={styles.title}>🎄 Berounský adventní kalendář 🎄</h1>
+        <h1 className={styles.title}>Berounský adventní kalendář</h1>
         <p className={styles.infoText}>
-          Každý den se od 1. prosince objeví nové místo! Objeveno: {visibleLocations.length} z 24
+          Každý den od 1. prosince se objeví nové místo!
         </p>
 
         <div className={styles.adventCalendar}>
