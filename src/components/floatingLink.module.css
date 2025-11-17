@@ -3,10 +3,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  bottom: -5rem;;
+  bottom: -5rem;
   left: 3rem;
-  background-color: #e58160;
-  color: #ebe8e4;
+  background-color: #bcccd2;
+  color: #1b4a4c;
   border-radius: 50%;
   padding: 1rem;
   font-weight: bold;
@@ -14,10 +14,26 @@
   text-decoration: none;
   z-index: 9999;
   transition: transform 0.5s ease;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   height: 10rem;
   width: 10rem;
   font-size: 1.2rem;
+  overflow: hidden;
+}
+
+.floatingLink::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/rukavice.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.3;
+  z-index: -1;
+  border-radius: 50%;
 }
 
 .floatingLink:hover {
@@ -44,4 +60,3 @@
     padding: 0.5rem;
   }
 }
-

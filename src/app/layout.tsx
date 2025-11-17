@@ -4,6 +4,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 import { config } from '@fortawesome/fontawesome-svg-core';
 config.autoAddCss = false;
 import "./globals.css";
+import Menu from "@/components/Menu";
 
 
 export const metadata: Metadata = {
@@ -22,6 +23,7 @@ export default function RootLayout({
   return (
     <html lang="cs">
       <body>
+        <Menu />
         {children}
         <footer className={styles.footer}>
           © 2025 Berounský rybníček

@@ -6,7 +6,11 @@ import { adventLocations, AdventLocation } from '../data/adventLocations';
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import AdventLocationDrawer from "./AdventLocationDrawer";
+import AdventSubmitForm from "./AdventSubmitForm";
+import Image from "next/image";
+import Link from "next/link";
 import styles from './adventMap.module.css';
+import pageStyles from '../app/advent/style.module.css';
 
 interface AdventMapComponentProps {
   currentDate?: Date;
@@ -18,6 +22,7 @@ const AdventMapComponent = ({ currentDate }: AdventMapComponentProps) => {
   const [mounted, setMounted] = useState(false);
   const [visibleLocations, setVisibleLocations] = useState<AdventLocation[]>([]);
   const [shuffledLocations, setShuffledLocations] = useState<AdventLocation[]>([]);
+  const [clickedLocationId, setClickedLocationId] = useState<number | null>(null);
   const searchParams = useSearchParams();
 
   const activeLocation: AdventLocation | undefined = adventLocations.find((loc) => loc.number === activeLocationId);
@@ -52,6 +57,7 @@ const AdventMapComponent = ({ currentDate }: AdventMapComponentProps) => {
 
   const handleLocationClick = (locationId: number) => {
     setActiveLocationId(locationId);
+    setClickedLocationId(locationId);
 
     const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
     if (isTouchDevice) {
@@ -87,7 +93,7 @@ const AdventMapComponent = ({ currentDate }: AdventMapComponentProps) => {
       <div style={{ position: 'relative' }}>
         <MapContainer
           center={center}
-          zoom={14}
+          zoom={18}
           className={styles.map}
         >
           <TileLayer
@@ -119,18 +125,8 @@ const AdventMapComponent = ({ currentDate }: AdventMapComponentProps) => {
           })}
         </MapContainer>
       </div>
-      <AdventLocationDrawer
-        open={drawerOpen}
-        onOpen={() => setDrawerOpen(true)}
-        onClose={() => setDrawerOpen(false)}
-        location={activeLocation}
-      />
+      <h1 className={styles.title} style={{ textAlign: 'center', margin: '3rem auto 1rem' }}>Berounský adventní kalendář</h1>
       <div className={styles.info}>
-        <h1 className={styles.title}>Berounský adventní kalendář</h1>
-        <p className={styles.infoText}>
-          Každý den od 1. prosince se objeví nové místo!
-        </p>
-
         <div className={styles.adventCalendar}>
           {shuffledLocations.map((loc) => {
             const isRevealed = visibleLocations.some(v => v.number === loc.number);
@@ -138,7 +134,7 @@ const AdventMapComponent = ({ currentDate }: AdventMapComponentProps) => {
             return (
               <div
                 key={loc.number}
-                className={`${styles.window} ${isRevealed ? styles.windowOpen : styles.windowClosed}`}
+                className={`${styles.window} ${isRevealed ? styles.windowOpen : styles.windowClosed} ${clickedLocationId === loc.number ? styles.windowClicked : ''}`}
                 onClick={() => isRevealed && handleLocationClick(loc.number)}
               >
                 <div className={styles.windowDoorLeft}></div>
@@ -155,7 +151,38 @@ const AdventMapComponent = ({ currentDate }: AdventMapComponentProps) => {
             );
           })}
         </div>
+        <div style={{ position: 'relative' }}>
+          <div className={styles.imageContainer}>
+            <Image
+              src="/rukavice.png"
+              alt="Vánoční rukavice"
+              fill
+              style={{ objectFit: 'cover' }}
+            />
+          </div>
+          <p className={styles.infoText} style={{ marginTop: '3rem' }}>
+          Zveme vás na <strong>procházku adventním Berounem</strong>. Každý den <strong>od 1. do 24. prosince</strong> se ve městě rozsvítí jedno nové okno s adventním číslem. Najděte všechna okna, vyluštěte tajenku a hrajte o ceny!
+        </p>
+        <p className={styles.infoText}>Každý prosincový den až do Štědrého večera zveřejníme nápovědu, <strong>kde se nové okno nachází</strong>. Vaším úkolem bude místo najít a objevit skrytou nápovědu do tajenky. Některá místa nabídnou i <strong>malé překvapení</strong> – hrnek svařáku, tematickou výstavu, prodej vánočního zboží či speciální prohlídku. </p>
+        <p className={styles.infoText}>Pro ty, kteří už mají kalendář plný besídek a vánočních večírků, máme dobrou zprávu - adventní kalendář bude <strong>svítit až do konce prosince</strong>. </p>
+        <p className={styles.infoText}>U každého rozsvíceého čísla najdete i <strong>písmeno</strong>. Posbírejte všechna písmena a my na Štědrý den <strong>odhalíme jejich pořadí</strong>, které vám umožní sestavit tajenku.</p>
+        </div>
+        <AdventSubmitForm />
+        <div className={pageStyles.instructionsLinkContainer}>
+          <Link href="/advent_info" className={pageStyles.instructionsLink}>
+            Instrukce pro účastníky
+          </Link>
+        </div>
       </div>
+      <AdventLocationDrawer
+        open={drawerOpen}
+        onOpen={() => setDrawerOpen(true)}
+        onClose={() => {
+          setDrawerOpen(false);
+          setClickedLocationId(null);
+        }}
+        location={activeLocation}
+      />
     </>
   );
 }
