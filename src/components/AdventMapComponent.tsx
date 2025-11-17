@@ -161,11 +161,11 @@ const AdventMapComponent = ({ currentDate }: AdventMapComponentProps) => {
             />
           </div>
           <p className={styles.infoText} style={{ marginTop: '3rem' }}>
-          Zveme vás na <strong>procházku adventním Berounem</strong>. Každý den <strong>od 1. do 24. prosince</strong> se ve městě rozsvítí jedno nové okno s adventním číslem. Najděte všechna okna, vyluštěte tajenku a hrajte o ceny!
-        </p>
-        <p className={styles.infoText}>Každý prosincový den až do Štědrého večera zveřejníme nápovědu, <strong>kde se nové okno nachází</strong>. Vaším úkolem bude místo najít a objevit skrytou nápovědu do tajenky. Některá místa nabídnou i <strong>malé překvapení</strong> – hrnek svařáku, tematickou výstavu, prodej vánočního zboží či speciální prohlídku. </p>
-        <p className={styles.infoText}>Pro ty, kteří už mají kalendář plný besídek a vánočních večírků, máme dobrou zprávu - adventní kalendář bude <strong>svítit až do konce prosince</strong>. </p>
-        <p className={styles.infoText}>U každého rozsvíceého čísla najdete i <strong>písmeno</strong>. Posbírejte všechna písmena a my na Štědrý den <strong>odhalíme jejich pořadí</strong>, které vám umožní sestavit tajenku.</p>
+            Zveme vás na <strong>procházku adventním Berounem</strong>. Každý den <strong>od 1. do 24. prosince</strong> se ve městě rozsvítí jedno nové okno s adventním číslem. Najděte všechna okna, vyluštěte tajenku a hrajte o ceny!
+          </p>
+          <p className={styles.infoText}>Každý prosincový den až do Štědrého večera zveřejníme nápovědu, <strong>kde se nové okno nachází</strong>. Vaším úkolem bude místo najít a objevit skrytou nápovědu do tajenky. Některá místa nabídnou i <strong>malé překvapení</strong> – hrnek svařáku, tematickou výstavu, prodej vánočního zboží či speciální prohlídku. </p>
+          <p className={styles.infoText}>Pro ty, kteří už mají kalendář plný besídek a vánočních večírků, máme dobrou zprávu - adventní kalendář bude <strong>svítit až do konce prosince</strong>. </p>
+          <p className={styles.infoText}>U každého rozsvíceného čísla najdete i <strong>písmeno</strong>. Posbírejte všechna písmena a my na Štědrý den <strong>odhalíme jejich pořadí</strong>, které vám umožní sestavit tajenku.</p>
         </div>
         <AdventSubmitForm />
         <div className={pageStyles.instructionsLinkContainer}>
