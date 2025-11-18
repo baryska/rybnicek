@@ -16,22 +16,34 @@ interface AdventMapComponentProps {
   currentDate?: Date;
 }
 
+// Seeded random number generator for consistent shuffle
+const seededRandom = (seed: number) => {
+  const x = Math.sin(seed) * 10000;
+  return x - Math.floor(x);
+};
+
+// Shuffle array with seed for consistent results
+const shuffleWithSeed = (array: AdventLocation[], seed: number): AdventLocation[] => {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(seededRandom(seed + i) * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+};
+
 const AdventMapComponent = ({ currentDate }: AdventMapComponentProps) => {
   const [activeLocationId, setActiveLocationId] = useState<number | null>(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [visibleLocations, setVisibleLocations] = useState<AdventLocation[]>([]);
-  const [shuffledLocations, setShuffledLocations] = useState<AdventLocation[]>([]);
   const [clickedLocationId, setClickedLocationId] = useState<number | null>(null);
   const searchParams = useSearchParams();
 
   const activeLocation: AdventLocation | undefined = adventLocations.find((loc) => loc.number === activeLocationId);
 
-  // Shuffle locations once on mount
-  useEffect(() => {
-    const shuffled = [...adventLocations].sort(() => Math.random() - 0.5);
-    setShuffledLocations(shuffled);
-  }, []);
+  // Shuffle locations with fixed seed for consistent order
+  const shuffledLocations = shuffleWithSeed(adventLocations, 5000);
 
   useEffect(() => {
     setMounted(true);
