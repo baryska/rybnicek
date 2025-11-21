@@ -148,7 +148,7 @@ const AdventSubmitForm = () => {
             </Link>
             <div className={crosswordStyles.logoContainer}>
               <a href="https://www.nadacevia.cz" target="_blank" rel="noopener noreferrer" aria-label="Nadace Via">
-                <Image src="/via.png" alt="Logo" width={150} height={80} className={crosswordStyles.logo} style={{ marginLeft: '0.5rem' }} />
+                <Image src="/bile-logo-via.png" alt="Logo" width={150} height={80} className={crosswordStyles.logo} style={{ marginLeft: '0.5rem' }} />
               </a>
             </div>
           </div>
