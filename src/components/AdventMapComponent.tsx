@@ -47,6 +47,8 @@ const AdventMapComponent = ({ currentDate }: AdventMapComponentProps) => {
     const newLetters = { ...collectedLetters, [locationId]: letter };
     setCollectedLetters(newLetters);
     localStorage.setItem("adventLetters", JSON.stringify(newLetters));
+    // Keep the window clicked/open after saving letter
+    setClickedLocationId(locationId);
   };
 
   const handleClearAllLetters = () => {
@@ -166,7 +168,7 @@ const AdventMapComponent = ({ currentDate }: AdventMapComponentProps) => {
             return (
               <div
                 key={loc.number}
-                className={`${styles.window} ${isRevealed ? styles.windowOpen : styles.windowClosed} ${clickedLocationId === loc.number ? styles.windowClicked : ''}`}
+                className={`${styles.window} ${isRevealed ? styles.windowOpen : styles.windowClosed} ${collectedLetters[loc.number] || clickedLocationId === loc.number ? styles.windowClicked : ''}`}
                 onClick={() => isRevealed && handleLocationClick(loc.number)}
               >
                 <div className={styles.windowDoorLeft}></div>
@@ -244,7 +246,10 @@ const AdventMapComponent = ({ currentDate }: AdventMapComponentProps) => {
         onOpen={() => setDrawerOpen(true)}
         onClose={() => {
           setDrawerOpen(false);
-          setClickedLocationId(null);
+          // Close window only if no letter is saved
+          if (activeLocationId && !collectedLetters[activeLocationId]) {
+            setClickedLocationId(null);
+          }
         }}
         location={activeLocation}
         savedLetter={activeLocation ? collectedLetters[activeLocation.number] || "" : ""}
