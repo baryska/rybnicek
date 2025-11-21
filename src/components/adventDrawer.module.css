@@ -103,6 +103,14 @@
   color: #1b4a4c;
   text-transform: uppercase;
   background: linear-gradient(135deg, #dfdbd3 0%, #bccccd 100%);
+  line-height: 60px;
+  padding: 0;
+}
+
+.letterField::placeholder {
+  font-size: 1.4rem;
+  opacity: 0.6;
+  line-height: 60px;
 }
 
 .letterField:focus {
