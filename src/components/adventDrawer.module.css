@@ -21,6 +21,124 @@
   color: #333;
 }
 
+.letterSection {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: #f8f3f0;
+  border-radius: 8px;
+  border: 2px solid #d98f82;
+}
+
+.letterTitle {
+  font-size: 1.3rem;
+  color: #1b434c;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.letterSaved {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.letterBox {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: white;
+  border: 3px solid #d98f82;
+  border-radius: 8px;
+  color: #1b434c;
+}
+
+.letterConfirm {
+  font-size: 1rem;
+  color: #2d7a3e;
+  margin: 0;
+}
+
+.letterInput {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.letterHint {
+  font-size: 1rem;
+  color: #555;
+  margin: 0;
+  text-align: center;
+}
+
+.letterInputWrapper {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.letterField {
+  width: 60px;
+  height: 60px;
+  font-size: 2rem;
+  text-align: center;
+  border: 2px solid #d98f82;
+  border-radius: 8px;
+  font-weight: bold;
+  color: #1b434c;
+  text-transform: uppercase;
+}
+
+.letterField:focus {
+  outline: none;
+  border-color: #c58160;
+  box-shadow: 0 0 0 3px rgba(217, 143, 130, 0.2);
+}
+
+.letterButton {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #d98f82;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.letterButton:hover:not(:disabled) {
+  background-color: #c58160;
+}
+
+.letterButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.letterEditButton {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background-color: #346f70;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.letterEditButton:hover {
+  background-color: #2d5f60;
+}
+
 @media (max-width: 768px) {
   .dayNumber {
     font-size: 3.5rem;
@@ -32,5 +150,13 @@
 
   .description {
     font-size: 1rem;
+  }
+
+  .letterSection {
+    padding: 1rem;
+  }
+
+  .letterTitle {
+    font-size: 1.1rem;
   }
 }

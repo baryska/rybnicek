@@ -38,15 +38,35 @@ const AdventMapComponent = ({ currentDate }: AdventMapComponentProps) => {
   const [mounted, setMounted] = useState(false);
   const [visibleLocations, setVisibleLocations] = useState<AdventLocation[]>([]);
   const [clickedLocationId, setClickedLocationId] = useState<number | null>(null);
+  const [collectedLetters, setCollectedLetters] = useState<Record<number, string>>({});
   const searchParams = useSearchParams();
 
   const activeLocation: AdventLocation | undefined = adventLocations.find((loc) => loc.number === activeLocationId);
+
+  const handleLetterSave = (locationId: number, letter: string) => {
+    const newLetters = { ...collectedLetters, [locationId]: letter };
+    setCollectedLetters(newLetters);
+    localStorage.setItem("adventLetters", JSON.stringify(newLetters));
+  };
+
+  const handleClearAllLetters = () => {
+    if (window.confirm("Opravdu chcete vymazat všechna sesbíraná písmena?")) {
+      setCollectedLetters({});
+      localStorage.removeItem("adventLetters");
+    }
+  };
 
   // Shuffle locations with fixed seed for consistent order
   const shuffledLocations = shuffleWithSeed(adventLocations, 5000);
 
   useEffect(() => {
     setMounted(true);
+
+    // Load saved letters from localStorage
+    const savedLetters = localStorage.getItem("adventLetters");
+    if (savedLetters) {
+      setCollectedLetters(JSON.parse(savedLetters));
+    }
 
     const testDateParam = searchParams.get('testDate');
     let now: Date;
@@ -179,6 +199,39 @@ const AdventMapComponent = ({ currentDate }: AdventMapComponentProps) => {
           <p className={styles.infoText}>Pro ty, kteří už mají kalendář plný besídek a vánočních večírků, máme dobrou zprávu - adventní kalendář bude <strong>svítit až do konce prosince</strong>. </p>
           <p className={styles.infoText}>U každého rozsvíceného čísla najdete i <strong>písmeno</strong>. Posbírejte všechna písmena a my na Štědrý den <strong>odhalíme jejich pořadí</strong>, které vám umožní sestavit tajenku.</p>
         </div>
+
+        {Object.keys(collectedLetters).length > 0 && (
+          <div className={styles.collectedLettersSection}>
+            <div className={styles.collectedLettersHeader}>
+              <h2 className={styles.collectedLettersTitle}>Sesbíraná písmena</h2>
+              <button
+                onClick={handleClearAllLetters}
+                className={styles.clearLettersButton}
+                title="Vymazat všechna písmena"
+              >
+                Vymazat vše
+              </button>
+            </div>
+            <p className={styles.collectedLettersHint}>
+              Písmena sesbíraná z jednotlivých míst. Pořadí písmen bude odhaleno na Štědrý den!
+            </p>
+            <div className={styles.collectedLettersGrid}>
+              {adventLocations
+                .filter((loc) => collectedLetters[loc.number])
+                .sort((a, b) => a.number - b.number)
+                .map((loc) => (
+                  <div key={loc.number} className={styles.collectedLetterItem}>
+                    <div className={styles.collectedLetterNumber}>{loc.number}</div>
+                    <div className={styles.collectedLetterBox}>
+                      {collectedLetters[loc.number]}
+                    </div>
+                    <div className={styles.collectedLetterName}>{loc.name}</div>
+                  </div>
+                ))}
+            </div>
+          </div>
+        )}
+
         <AdventSubmitForm />
         <div className={pageStyles.instructionsLinkContainer}>
           <Link href="/advent_info" className={pageStyles.instructionsLink}>
@@ -194,6 +247,8 @@ const AdventMapComponent = ({ currentDate }: AdventMapComponentProps) => {
           setClickedLocationId(null);
         }}
         location={activeLocation}
+        savedLetter={activeLocation ? collectedLetters[activeLocation.number] || "" : ""}
+        onLetterSave={handleLetterSave}
       />
     </>
   );

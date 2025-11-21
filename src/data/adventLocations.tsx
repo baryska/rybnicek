@@ -140,7 +140,7 @@ export const adventLocations: AdventLocation[] = [
     name: "Brdatka",
     position: [49.976897, 14.056209],
     number: 17,
-    description: 'Krásný rybníček v Talichově údolí, kam se dříve chodilo na výlety. Dnes tu najdete naučné stezky a útočiště pro vzácné živočichy.',
+    description: 'Krásný rybníček v Talichové údolí, kam se dříve chodilo na výlety. Dnes tu najdete naučné stezky a útočiště pro vzácné živočichy.',
     revealDate: "2025-12-17",
     icon: "🦆",
   },
