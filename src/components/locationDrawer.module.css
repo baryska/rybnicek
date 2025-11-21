@@ -54,7 +54,7 @@
 .input {
   padding: 0.5rem;
   margin-top: 0.5rem;
-  background-color: white;
+  background: linear-gradient(135deg, #dfdbd3 0%, #bccccd 100%);
   border-radius: 8px;
   width: 100%;
   border: solid 1px #346f70;
@@ -108,9 +108,10 @@
   margin-top: 1rem;
   flex-wrap: wrap;
 }
+
 .break {
   flex-basis: 100%;
-  height: 0; 
+  height: 0;
 }
 
 .box {
@@ -138,3 +139,6 @@
   text-align: center;
 }
 
+.question {
+  color: #dfdbd3;
+}

@@ -60,6 +60,7 @@ const AdventLocationDrawer = ({
             maxHeight: "100%",
             overflowY: "auto",
             padding: 3,
+            backgroundColor: "white",
           },
         },
       }}

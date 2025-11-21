@@ -1,7 +1,7 @@
 .dayNumber {
   font-size: 5rem;
   font-weight: bold;
-  color: #d98f82;
+  color: #e5816d;
   text-align: center;
   margin-bottom: 1rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
@@ -10,7 +10,7 @@
 .title {
   font-size: 2rem;
   margin-bottom: 1.5rem;
-  color: #1b434c;
+  color: #1b4a4c;
   text-align: center;
 }
 
@@ -23,15 +23,11 @@
 
 .letterSection {
   margin-top: 2rem;
-  padding: 1.5rem;
-  background-color: #f8f3f0;
-  border-radius: 8px;
-  border: 2px solid #d98f82;
 }
 
 .letterTitle {
   font-size: 1.3rem;
-  color: #1b434c;
+  color: #1b4a4c;
   margin-bottom: 1rem;
   text-align: center;
 }
@@ -41,7 +37,6 @@
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-  position: relative;
 }
 
 .letterBox {
@@ -53,9 +48,9 @@
   font-size: 2rem;
   font-weight: bold;
   background-color: white;
-  border: 3px solid #d98f82;
+  border: 3px solid #e5816d;
   border-radius: 8px;
-  color: #1b434c;
+  color: #1b4a4c;
 }
 
 .letterConfirm {
@@ -65,13 +60,12 @@
 }
 
 .letterLink {
-  position: absolute;
-  bottom: 0;
-  right: 0;
+  margin-top: 0.5rem;
   font-size: 0.9rem;
-  color: #346f70;
+  color: #469aaa;
   text-decoration: none;
   transition: color 0.3s;
+  text-align: center;
 }
 
 .letterLink:hover {
@@ -93,7 +87,7 @@
 
 .letterInputWrapper {
   display: flex;
-  gap: 0.5rem;
+  gap: 1rem;
   justify-content: center;
   align-items: center;
 }
@@ -103,33 +97,34 @@
   height: 60px;
   font-size: 2rem;
   text-align: center;
-  border: 2px solid #d98f82;
+  border: 2px solid #e5816d;
   border-radius: 8px;
   font-weight: bold;
-  color: #1b434c;
+  color: #1b4a4c;
   text-transform: uppercase;
+  background: linear-gradient(135deg, #dfdbd3 0%, #bccccd 100%);
 }
 
 .letterField:focus {
   outline: none;
-  border-color: #c58160;
-  box-shadow: 0 0 0 3px rgba(217, 143, 130, 0.2);
+  border-color: #d98f82;
+  box-shadow: 0 0 0 3px rgba(229, 129, 109, 0.2);
 }
 
 .letterButton {
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.95rem;
   font-weight: bold;
-  background-color: #d98f82;
+  background-color: #e5816d;
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 999px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
 .letterButton:hover:not(:disabled) {
-  background-color: #c58160;
+  background-color: #d98f82;
 }
 
 .letterButton:disabled {
@@ -145,7 +140,7 @@
   background-color: #346f70;
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 999px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
@@ -165,10 +160,6 @@
 
   .description {
     font-size: 1rem;
-  }
-
-  .letterSection {
-    padding: 1rem;
   }
 
   .letterTitle {

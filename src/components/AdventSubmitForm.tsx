@@ -1,5 +1,9 @@
 import { useState } from "react";
-import styles from './locationDrawer.module.css'
+import styles from './locationDrawer.module.css';
+import crosswordStyles from './crossword.module.css';
+import Link from "next/link";
+import Image from "next/image";
+import Socials from "./Socials";
 
 const AdventSubmitForm = () => {
   const [email, setEmail] = useState("");
@@ -54,8 +58,9 @@ const AdventSubmitForm = () => {
   };
 
   return (
+    <>
     <div className={styles.form} style={{ margin: '2rem 0' }}>
-      <p>Vyluštili jste tajenku? Napište nám ji zde:</p>
+      <p className={styles.question}>Vyluštili jste tajenku? Napište nám ji zde:</p>
       <div>
         <input
           type="text"
@@ -122,6 +127,33 @@ const AdventSubmitForm = () => {
       {status === "sent" && <p style={{ color: "green" }}>✅ Odesláno!</p>}
       {status === "error" && <p style={{ color: "red" }}>❌ Chyba při odesílání.</p>}
     </div>
+    <div className={crosswordStyles.logosWrapper}>
+          <div className={crosswordStyles.logoContainer}>
+            <Link href="/" rel="noopener noreferrer" aria-label="Homepage">
+              <Image src="/logo_orange.svg" alt="Logo" width={100} height={100} className={crosswordStyles.logo} />
+            </Link>
+          </div>
+          <Socials />
+          <div className={crosswordStyles.logoContainer}>
+            <a href="https://www.nadacevia.cz" target="_blank" rel="noopener noreferrer" aria-label="Nadace Via">
+              <Image src="/bile-logo-via.png" alt="Logo" width={150} height={80} className={crosswordStyles.logo} />
+            </a>
+          </div>
+        </div>
+        <div className={crosswordStyles.logosWrapper_mobile}>
+          <Socials />
+          <div className={crosswordStyles.wrapper}>
+            <Link href="/" rel="noopener noreferrer" aria-label="Homepage">
+              <Image src="/logo_orange.svg" alt="Logo" width={100} height={100} className={crosswordStyles.logo} style={{ marginLeft: '0.8rem' }} />
+            </Link>
+            <div className={crosswordStyles.logoContainer}>
+              <a href="https://www.nadacevia.cz" target="_blank" rel="noopener noreferrer" aria-label="Nadace Via">
+                <Image src="/via.png" alt="Logo" width={150} height={80} className={crosswordStyles.logo} style={{ marginLeft: '0.5rem' }} />
+              </a>
+            </div>
+          </div>
+        </div>
+        </>
   );
 };
 

@@ -188,7 +188,7 @@ const AdventMapComponent = ({ currentDate }: AdventMapComponentProps) => {
         <div style={{ position: 'relative' }}>
           <div className={styles.imageContainer}>
             <Image
-              src="/rukavice.png"
+              src="/ruk.png"
               alt="Vánoční rukavice"
               fill
               style={{ objectFit: 'cover' }}
