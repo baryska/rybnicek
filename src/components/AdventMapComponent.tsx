@@ -201,7 +201,7 @@ const AdventMapComponent = ({ currentDate }: AdventMapComponentProps) => {
         </div>
 
         {Object.keys(collectedLetters).length > 0 && (
-          <div className={styles.collectedLettersSection}>
+          <div id="sesbirana-pismena" className={styles.collectedLettersSection}>
             <div className={styles.collectedLettersHeader}>
               <h2 className={styles.collectedLettersTitle}>Sesbíraná písmena</h2>
               <button

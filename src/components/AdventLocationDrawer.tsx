@@ -3,6 +3,9 @@ import { SwipeableDrawer, useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { AdventLocation } from "@/data/adventLocations";
 import { useState } from "react";
+import Link from "next/link";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
 import styles from "./adventDrawer.module.css";
 
 interface Props {
@@ -79,6 +82,13 @@ const AdventLocationDrawer = ({
             >
               Upravit písmeno
             </button>
+            <Link
+              href="#sesbirana-pismena"
+              className={styles.letterLink}
+              onClick={onClose}
+            >
+              K tajence! <FontAwesomeIcon icon={faArrowRightLong} />
+            </Link>
           </div>
         ) : (
           <div className={styles.letterInput}>

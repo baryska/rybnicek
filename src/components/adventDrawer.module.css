@@ -41,6 +41,7 @@
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
+  position: relative;
 }
 
 .letterBox {
@@ -61,6 +62,20 @@
   font-size: 1rem;
   color: #2d7a3e;
   margin: 0;
+}
+
+.letterLink {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 0.9rem;
+  color: #346f70;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.letterLink:hover {
+  color: #51b395;
 }
 
 .letterInput {
