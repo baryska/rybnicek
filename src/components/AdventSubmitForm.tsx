@@ -13,6 +13,8 @@ const AdventSubmitForm = () => {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [comment, setComment] = useState('');
   const [teamSize, setTeamSize] = useState('');
+  const [hearAboutUs, setHearAboutUs] = useState('');
+  const [hearAboutUsOther, setHearAboutUsOther] = useState('');
 
   const handleSubmit = async () => {
     if (!email) {
@@ -37,6 +39,7 @@ const AdventSubmitForm = () => {
           message: `Adventní kalendář - Tajenka: ${solution}`,
           comment,
           teamSize,
+          hearAboutUs: hearAboutUs === 'Jinde' ? `Jinde - ${hearAboutUsOther}` : hearAboutUs,
         }),
       });
 
@@ -48,6 +51,8 @@ const AdventSubmitForm = () => {
         setSolution("");
         setComment("");
         setTeamSize('');
+        setHearAboutUs('');
+        setHearAboutUsOther('');
       } else {
         setStatus("error");
       }
@@ -108,6 +113,31 @@ const AdventSubmitForm = () => {
           className={styles.input}
         />
       </div>
+      <div>
+        <select
+          value={hearAboutUs}
+          onChange={(e) => setHearAboutUs(e.target.value)}
+          className={`${styles.input} ${hearAboutUs === '' ? styles.selectPlaceholder : ''}`}
+        >
+          <option value="" disabled>Kde jste se o kalendáři dozvěděli?</option>
+          <option value="Na Instagramu/Facebooku">Na Instagramu/Facebooku</option>
+          <option value="Na plakátech ve městě">Na plakátech ve městě</option>
+          <option value="Z rozsvíceného okna">Z rozsvíceného okna</option>
+          <option value="Od kamarádů/známých">Od kamarádů/známých</option>
+          <option value="Jinde">Jinde</option>
+        </select>
+      </div>
+      {hearAboutUs === 'Jinde' && (
+        <div>
+          <input
+            type="text"
+            placeholder="Kde?"
+            value={hearAboutUsOther}
+            onChange={(e) => setHearAboutUsOther(e.target.value)}
+            className={styles.input}
+          />
+        </div>
+      )}
       <div>
         <textarea
           placeholder="Chcete nám něco vzkázat?"

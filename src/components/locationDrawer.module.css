@@ -60,6 +60,15 @@
   border: solid 1px #346f70;
 }
 
+.input::placeholder {
+  color: #346f70;
+  opacity: 1;
+}
+
+.selectPlaceholder {
+  color: #346f70 !important;
+}
+
 .correct {
   color: green;
 }
