@@ -57,7 +57,7 @@ const AdventLocationDrawer = ({
         paper: {
           sx: {
             width: isMobile ? "100%" : 500,
-            maxHeight: "100%",
+            maxHeight: isMobile ? "85vh" : "100%",
             overflowY: "auto",
             padding: 3,
             backgroundColor: "white",
