@@ -157,6 +157,7 @@ const AdventSubmitForm = () => {
       {status === "sent" && <p style={{ color: "green" }}>✅ Odesláno!</p>}
       {status === "error" && <p style={{ color: "red" }}>❌ Chyba při odesílání.</p>}
     </div>
+    <p style={{ textAlign: 'center', color: '#dfdbd3' }}>Projekt byl podpořen Nadací Via z programu Místo, kde žijeme.</p>
     <div className={crosswordStyles.logosWrapper}>
           <div className={crosswordStyles.logoContainer}>
             <Link href="/" rel="noopener noreferrer" aria-label="Homepage">
