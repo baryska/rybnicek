@@ -17,7 +17,7 @@ const AdventMapView = memo(({ visibleLocations, onLocationClick }: AdventMapView
   return (
     <MapContainer
       center={center}
-      zoom={14}
+      zoom={15}
       className={styles.map}
       scrollWheelZoom={true}
     >

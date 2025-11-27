@@ -106,7 +106,7 @@
 }
 
 .windowNumber {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: bold;
   color: #dfdbbd;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -198,7 +198,7 @@
 }
 
 .windowTitle {
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   color: #dfdbbd;
   font-weight: bold;
   line-height: 1.1;
@@ -241,7 +241,7 @@
   }
 
   .windowNumber {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   .windowIcon {
@@ -253,7 +253,7 @@
   }
 
   .windowTitle {
-    font-size: 0.75rem;
+    font-size: 0.85rem;
   }
 
   .imageContainer {
@@ -289,7 +289,7 @@
   }
 
   .windowNumber {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
   }
 
   .windowLock {
@@ -305,7 +305,7 @@
   }
 
   .windowTitle {
-    font-size: 0.65rem;
+    font-size: 0.75rem;
   }
 
   .imageContainer {

@@ -68,7 +68,9 @@ const AdventLocationDrawer = ({
       <div className={styles.dayNumber}>{location.number}</div>
       <h2 className={styles.title}>{location.name}</h2>
       <div className={styles.description}>
-        <p>{location.description}</p>
+        {location.description.map((paragraph, index) => (
+          <p key={index}>{paragraph}</p>
+        ))}
       </div>
 
       <div className={styles.letterSection}>

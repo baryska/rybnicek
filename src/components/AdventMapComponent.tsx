@@ -127,7 +127,7 @@ const AdventMapComponent = ({ currentDate }: AdventMapComponentProps) => {
       <div style={{ position: 'relative' }}>
         <MapContainer
           center={center}
-          zoom={18}
+          zoom={15}
           className={styles.map}
         >
           <TileLayer
@@ -177,7 +177,6 @@ const AdventMapComponent = ({ currentDate }: AdventMapComponentProps) => {
                 {!isRevealed && <div className={styles.windowLock}>🔒</div>}
                 {isRevealed && (
                   <div className={styles.windowContent}>
-                    <div className={styles.windowIcon}>{loc.icon}</div>
                     <h4 className={styles.windowTitle}>{loc.name}</h4>
                   </div>
                 )}
