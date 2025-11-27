@@ -11,10 +11,10 @@ export const adventLocations: AdventLocation[] = [
     name: "NEJenBistro",
     position: [49.9575986, 14.0764997],
     number: 1,
-    description: ['NEJenBistro je součástí Sociálního podniku Klubák, který už od roku 2016 vytváří chráněná pracovní místa pro dospělé se zdravotním znevýhodněním, pečující osoby i další lidi jinak znevýhodněné na trhu práce v našem regionu. Klubák navazuje na práci organizace Klubíčko Beroun a dává příležitost těm, kteří prošli tréninkovým pracovištěm, aby se „vyklubali“ do samostatnosti a mohli pracovat třeba v pekárně, kuchyni nebo bistru.',
+    description: ['<strong>Prvního prosince můžete zajít do NEJenBistra na kávu s kremrolí za speciální cenu.</strong>',
+      '<strong>A v závěrečném slosování se můžete těšit na krabičku cukroví.</strong>',
+      'NEJenBistro je součástí <strong>Sociálního podniku Klubák</strong>, který už od roku 2016 vytváří <strong>chráněná pracovní místa</strong> pro dospělé se zdravotním znevýhodněním, pečující osoby i další lidi jinak znevýhodněné na trhu práce v našem regionu. Klubák navazuje na práci organizace Klubíčko Beroun a dává příležitost těm, kteří prošli tréninkovým pracovištěm, aby se „vyklubali“ do samostatnosti a mohli pracovat třeba v pekárně, kuchyni nebo bistru.',
       'Letos se NEJenBistro stává prvním podnikem, který rozsvítí své adventní okno, a právě u jejich jedničky můžete najít i první písmenko do tajenky Sousedského adventního kalendáře.',
-      'Prvního prosince můžete navíc zajít do NEJenBistra na kávu s kremrolí za speciální cenu.',
-      'A v závěrečném slosování se můžete těšit na krabičku cukroví.'
     ],
     revealDate: "2025-12-01",
   },

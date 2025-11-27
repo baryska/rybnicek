@@ -69,7 +69,7 @@ const AdventLocationDrawer = ({
       <h2 className={styles.title}>{location.name}</h2>
       <div className={styles.description}>
         {location.description.map((paragraph, index) => (
-          <p key={index}>{paragraph}</p>
+          <p key={index} dangerouslySetInnerHTML={{ __html: paragraph }} />
         ))}
       </div>
 
