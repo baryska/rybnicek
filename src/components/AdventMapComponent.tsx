@@ -108,7 +108,7 @@ const AdventMapComponent = ({ currentDate }: AdventMapComponentProps) => {
   }
 
   const testDateParam = searchParams.get('testDate');
-  const center: LatLngTuple = [49.964, 14.072];
+  const center: LatLngTuple = [49.961, 14.072];
 
   return (
     <>
