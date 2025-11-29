@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GoogleAnalytics } from '@next/third-parties/google';
 import styles from "./page.module.css";
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { config } from '@fortawesome/fontawesome-svg-core';
@@ -29,6 +30,7 @@ export default function RootLayout({
           © 2025 Berounský rybníček
         </footer>
       </body>
+      <GoogleAnalytics gaId="G-BQ1PQX5JRT" />
     </html>
   );
 }
