@@ -199,6 +199,12 @@ const AdventMapComponent = ({ currentDate }: AdventMapComponentProps) => {
           <p className={styles.infoText}>Každý prosincový den až do Štědrého večera zveřejníme nápovědu, <strong>kde se nové okno nachází</strong>. Vaším úkolem bude místo najít a objevit skrytou nápovědu do tajenky. Některá místa nabídnou i <strong>malé překvapení</strong> – hrnek svařáku, tematickou výstavu, prodej vánočního zboží či speciální prohlídku. </p>
           <p className={styles.infoText}>Pro ty, kteří už mají kalendář plný besídek a vánočních večírků, máme dobrou zprávu - adventní kalendář bude <strong>svítit až do konce prosince</strong>. </p>
           <p className={styles.infoText}>U každého rozsvíceného čísla najdete i <strong>písmeno</strong>. Posbírejte všechna písmena a my na Štědrý den <strong>odhalíme jejich pořadí</strong>, které vám umožní sestavit tajenku.</p>
+          <p className={styles.infoText}>
+            Písmenka můžete vyplňovat přímo zde na webu, nebo si adventní kalendář
+            <a href="/advent.pdf" target="_blank" rel="noopener noreferrer">
+              {' '} <span style={{textDecoration: 'underline'}}>stáhněte a vytiskněte zde</span>. 
+            </a>
+          </p>
         </div>
 
         {Object.keys(collectedLetters).length > 0 && (
