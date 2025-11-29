@@ -45,14 +45,21 @@ brigádu ke mě chodí už i moje dcery.`,
     name: "Kavárna Štastná Koza",
     position: [49.9643636, 14.073026],
     number: 4,
-    description: ['Moderní kulturní centrum s bohatou sbírkou knih a možností zapůjčení 24/7 díky automatizovanému boxu.'],
+    description: ['Jsme rodinná kavárna s <strong>pekárnou a bioobchodem</strong> v centru Berouna.',
+      'Pečeme si <strong>vlastní dorty, koláče a pečivo, nabízíme vegetariánská i veganská jídla a milujeme výběrovou kávu</strong>. Již mnoho let se u nás potkávají Berouňáci, sousedé z okolí, ale i přespolní výletníci. Největší radost máme z toho, když se k nám lidé rádi vracejí.',
+      'Do sousedského adventního kalendáře jsme se zapojili, protože věříme, že akce tohoto typu nás <strong>drží pospolu</strong>. Chceme být jedním z těch míst, kde se lidé setkávají, kam přijdou se svými radostmi i starostmi na něco dobrého, místem útulným a otevřeným pro všechny.'
+    ],
     revealDate: "2025-12-04",
   },
   {
     name: "Bonté Gelatrie",
     position: [49.9641856, 14.0752317],
     number: 5,
-    description: ['Kopec s rozhlednou a vodojemem, odkud se naskytá krásný výhled na město. Dříve zde byla oblíbená výletní restaurace.'],
+    description: ['V samém srdci Berouna najdete skvělou zmrzlinárnu Bonté Gelaterie, která nabízí <strong>poctivou italskou zmzlinu</strong>.',
+      'U Pražské brány najdete kouzelnou zmrzlinárnu, která nabízí autentické italské gelato, připravované s láskou a vždy z nejčerstvějších surovin. Nabízí <strong>jak klasické příchutě, tak i originální a inovativní speciály</strong>. Můžete si vychutnat tradiční příchutě jako je čokoládová, citronová nebo jahodová nebo se nechat překvapit lahodnými speciály, mezi něž patří slaný karamel, mango nebo mák se švestkou. Každý kornoutek nebo kelímek je plný chuti a radosti, což je důkazem mistrovství zdejších zmrzlinářů.',
+      'V jedinečných historických prostorách nabízí také <strong>domácí zákusky</strong>, které jsou pečlivě připravovány, aby doplnily chuť zmrzliny, osvěžující limonády z čerstvých surovin, <strong>skvělou italskou kávu</strong> a také sklenku vína pro chvíle pohody a relaxace.',
+      '<strong>V závěrečném slosování se můžete těšit na voucher na 10 zmrzlin!</strong>'
+    ],
     revealDate: "2025-12-05",
   },
   {
