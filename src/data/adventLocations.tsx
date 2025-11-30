@@ -42,8 +42,7 @@ brigádu ke mě chodí už i moje dcery.`,
 `<strong>Připravili jsme drobné dárky pro vítěze této soutěže.</strong>`,
 `Těšíme se na vaši návštěvu a přejeme vám krásný advent a vánoční svátky.`,
 `Za celý  kolektiv hračkářství
- Miroslava Trojanová`,
-'<strong>Hračkářství Trojánek věnuje do závěrečného slosování hračku ze svého sortimentu.</strong>'],
+ Miroslava Trojanová`],
     revealDate: "2025-12-03",
   },
   {
