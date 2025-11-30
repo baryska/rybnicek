@@ -22,7 +22,11 @@ export const adventLocations: AdventLocation[] = [
     name: "Pekárna Just Bake",
     position: [49.9644606, 14.0764589],
     number: 2,
-    description: ['Horní brána městského opevnění, která střežila vstup do Berouna ze západu. Nad branou najdete fresku s nápisem "Všeho dočasu, Pán Bůh navěky".'],
+    description: ['Jsme malá rodinná pekárna JUST BAKE v berounském mlýně. <strong>S láskou pečeme poctivé pečivo podle tradičních receptur</strong> – tak, jak to dělávali naši předkové.',
+      'Dbáme na kvalitu, čerstvost a spokojenost každého zákazníka.',
+      'Zastavte se na <strong>kváskový chleba, české rohlíky, loupáky, koláčky a skvělou kávu z pražírny Charisma</strong>.',
+      '<strong>Pekárna Just Bake věnuje do závěrečného slosování poukázku na jejich řemeslné dobroty.</strong>'
+    ],
     revealDate: "2025-12-02",
   },
   {
