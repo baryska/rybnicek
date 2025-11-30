@@ -245,6 +245,7 @@ const AdventMapComponent = ({ currentDate }: AdventMapComponentProps) => {
             Instrukce pro účastníky
           </Link>
         </div>
+        <p className={pageStyles.instructionsLinkContainer}>Pravidla hry ke stažení <a href="/pravidla_advent.pdf" download style={{ textDecoration: 'underline' }}>zde</a>.</p>
       </div>
       <AdventLocationDrawer
         open={drawerOpen}
