@@ -81,7 +81,7 @@ const AdventMapComponent = ({ currentDate }: AdventMapComponentProps) => {
     }
 
     const isLocationRevealed = (location: AdventLocation): boolean => {
-      const revealDate = new Date(location.revealDate);
+      const revealDate = new Date(location.revealDate + 'T00:00:00');
       return now >= revealDate;
     };
 
