@@ -2,7 +2,7 @@
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L, { LatLngTuple } from "leaflet";
-import { adventLocations, AdventLocation } from '../data/adventLocations';
+import { AdventLocation } from '../data/adventLocations';
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import AdventLocationDrawer from "./AdventLocationDrawer";
@@ -23,7 +23,7 @@ const seededRandom = (seed: number) => {
 };
 
 // Shuffle array with seed for consistent results
-const shuffleWithSeed = (array: AdventLocation[], seed: number): AdventLocation[] => {
+const shuffleWithSeed = <T,>(array: T[], seed: number): T[] => {
   const shuffled = [...array];
   for (let i = shuffled.length - 1; i > 0; i--) {
     const j = Math.floor(seededRandom(seed + i) * (i + 1));
@@ -32,16 +32,24 @@ const shuffleWithSeed = (array: AdventLocation[], seed: number): AdventLocation[
   return shuffled;
 };
 
+interface LocationMetadata {
+  number: number;
+  revealDate: string;
+}
+
 const AdventMapComponent = ({ currentDate }: AdventMapComponentProps) => {
   const [activeLocationId, setActiveLocationId] = useState<number | null>(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [visibleLocations, setVisibleLocations] = useState<AdventLocation[]>([]);
+  const [allLocationsMetadata, setAllLocationsMetadata] = useState<LocationMetadata[]>([]);
   const [clickedLocationId, setClickedLocationId] = useState<number | null>(null);
   const [collectedLetters, setCollectedLetters] = useState<Record<number, string>>({});
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const searchParams = useSearchParams();
 
-  const activeLocation: AdventLocation | undefined = adventLocations.find((loc) => loc.number === activeLocationId);
+  const activeLocation: AdventLocation | undefined = visibleLocations.find((loc) => loc.number === activeLocationId);
 
   const handleLetterSave = (locationId: number, letter: string) => {
     const newLetters = { ...collectedLetters, [locationId]: letter };
@@ -59,34 +67,51 @@ const AdventMapComponent = ({ currentDate }: AdventMapComponentProps) => {
   };
 
   // Shuffle locations with fixed seed for consistent order
-  const shuffledLocations = shuffleWithSeed(adventLocations, 5000);
+  const shuffledLocations = shuffleWithSeed(allLocationsMetadata, 5000);
 
   useEffect(() => {
-    setMounted(true);
+    const fetchLocations = async () => {
+      try {
+        setLoading(true);
+        setMounted(true);
 
-    // Load saved letters from localStorage
-    const savedLetters = localStorage.getItem("adventLetters");
-    if (savedLetters) {
-      setCollectedLetters(JSON.parse(savedLetters));
-    }
+        // Load saved letters from localStorage
+        const savedLetters = localStorage.getItem("adventLetters");
+        if (savedLetters) {
+          setCollectedLetters(JSON.parse(savedLetters));
+        }
 
-    const testDateParam = searchParams.get('testDate');
-    let now: Date;
+        const testDateParam = searchParams.get('testDate');
 
-    if (testDateParam) {
-      now = new Date(testDateParam);
-      console.log('🧪 Test mode active! Simulating date:', now.toLocaleDateString('cs-CZ'));
-    } else {
-      now = currentDate || new Date();
-    }
+        // Fetch metadata for all locations (for calendar grid)
+        const metadataResponse = await fetch('/api/advent-metadata');
+        if (!metadataResponse.ok) {
+          throw new Error('Failed to fetch metadata');
+        }
+        const metadataData = await metadataResponse.json();
+        setAllLocationsMetadata(metadataData.metadata);
 
-    const isLocationRevealed = (location: AdventLocation): boolean => {
-      const revealDate = new Date(location.revealDate + 'T00:00:00');
-      return now >= revealDate;
+        // Fetch full details for visible locations only
+        const locationsUrl = testDateParam
+          ? `/api/advent-locations?testDate=${testDateParam}`
+          : '/api/advent-locations';
+
+        const locationsResponse = await fetch(locationsUrl);
+        if (!locationsResponse.ok) {
+          throw new Error('Failed to fetch locations');
+        }
+
+        const locationsData = await locationsResponse.json();
+        setVisibleLocations(locationsData.locations);
+        setLoading(false);
+      } catch (err) {
+        console.error('Error loading locations:', err);
+        setError('Nepodařilo se načíst lokace');
+        setLoading(false);
+      }
     };
 
-    const visible = adventLocations.filter(isLocationRevealed);
-    setVisibleLocations(visible);
+    fetchLocations();
   }, [currentDate, searchParams]);
 
   const handleLocationClick = (locationId: number) => {
@@ -103,8 +128,12 @@ const AdventMapComponent = ({ currentDate }: AdventMapComponentProps) => {
     }
   };
 
-  if (!mounted) {
+  if (loading || !mounted) {
     return <div style={{ padding: '2rem', textAlign: 'center' }}>Načítám adventní mapu...</div>;
+  }
+
+  if (error) {
+    return <div style={{ padding: '2rem', textAlign: 'center', color: 'red' }}>{error}</div>;
   }
 
   const testDateParam = searchParams.get('testDate');
@@ -164,6 +193,7 @@ const AdventMapComponent = ({ currentDate }: AdventMapComponentProps) => {
         <div className={styles.adventCalendar}>
           {shuffledLocations.map((loc) => {
             const isRevealed = visibleLocations.some(v => v.number === loc.number);
+            const visibleLocation = visibleLocations.find(v => v.number === loc.number);
 
             return (
               <div
@@ -175,9 +205,9 @@ const AdventMapComponent = ({ currentDate }: AdventMapComponentProps) => {
                 <div className={styles.windowDoorRight}></div>
                 <div className={styles.windowNumber}>{loc.number}</div>
                 {!isRevealed && <div className={styles.windowLock}>🔒</div>}
-                {isRevealed && (
+                {isRevealed && visibleLocation && (
                   <div className={styles.windowContent}>
-                    <h4 className={styles.windowTitle}>{loc.name}</h4>
+                    <h4 className={styles.windowTitle}>{visibleLocation.name}</h4>
                   </div>
                 )}
               </div>
@@ -223,7 +253,7 @@ const AdventMapComponent = ({ currentDate }: AdventMapComponentProps) => {
               Písmena sesbíraná z jednotlivých míst. Pořadí písmen bude odhaleno na Štědrý den!
             </p>
             <div className={styles.collectedLettersGrid}>
-              {adventLocations
+              {visibleLocations
                 .filter((loc) => collectedLetters[loc.number])
                 .sort((a, b) => a.number - b.number)
                 .map((loc) => (
