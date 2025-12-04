@@ -51,7 +51,8 @@ brigádu ke mě chodí už i moje dcery.`,
     number: 4,
     description: ['Jsme rodinná kavárna s <strong>pekárnou a bioobchodem</strong> v centru Berouna.',
       'Pečeme si <strong>vlastní dorty, koláče a pečivo, nabízíme vegetariánská i veganská jídla a milujeme výběrovou kávu</strong>. Již mnoho let se u nás potkávají Berouňáci, sousedé z okolí, ale i přespolní výletníci. Největší radost máme z toho, když se k nám lidé rádi vracejí.',
-      'Do sousedského adventního kalendáře jsme se zapojili, protože věříme, že akce tohoto typu nás <strong>drží pospolu</strong>. Chceme být jedním z těch míst, kde se lidé setkávají, kam přijdou se svými radostmi i starostmi na něco dobrého, místem útulným a otevřeným pro všechny.'
+      'Do sousedského adventního kalendáře jsme se zapojili, protože věříme, že akce tohoto typu nás <strong>drží pospolu</strong>. Chceme být jedním z těch míst, kde se lidé setkávají, kam přijdou se svými radostmi i starostmi na něco dobrého, místem útulným a otevřeným pro všechny.',
+      '<strong>Do závěrečného slosování věnujeme poukázku do našeho Barevného bistra.</strong>'
     ],
     revealDate: "2025-12-04",
   },
