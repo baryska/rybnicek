@@ -87,7 +87,10 @@ brigádu ke mě chodí už i moje dcery.`,
     name: "Restaurace Český Dvůr",
     position: [49.9634544, 14.0730931],
     number: 7,
-    description: ['Místo, kde se z opomíjeného prostoru stalo místo setkávání. Najdete tu komunitní záhony, lavičky a ohniště.'],
+    description: ['Restaurace Český Dvůr je zasazena v samém centru města Berouna. Vaříme pro Vás <strong>poctivou českou kuchyni</strong> v moderním i klasickém pojetí.',
+      'Na čepu nabízíme <strong>klasická, ale i speciální piva</strong>, na jejichž kvalitě si velmi zakládáme. Příjemný a profesionální servis je pro nás velmi důležitý, protože spokojený zákazník je ten, který se rád vrací. Těšíme se na Vaši návštěvu!',
+      '<strong>Do závěrečného slosování věnuje restaurace Český dvůr poukázku na konzumaci.</strong>'
+    ],
     revealDate: "2025-12-07",
   },
   {
