@@ -112,7 +112,10 @@ brigádu ke mě chodí už i moje dcery.`,
     name: "Bonté Gourmeterie",
     position: [49.9638025, 14.0742128],
     number: 9,
-    description: ['Místo pro letní radovánky - paddle boarding, koncerty a závody dračích lodí. Kdysi se tu konaly Mírové slavnosti.'],
+    description: ['Bonté gourmeterie je malý obchůdek na berounském náměstí plný <strong>sýrů, vín, dobrot, farmářských výrobků i voňavého pečiva</strong>. V předvánočním čase se u nás můžete zahřát svařákem nebo kávou.',
+      'Máme velkou radost, že jsme se mohli zapojit do sousedského adventního kalendáře, protože věříme, že akce tohoto typu nás drží pospolu. Rádi vás u nás přivítáme v tomto milém předvánočním čase.',
+      '<strong>Do závěrečného slosování věnujeme dárkový poukaz na nákup u nás.</strong>'
+    ],
     revealDate: "2025-12-09",
   },
   {
