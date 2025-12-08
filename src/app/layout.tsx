@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { GoogleAnalytics } from '@next/third-parties/google';
+import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google';
 import styles from "./page.module.css";
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { config } from '@fortawesome/fontawesome-svg-core';
@@ -23,6 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="cs">
+      <GoogleTagManager gtmId="GTM-W49GKXHD" />
       <body>
         <Menu />
         {children}
