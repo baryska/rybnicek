@@ -135,7 +135,11 @@ brigádu ke mě chodí už i moje dcery.`,
     name: "Galanterie U Bílé růže",
     position: [49.9636428, 14.0738742],
     number: 11,
-    description: ['Sídlo městské správy s legendou o skřítkovi, který chrání město před lží a nespravedlností.'],
+    description: ['V galanterii (švadlence) na Husově náměstí najdete nepřeberné množství potřeb pro <strong>šití, pletení, háčkování i další tvoření.</strong>',
+      'Aktuálně si můžete vybrat i <strong>vánoční ubrusy, stuhy a další zboží s vánoční tématikou.</strong>',
+      'Pro každého luštitele Sousedského adventního kalendáře máme u pokladny připravený malý dárek.',
+      '<strong>Do závěrečného slosování věnujeme poukázku na zboží z našeho obchodu.</strong>'
+    ],
     revealDate: "2025-12-11",
   },
   {
