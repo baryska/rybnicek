@@ -185,7 +185,12 @@ brigádu ke mě chodí už i moje dcery.`,
     name: "Vinotéka Semrád",
     position: [49.9649108, 14.0736175],
     number: 15,
-    description: ['Nejznámější berounská studánka s kapličkou, kdysi nazývaná Na Průhoně. Místo s duchovní atmosférou.'],
+    description: ['Jsme vinotéka s nabídkou <strong>lahvových a stáčených vín</strong>. Dále nabízíme destiláty, medovinu, ořechy a ovoce v polevách, kávu a vinné příslušenství.',
+      'Lahvová vína pochází z Moravy, Německa, Rakouska, Portugalska, Španělska, Francie, Itálie, Jihoafrické republiky, Bulharska, Chile a Argentiny.',
+      'Najdete u nás také sušené ovoce, oříšky a cukrovinky prodávané na váhu.',
+      '<strong>Kornout těchto dobrot věnujeme i do závěrečného slosování.</strong>',
+      'Rádi vás u nás přivítáme v tomto milém předvánočním čase.'
+    ],
     revealDate: "2025-12-15",
   },
   {
