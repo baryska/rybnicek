@@ -222,7 +222,11 @@ brigádu ke mě chodí už i moje dcery.`,
     name: "Jiná káva",
     position: [49.9680153, 14.0712125],
     number: 18,
-    description: ['Kavárna s výhledem na Berounku a zážitky se zvířaty. Nedaleko najdete největší lípu na Berounsku s obvodem přes pět metrů.'],
+    description: ['Jiná káva je kavárna s <strong>vegetariánskou kuchyní</strong>.',
+      'Vaříme denní menu, pečeme vlastní dorty, vyrábíme osvěžující limonády, připravujeme kvalitní kávu, čepujeme dobré pivo…',
+      'Kromě poctivého jídla a pití, je Jiná káva <strong>malou galerií</strong>, ve které se každý měsíc střídají výstavy obrazů či fotografií. Je místem pravidelných koncertů hudby různých žánrů i filmových festivalů. Je <strong>tréninkovým pracovištěm pro lidi, kteří si potřebují obnovit či prohloubit sociální a pracovní dovednosti</strong>.',
+      'Jiná káva je sice sociální službou, ale rozhodně nespoléháme na to, že k nám zákazníci budou chodit kvůli charitě. Naopak, je pro nás výzvou dělat gastronomii co nejprofesionálněji. '
+    ],
     revealDate: "2025-12-18",
   },
   {
