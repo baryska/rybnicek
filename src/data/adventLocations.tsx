@@ -214,7 +214,7 @@ brigádu ke mě chodí už i moje dcery.`,
       'Více než 20 let zajišťujeme prodej nových  i ojetých vozů včetně pojištění a financování.',
       'Starší vozy můžeme vykoupit na protiúčet.',
       'Ve všech pobočkách provádíme kompletní záruční i pozáruční servis všech vozidel Škoda, měření emisí či pneuservis.',
-      '<strong>Do závěrečného slosování věnujeme dárkový poukaz na nákup u nás.</strong>'
+      '<strong>Do závěrečného slosování věnujeme drobné dárky.</strong>'
     ],
     revealDate: "2025-12-17",
   },
