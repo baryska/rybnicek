@@ -210,7 +210,12 @@ brigádu ke mě chodí už i moje dcery.`,
     name: "Autoservis Drupol",
     position: [49.9624367, 14.0763128],
     number: 17,
-    description: ['Krásný rybníček v Talichové údolí, kam se dříve chodilo na výlety. Dnes tu najdete naučné stezky a útočiště pro vzácné živočichy.'],
+    description: ['Jsme autorizovaný <strong>prodejce a servis vozů Škoda</strong> v Berouně, ve Zdicích a v Příbrami.',
+      'Více než 20 let zajišťujeme prodej nových  i ojetých vozů včetně pojištění a financování.',
+      'Starší vozy můžeme vykoupit na protiúčet.',
+      'Ve všech pobočkách provádíme kompletní záruční i pozáruční servis všech vozidel Škoda, měření emisí či pneuservis.',
+      '<strong>Do závěrečného slosování věnujeme dárkový poukaz na nákup u nás.</strong>'
+    ],
     revealDate: "2025-12-17",
   },
   {
