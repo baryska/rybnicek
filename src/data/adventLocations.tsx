@@ -266,7 +266,14 @@ brigádu ke mě chodí už i moje dcery.`,
     name: "Barrande",
     position: [49.9651383, 14.0723844],
     number: 21,
-    description: ['Místo, kde se učí světlo, obraz a příběh. Studenti filmu, divadla i hudby tu tvoří v bývalé budově základní školy.'],
+    description: ['Španělsko je naší vášní. Milujeme jeho otevřenost a vstřícnost, způsob stravování a hlavně vína. <strong>Kousek Španělska</strong> chceme nabídnout i vám v centru Berouna.',
+      'Dovážíme na český trh <strong>vína od menších, především rodinných vinařství z 15 vinařských oblastí Španělska</strong>. Jsme specialisté na Španělsko a je pro nás důležité znát prostředí i podmínky, ve kterých víno vzniklo.',
+      'Kromě vína nabízíme i točené pivo z pivovaru Trilobit. K pivu a vínu máme naše <strong>originální Tapas</strong>.',
+      'Každá část Španělska má svá typická tapas v závislosti na surovinách a zvyku. Mohou to být mističky, variace na bagetě či na špejli. V Barrande používáme styl, který je nám ze Španělska nejbližší, především oblastí Aragon, La Rioja, či Baskicka, kde se nazývají Pintxos.',
+      'V den, kdy rozsvítíme číslo adventního kalendáře, se u nás od 17.30 koná vánoční besídka s živou hudbou pro všechny naše příznivce!',
+      '<strong>Do závěrečného slosování věnujeme poukaz na útratu v Barrande.</strong>'
+
+    ],
     revealDate: "2025-12-21",
   },
   {
