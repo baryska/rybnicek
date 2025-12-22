@@ -280,7 +280,9 @@ brigádu ke mě chodí už i moje dcery.`,
     name: "Bistro U sýkorky",
     position: [49.9638125, 14.0704561],
     number: 22,
-    description: ['Pár kroků od Plzeňské brány, otevřelo Bistro U Sýkorky, gastronomické pohlazení s atmosférou, která jako by vypadla z malého pařížského podniku nebo z víkendového útočiště kdesi v Normandii.',
+    description: [
+      '<strong>POZOR, POZOR! 🙏 Ježíšek se nám v Berouně v samém finále kalendáře trochu popletl, má toho už asi taky chudák moc. V bistru U Sýkorky nesvítí 22, ale 23, takže dvacettrojky budou v Berouně hned dvě! 😁 Vyšlo to i tak, že budou jen kousíšek od sebe. Písmenko ale u Sýkorky najdete a do svého kalendáře ho zapište k číslu 22. Moc děkujeme za pochopení, i Ježíšek je jenom člověk ❤️</strong>',
+      'Pár kroků od Plzeňské brány, otevřelo Bistro U Sýkorky, gastronomické pohlazení s atmosférou, která jako by vypadla z malého pařížského podniku nebo z víkendového útočiště kdesi v Normandii.',
       'Bistro je osobním projektem Petry Sýkorové, původem interiérove designerky a ženy s jasnou představou o tom, jak má chutnat i působit místo, kam se lidé rádi vracejí.',
       'O kuchyni se stará zkušený kuchař Lukáš Holý, který má cit pro jednoduchost a čisté chutě, přitom však nechybí jemné moderní doteky. V kuchyni se pravidelně střídá se svým kolegou Jakubem Snebergerem, jehož přístup je stejně poctivý a osobitý.',
       'Bistro nabízí především snídaně a brunche - má otevřeno od 8 do 16:30. '
