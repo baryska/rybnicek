@@ -296,7 +296,7 @@ brigádu ke mě chodí už i moje dcery.`,
     description: ['Do masny u Horní brány se lidé vracejí znovu a znovu. Od roku 2007 zde pan Alfery provozuje <strong>masnu, která nabízí čerstvé maso a poctivé čerstvé uzeniny</strong>. S respektem k řemeslu.',
       '<strong>Řeznický mistr Kamil Alfery</strong> vyrábí část sortimentu podle vlastních receptů. Každý den si nechává dovézt maso vcelku a sám ho porcuje. Nehoní kvantitu. Hlídá kvalitu a čerstvost. Zákazníci si sem chodí pro vyhlášenou <strong>sekanou, vinnou klobásu a nebo salám Gothaj.</strong>',
       'Všechny výrobky jsou skvělé, Gothaj patří dle soutěží a ocenění mez top výrobky v republice.',
-      'Druhou provozovnu s oblíbenou a vždy obsazenou jídelnou má pan Alfery na sídlišti ve Hvězdě, třetí vede dcera Zuzka ve Zdicích.',
+      'Druhou provozovnu s oblíbenou a vždy obsazenou jídelnou má pan Alfery <strong>na sídlišti ve Hvězdě</strong>, třetí vede dcera Zuzka ve <strong>Zdicích</strong>.',
       'Místní řemeslo. Poctivá práce. Lidi, kteří dělají řemeslo naplno a srdcem. V Berouně je takových míst hodně a řeznictví pana Alferyho k nim rozhodně patří.',
       '<strong>Do závěrečného slosování věnujeme dárkový poukaz na nákup u nás.</strong>'
     ],
