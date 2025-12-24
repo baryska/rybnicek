@@ -47,6 +47,7 @@ const AdventMapComponent = ({ currentDate }: AdventMapComponentProps) => {
   const [collectedLetters, setCollectedLetters] = useState<Record<number, string>>({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [showSortedLetters, setShowSortedLetters] = useState(false);
   const searchParams = useSearchParams();
 
   const activeLocation: AdventLocation | undefined = visibleLocations.find((loc) => loc.number === activeLocationId);
@@ -65,6 +66,9 @@ const AdventMapComponent = ({ currentDate }: AdventMapComponentProps) => {
       localStorage.removeItem("adventLetters");
     }
   };
+
+  // Correct order of locations for the solution
+  const correctOrder = [6, 13, 15, 5, 10, 16, 20, 12, 18, 3, 14, 9, 2, 7, 4, 22, 1, 8, 21, 17, 19, 23, 11, 24];
 
   // Shuffle locations with fixed seed for consistent order
   const shuffledLocations = shuffleWithSeed(allLocationsMetadata, 5000);
@@ -241,33 +245,91 @@ const AdventMapComponent = ({ currentDate }: AdventMapComponentProps) => {
           <div id="sesbirana-pismena" className={styles.collectedLettersSection}>
             <div className={styles.collectedLettersHeader}>
               <h2 className={styles.collectedLettersTitle}>Sesbíraná písmena</h2>
-              <button
-                onClick={handleClearAllLetters}
-                className={styles.clearLettersButton}
-                title="Vymazat všechna písmena"
-              >
-                Vymazat vše
-              </button>
+              <div style={{ display: 'flex', gap: '0.5rem' }}>
+                <button
+                  onClick={() => setShowSortedLetters(!showSortedLetters)}
+                  style={{
+                    background: showSortedLetters ? '#4a7c59' : '#5a9168',
+                    color: 'white',
+                    border: 'none',
+                    padding: '0.5rem 1rem',
+                    borderRadius: '999px',
+                    cursor: 'pointer',
+                    fontWeight: 'bold',
+                    fontSize: '1rem',
+                    transition: 'background 0.2s'
+                  }}
+                  title="Seřadit písmena do správného pořadí"
+                  onMouseEnter={(e) => e.currentTarget.style.background = '#3d6649'}
+                  onMouseLeave={(e) => e.currentTarget.style.background = showSortedLetters ? '#4a7c59' : '#5a9168'}
+                >
+                  {showSortedLetters ? 'Skrýt tajenku' : 'Zobrazit tajenku'}
+                </button>
+                <button
+                  onClick={handleClearAllLetters}
+                  className={styles.clearLettersButton}
+                  title="Vymazat všechna písmena"
+                >
+                  Vymazat vše
+                </button>
+              </div>
             </div>
             <p className={styles.collectedLettersHint}>
               Písmena sesbíraná z jednotlivých míst. Pořadí písmen bude odhaleno na Štědrý den!
             </p>
+
             <div className={styles.collectedLettersGrid}>
-              {visibleLocations
-                .filter((loc) => collectedLetters[loc.number])
-                .sort((a, b) => a.number - b.number)
-                .map((loc) => (
-                  <div key={loc.number} className={styles.collectedLetterItem}>
-                    <div className={styles.collectedLetterNumber}>{loc.number}</div>
-                    <div className={styles.collectedLetterBox}>
-                      {collectedLetters[loc.number]}
-                    </div>
-                    <div className={styles.collectedLetterName}>{loc.name}</div>
+              {(showSortedLetters
+                ? correctOrder
+                    .filter(locationNumber => collectedLetters[locationNumber] !== undefined)
+                    .map(locationNumber => visibleLocations.find(loc => loc.number === locationNumber))
+                    .filter((loc): loc is AdventLocation => loc !== undefined)
+                : visibleLocations
+                    .filter((loc) => collectedLetters[loc.number])
+                    .sort((a, b) => a.number - b.number)
+              ).map((loc) => (
+                <div key={loc.number} className={styles.collectedLetterItem}>
+                  <div className={styles.collectedLetterNumber}>{loc.number}</div>
+                  <div className={styles.collectedLetterBox}>
+                    {collectedLetters[loc.number]}
                   </div>
-                ))}
+                  <div className={styles.collectedLetterName}>{loc.name}</div>
+                </div>
+              ))}
             </div>
           </div>
         )}
+
+        <div className={styles.collectedLettersSection}>
+          <h2 className={styles.collectedLettersTitle}>Správné pořadí písmen</h2>
+          <p className={styles.collectedLettersHint}>
+            Pro ty, kdo vyplňovali adventní kalendář na papíře
+          </p>
+          <div style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '0.5rem',
+            justifyContent: 'center',
+            alignItems: 'center',
+            fontSize: '1.2rem',
+            fontWeight: 'bold',
+            color: '#1b4a4c'
+          }}>
+            {correctOrder.map((num, index) => (
+              <span key={index} style={{
+                background: 'white',
+                border: '2px solid #e5816d',
+                borderRadius: '6px',
+                padding: '0.5rem',
+                width: '50px',
+                textAlign: 'center',
+                display: 'inline-block'
+              }}>
+                {num}
+              </span>
+            ))}
+          </div>
+        </div>
 
         <AdventSubmitForm />
         <div className={pageStyles.instructionsLinkContainer}>
