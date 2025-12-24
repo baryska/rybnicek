@@ -308,8 +308,9 @@ brigádu ke mě chodí už i moje dcery.`,
     number: 24,
     description: ['Celý adventní kalendář vznikl z jednoduché myšlenky propojovat sousedy, podniky kolem náměstí a místa, kde se lidé potkávají. Vytvářet příležitosti k setkávání, ke zpomalení a k pocitu, že město není anonymní prostor, ale živé sousedství.',
       'Radnice k tomuto sousedství patří stejně jako kavárny, obchody, domy i náměstí samotné. Je součástí každodenního života města a místem, kde se potkává veřejný prostor s tím osobním. Proto jsme rádi, že právě tady má rybníčková čtyřiadvacítka své místo.',
+      '<strong>Písmeno najdete v okně v přízemí pod rozsvíceným číslem.</strong>',
       'Děkujeme všem, kteří byli součástí letošního adventu. Za otevřenost, spolupráci i chuť být spolu. Přejeme klidné svátky a dobrý nový rok, ve kterém bude sousedství dál růst.'
     ],
-    revealDate: "2025-12-25",
+    revealDate: "2025-12-24",
   },
 ];
