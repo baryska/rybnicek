@@ -1,0 +1,392 @@
+.map {
+  height: 70vh;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.info {
+  margin: 0 auto;
+  text-align: left;
+  width: 1000px;
+  padding: 1rem;
+  position: relative;
+  overflow: visible;
+}
+
+.title {
+  font-size: 3.5rem;
+  color: #dfdbd3;
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
+.infoText {
+  font-size: 1.4rem;
+  color: #dfdbd3;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.rulesSection {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+.rulesTitle {
+  font-size: 1.3rem;
+  color: #e5816d;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.rulesList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.rulesList li {
+  font-size: 1.1rem;
+  color: #dfdbd3;
+  padding: 0.4rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.rulesList li::before {
+  content: '\2022';
+  position: absolute;
+  left: 0;
+  color: #346f70;
+  font-size: 1.4rem;
+}
+
+.tajenkaSection {
+  margin: 3rem auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #dfdbd3 0%, #bccccd 100%);
+  border-radius: 12px;
+  border: 3px solid #e5816d;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tajenkaHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.tajenkaTitle {
+  font-size: 2rem;
+  color: #1b4a4c;
+  margin: 0;
+  font-weight: bold;
+}
+
+.clearButton {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background-color: #e5816d;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  white-space: nowrap;
+}
+
+.clearButton:hover {
+  background-color: #d98f82;
+}
+
+.tajenkaHint {
+  font-size: 1.1rem;
+  color: #346f70;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.tajenkaGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.tajenkaItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.tajenkaNumber {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #346f70;
+  margin-bottom: 0.25rem;
+}
+
+.tajenkaInput {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  background: white;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  color: #1b4a4c;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  padding: 0;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.tajenkaInput:focus {
+  border-color: #e5816d;
+  box-shadow: 0 0 0 3px rgba(229, 129, 109, 0.25);
+}
+
+.tajenkaInputFilled {
+  border-color: #346f70;
+  background: #f0f5f5;
+}
+
+.cipherSection {
+  margin: 3rem auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #dfdbd3 0%, #bccccd 100%);
+  border-radius: 12px;
+  border: 3px solid #e5816d;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cipherTitle {
+  font-size: 2rem;
+  color: #1b4a4c;
+  margin: 0 0 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.cipherHidden {
+  font-size: 1.2rem;
+  color: #346f70;
+  text-align: center;
+  font-weight: 500;
+  padding: 2rem;
+}
+
+.cipherTable {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  margin-bottom: 2rem;
+}
+
+.cipherRow {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.cipherCell {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.cipherCellTop {
+  background: #346f70;
+  color: white;
+}
+
+.cipherCellBottom {
+  background: #e5816d;
+  color: white;
+}
+
+.cipherCellSpace {
+  width: auto;
+  padding: 0 0.5rem;
+  font-size: 0.8rem;
+  font-weight: normal;
+}
+
+.cipherArrow {
+  font-size: 1.2rem;
+  color: #1b4a4c;
+  text-align: center;
+  padding: 0.25rem 0;
+}
+
+.decodedSection {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.decodedLabel {
+  font-size: 1.2rem;
+  color: #1b4a4c;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.decodedGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.decodedInput {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  background: white;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  color: #1b4a4c;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  padding: 0;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.decodedInput:focus {
+  border-color: #346f70;
+  box-shadow: 0 0 0 3px rgba(52, 111, 112, 0.25);
+}
+
+.decodedInputFilled {
+  border-color: #346f70;
+  background: #e8f0f0;
+}
+
+@media (max-width: 1024px) {
+  .map {
+    height: 60vh;
+  }
+
+  .info {
+    width: 90%;
+  }
+
+  .title {
+    font-size: 2.8rem;
+  }
+
+  .infoText {
+    font-size: 1.2rem;
+  }
+
+  .cipherCell {
+    width: 32px;
+    height: 32px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .map {
+    height: 50vh;
+    border-radius: 0;
+  }
+
+  .info {
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .infoText {
+    font-size: 1rem;
+  }
+
+  .tajenkaSection {
+    padding: 1rem;
+    margin: 2rem auto;
+  }
+
+  .tajenkaHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .tajenkaTitle {
+    font-size: 1.5rem;
+  }
+
+  .tajenkaInput {
+    width: 42px;
+    height: 42px;
+    font-size: 1.6rem;
+  }
+
+  .cipherSection {
+    padding: 1rem;
+    margin: 2rem auto;
+  }
+
+  .cipherTitle {
+    font-size: 1.5rem;
+  }
+
+  .cipherCell {
+    width: 26px;
+    height: 26px;
+    font-size: 0.8rem;
+  }
+
+  .decodedInput {
+    width: 42px;
+    height: 42px;
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tajenkaInput {
+    width: 36px;
+    height: 36px;
+    font-size: 1.4rem;
+  }
+
+  .cipherCell {
+    width: 22px;
+    height: 22px;
+    font-size: 0.7rem;
+  }
+
+  .decodedInput {
+    width: 36px;
+    height: 36px;
+    font-size: 1.4rem;
+  }
+}
