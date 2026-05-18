@@ -5,7 +5,7 @@ import { Suspense } from "react";
 import ForestMapClientPage from "@/components/ForestMapClientPage";
 import styles from "./style.module.css";
 
-const ACCESS_KEY = "vinice2025";
+const ACCESS_KEY = "vinice2026";
 
 function VinicePage() {
   const searchParams = useSearchParams();
