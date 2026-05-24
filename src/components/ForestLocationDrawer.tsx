@@ -92,6 +92,10 @@ function TaskBlock({
 
       <p className={styles.question}>{task.question}</p>
 
+      {task.descriptionAbove && (
+        <p className={styles.taskDescription}>{task.descriptionAbove}</p>
+      )}
+
       {task.hasImage && (
         task.imageUrl ? (
           (Array.isArray(task.imageUrl) ? task.imageUrl : [task.imageUrl]).map((url, i) => (

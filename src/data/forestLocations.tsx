@@ -1,6 +1,7 @@
 export interface ForestTask {
   taskNumber: number;
   question: string;
+  descriptionAbove?: string;
   description?: string;
   options: { text: string; letter: string }[];
   hasImage: boolean;
@@ -57,8 +58,8 @@ export const forestStations: ForestStation[] = [
         taskNumber: 2,
         question:
           "Pokračuj cestou do lesa, dokud u ní neuvidíš alespoň tři vývraty (vyvrácené kořeny stromů). Přijde ti to jako náhoda? Co myslíš, že to způsobilo?",
-        description:
-          "Nejdřív ale najdi klacík a polož ho na některý z vývratů, které si objevil. Bude to důkaz, že si to našel!",
+        descriptionAbove:
+          "Nejdřív ale najdi klacík a polož ho na některý z vývratů, které jsi objevil. Bude to důkaz, že jsi to našel!",
         options: [
           {
             text: "Praděd – obrovský strážce lesa, který při své cestě občas porazí strom, aby mohl projít, když tudy jednou za sto let prochází",
