@@ -289,7 +289,7 @@ export const forestStations: ForestStation[] = [
           },
           {
             text: "Krmit koně, protože mohou být alergičtí – stejně jako lidé – a například i obyčejná mrkev, nebo pečivo je může zabít",
-            letter: "V",
+            letter: "A",
           },
         ],
         hasImage: true,
