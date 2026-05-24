@@ -48,7 +48,19 @@ const ForestLocationDrawer = ({
     >
       <div className={styles.stationNumber}>{station.number}</div>
       <h2 className={styles.title}>{station.name}</h2>
-      <div className={styles.coordinates}>{station.coordinatesDisplay}</div>
+      <a
+        href={`https://mapy.cz/turisticka?y=${station.position[0]}&x=${station.position[1]}&z=18`}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.coordinates}
+        style={{ display: "block", textDecoration: "underline", cursor: "pointer" }}
+      >
+        {station.coordinatesDisplay} ↗
+      </a>
+
+      {station.intro && (
+        <div className={styles.stationIntro}>{station.intro}</div>
+      )}
 
       {station.tasks.map((task) => (
         <TaskBlock
@@ -80,20 +92,19 @@ function TaskBlock({
 
       <p className={styles.question}>{task.question}</p>
 
-      {task.description && (
-        <p className={styles.taskDescription}>{task.description}</p>
-      )}
-
       {task.hasImage && (
         task.imageUrl ? (
-          <Image
-            src={task.imageUrl}
-            alt={`Obrázek k úkolu ${task.taskNumber}`}
-            width={600}
-            height={400}
-            className={styles.taskImage}
-            style={{ objectFit: 'cover' }}
-          />
+          (Array.isArray(task.imageUrl) ? task.imageUrl : [task.imageUrl]).map((url, i) => (
+            <Image
+              key={i}
+              src={url}
+              alt={`Obrázek k úkolu ${task.taskNumber}`}
+              width={600}
+              height={400}
+              className={styles.taskImage}
+              style={{ objectFit: 'cover' }}
+            />
+          ))
         ) : (
           <div className={styles.imagePlaceholder}>
             <div className={styles.imagePlaceholderIcon}>🖼️</div>
@@ -126,6 +137,22 @@ function TaskBlock({
       {selectedLetter && (
         <div className={styles.savedConfirm}>
           ✅ Písmeno <strong>{selectedLetter}</strong> uloženo na pozici {task.taskNumber}
+        </div>
+      )}
+
+      {task.description && (
+        <div className={styles.descriptionBlock}>
+          <p className={styles.taskDescription}>{task.description}</p>
+          {task.descriptionImageUrl && (
+            <Image
+              src={task.descriptionImageUrl}
+              alt={`Obrázek k úkolu ${task.taskNumber}`}
+              width={600}
+              height={400}
+              className={styles.taskImage}
+              style={{ objectFit: 'cover' }}
+            />
+          )}
         </div>
       )}
     </div>

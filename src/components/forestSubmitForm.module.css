@@ -1,0 +1,232 @@
+.formSection {
+  margin: 3rem auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #dfdbd3 0%, #bccccd 100%);
+  border-radius: 12px;
+  border: 3px solid #e5816d;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.formTitle {
+  font-size: 2rem;
+  color: #1b4a4c;
+  margin: 0 0 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.formDescription {
+  font-size: 1.05rem;
+  color: #346f70;
+  text-align: center;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.formGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.input {
+  padding: 0.75rem 1rem;
+  background: white;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #1b4a4c;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.input:focus {
+  border-color: #346f70;
+  box-shadow: 0 0 0 3px rgba(52, 111, 112, 0.15);
+}
+
+.input::placeholder {
+  color: #999;
+}
+
+.selectPlaceholder {
+  color: #999 !important;
+}
+
+.textarea {
+  padding: 0.75rem 1rem;
+  background: white;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #1b4a4c;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.2s;
+  resize: vertical;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.textarea:focus {
+  border-color: #346f70;
+  box-shadow: 0 0 0 3px rgba(52, 111, 112, 0.15);
+}
+
+.textarea::placeholder {
+  color: #999;
+}
+
+.imageSection {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.imageLabel {
+  font-size: 1rem;
+  color: #346f70;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.imageUploadButton {
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+  background-color: #346f70;
+  color: white;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.imageUploadButton:hover {
+  background-color: #2a5a5b;
+}
+
+.imagePreviewContainer {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.imagePreview {
+  max-width: 300px;
+  max-height: 200px;
+  border-radius: 8px;
+  border: 2px solid #346f70;
+  object-fit: cover;
+}
+
+.imageRemoveButton {
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  background-color: #e5816d;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.imageRemoveButton:hover {
+  background-color: #d9705c;
+}
+
+.submitButton {
+  display: block;
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 0.85rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background-color: #e5816d;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.submitButton:hover {
+  background-color: #d9705c;
+}
+
+.submitButton:active {
+  transform: scale(0.98);
+}
+
+.submitButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.statusSuccess {
+  text-align: center;
+  color: #2a7a2a;
+  font-weight: 600;
+  margin-top: 1rem;
+  font-size: 1.05rem;
+}
+
+.statusError {
+  text-align: center;
+  color: #c0392b;
+  font-weight: 600;
+  margin-top: 1rem;
+  font-size: 1.05rem;
+}
+
+.contactSection {
+  margin-top: 2rem;
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 2px solid rgba(52, 111, 112, 0.2);
+}
+
+.contactText {
+  font-size: 1rem;
+  color: #346f70;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.contactItem {
+  margin: 0.3rem 0;
+}
+
+.contactLink {
+  color: #e5816d;
+  text-decoration: underline;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.contactLink:hover {
+  color: #d9705c;
+}
+
+@media (max-width: 768px) {
+  .formSection {
+    padding: 1.25rem;
+    margin: 2rem auto;
+  }
+
+  .formTitle {
+    font-size: 1.5rem;
+  }
+
+  .formDescription {
+    font-size: 0.95rem;
+  }
+
+  .imagePreview {
+    max-width: 250px;
+  }
+}

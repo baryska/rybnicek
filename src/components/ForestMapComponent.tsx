@@ -6,6 +6,7 @@ import { forestStations, ForestStation } from "@/data/forestLocations";
 import { useState, useEffect } from "react";
 import ForestLocationDrawer from "./ForestLocationDrawer";
 import Link from "next/link";
+import ForestSubmitForm from "./ForestSubmitForm";
 import styles from "./forestMap.module.css";
 import pageStyles from "../app/vinice/style.module.css";
 
@@ -158,10 +159,10 @@ const ForestMapComponent = () => {
           vám ukážeme, až budete mít všechna písmena sesbíraná.
         </p>
         <p className={styles.infoText}>
-          Písmena si zapisujte do tajenky níže. Kliknutím na stanoviště v mapě si můžete přečíst úkoly.
+          Kliknutím na stanoviště v mapě si můžete přečíst úkoly. Odpověď se vám kliknutím automaticky zapíše do tajenky zde na webu, případně si ji vyplňte do své papírové tajenky.
         </p>
         <p className={styles.infoText} style={{ textAlign: "left", marginTop: "3rem" }}>
-          Tato hra vznikla ve spolupráci se spolkem{" "}
+          Tato hra vznikla ve spolupráci s berounským spolkem{" "}
           <a
             href="https://www.facebook.com/profile.php?id=61585544017185"
             target="_blank"
@@ -269,6 +270,8 @@ const ForestMapComponent = () => {
             </div>
           )}
         </div>
+
+        <ForestSubmitForm />
 
         <div className={pageStyles.instructionsLinkContainer}>
           <Link href="/" className={pageStyles.instructionsLink}>

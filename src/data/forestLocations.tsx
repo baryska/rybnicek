@@ -4,7 +4,8 @@ export interface ForestTask {
   description?: string;
   options: { text: string; letter: string }[];
   hasImage: boolean;
-  imageUrl?: string;
+  imageUrl?: string | string[];
+  descriptionImageUrl?: string;
 }
 
 export interface ForestStation {
@@ -12,6 +13,7 @@ export interface ForestStation {
   name: string;
   position: [number, number];
   coordinatesDisplay: string;
+  intro?: string;
   tasks: ForestTask[];
 }
 
@@ -36,11 +38,12 @@ export const forestStations: ForestStation[] = [
             letter: "A",
           },
           {
-            text: "Smíšený – druhy stromů se tu mísí, ať jsou mladé nebo staré, vysoké či nízké",
+            text: "Smíšený – druhy stromů se tu mísí, ať jsou mladé nebo staré, vysoké či nízké, jehličnaté i listnaté",
             letter: "Q",
           },
         ],
-        hasImage: false,
+        hasImage: true,
+        imageUrl: "/task-1.png",
       },
     ],
   },
@@ -55,7 +58,7 @@ export const forestStations: ForestStation[] = [
         question:
           "Pokračuj cestou do lesa, dokud u ní neuvidíš alespoň tři vývraty (vyvrácené kořeny stromů). Přijde ti to jako náhoda? Co myslíš, že to způsobilo?",
         description:
-          "Najdi kamínek, nebo klacík a polož ho na největší z vývratů, které si tu objevil. Bude to důkaz, že si tento úkol splnil!",
+          "Nejdřív ale najdi klacík a polož ho na některý z vývratů, které si objevil. Bude to důkaz, že si to našel!",
         options: [
           {
             text: "Praděd – obrovský strážce lesa, který při své cestě občas porazí strom, aby mohl projít, když tudy jednou za sto let prochází",
@@ -71,6 +74,7 @@ export const forestStations: ForestStation[] = [
           },
         ],
         hasImage: true,
+        imageUrl: "/task-2.png",
       },
     ],
   },
@@ -79,11 +83,12 @@ export const forestStations: ForestStation[] = [
     name: "Dračí teritorium",
     position: [49.96534, 14.0461],
     coordinatesDisplay: "49°57,92068'N, 14°2,76592'E",
+    intro: "Jsi na 3. stanovišti a čekají tě zde tři úkoly!",
     tasks: [
       {
         taskNumber: 3,
         question:
-          "Hlídej si pravou stranu a za chvilku uvidíš trojitý strom. Do jaké skupiny stromů patří tento strom?",
+          "Napravo do cesty najdi trojitý strom. Do jaké skupiny stromů tento strom patří?",
         options: [
           {
             text: "Začarovaných – je to tříhlavý drak, který se ve strom proměnil kouzlem. Přitom tři vysoké kmeny značí tři vysoké krky dračí",
@@ -99,11 +104,12 @@ export const forestStations: ForestStation[] = [
           },
         ],
         hasImage: true,
+        imageUrl: "/task-3.png",
       },
       {
         taskNumber: 4,
         question:
-          "O pár kroků výš, nad trojitým stromem, si všimni něčeho, co je v zimě vidět lépe než v létě, když se to skrývá za lesní zelení. Co to je, co bys v lese nečekal a dál od cesty napravo v kopci to můžeš zahlédnout?",
+          "V kopci na levé straně za trojitým stromem hledej něco, co se skrývý výše v lese. Co to je, co bys v lese nečekal?",
         options: [
           {
             text: "Dračí sluj v nadzemním provedení",
@@ -118,18 +124,29 @@ export const forestStations: ForestStation[] = [
             letter: "M",
           },
         ],
-        hasImage: false,
+        hasImage: true,
+        imageUrl: "/task-4.png",
       },
       {
         taskNumber: 5,
-        question:
-          'Na stejné straně cesty, alespoň 20 čapích kroků po ní dál, hledej další „dračí stromy“. Jsme totiž toho nevědeckého, ale pohádkami ověřeného názoru, že kouzlem pro záchranu Berouna byli ve své době zdejší draci proměněni ve stromy. Při hledání pamatuj: Každou hlavu dračí samostatný kmen jednoho stromu značí. Kolik hlav měl ten největší a nejvícehlavy?',
+        question: `Posuň se na půl cesty k dalšímu
+          stanovišti (zasadili jsme na to místo do
+          cesty pařez) a po pravé straně hledej „dračí
+          stromy“. Zastáváme totiž pohádkami
+          ověřený názor, že kouzlem pro záchranu
+          Berouna byli zdejší draci proměněni ve
+          stromy. Nápověda pro hledání: Každou
+          hlavu dračí jeden kmen jednoho stromu
+          značí. Tedy, čím více hlav drak měl, tím více
+          má strom kmenů. Kolik hlav měl drak
+          s nejvíce hlavami?`,
         options: [
           { text: "Dvě", letter: "K" },
           { text: "Tři", letter: "N" },
           { text: "Čtyři", letter: "A" },
         ],
-        hasImage: false,
+        hasImage: true,
+        imageUrl: "/task-5.png",
       },
     ],
   },
@@ -142,7 +159,11 @@ export const forestStations: ForestStation[] = [
       {
         taskNumber: 6,
         question:
-          "Jdi dál po cestě výš na další stanoviště, dávej ale pozor, na levé straně půjdeš okolo stromu, který jako by chtěl vstoupit do cesty. Podle toho jednoho stromu můžeš poznat, kde je sever a kde jih. Víš, podle čeho?",
+          `Na levé straně cesty najdeš strom,
+          který jako by chtěl vstoupit do cesty. Poznáš
+          podle tohoto stromu, kde je sever a kde jih? Je to
+          důležité, protože dál musíš najít cestu, která
+          povede na jih`,
         options: [
           {
             text: "Na straně, na které je strom nejteplejší, tam je jih, zkus to",
@@ -158,26 +179,7 @@ export const forestStations: ForestStation[] = [
           },
         ],
         hasImage: true,
-      },
-      {
-        taskNumber: 7,
-        question:
-          "Jakmile určíš světové strany, dál buď už velmi pozorný … koukej, abyš nepřehlédl někde poblíž vyšlapanou cestičku vedoucí na jih. Co v této lokalitě lidé pěstovali před 500 lety?",
-        options: [
-          {
-            text: "Dračí ovoce, protože co jiného v téhle oblasti plné draků pěstovat",
-            letter: "N",
-          },
-          {
-            text: "Pšenici, protože pšenice dává mouku, mouka dává chleba a chleba je základ naší stravy",
-            letter: "A",
-          },
-          {
-            text: "Vinnou révu, protože od doby Karla IV se i všechny jižní stráně nad Berounem, vč. této, osázely vinnou révou, aby byl dostatek vína, proto se tato oblast jmenuje Vinice",
-            letter: "M",
-          },
-        ],
-        hasImage: true,
+        imageUrl: "/task-6.png",
       },
     ],
   },
@@ -188,7 +190,12 @@ export const forestStations: ForestStation[] = [
     coordinatesDisplay: "49°57,89519'N, 14°2,71028'E",
     tasks: [
       {
-        taskNumber: 8,
+        taskNumber: 7,
+        description: `Možná jsi při hledání našel malé lesní stavby.
+          Jestli máš chuť si také nějakou postavit, použij
+          suché větvičky, listy, kameny (jen ne ty hraniční
+          zakopané v zemi :) a svoji fantazii. Udělej fotku
+          a poděl se s námi o ní. `,
         question:
           "Postav se na stanovišti ve směru, jak si po cestě sem přišel. Přibližně 25 čapích kroků doleva a dvojnásobek čapích kroků doprava, se nalézá kámen vystupující ze země. Zkus najít oba. Co je na nich napsáno a co to asi znamená?",
         options: [
@@ -202,25 +209,28 @@ export const forestStations: ForestStation[] = [
           },
           {
             text: "MB – hranice pozemků Města Berouna",
-            letter: "I",
+            letter: "M",
           },
         ],
         hasImage: true,
+        imageUrl: "/task-7.png",
+        descriptionImageUrl: "/task-7-domecek.png",
       },
     ],
   },
   {
     number: 6,
-    name: "Druhý z kamenů",
+    name: "Třetí z kamenů",
     position: [49.96482, 14.04459],
     coordinatesDisplay: "49°57,88928'N, 14°2,67548'E",
+    intro: "Jsi u třetího kamene a čekají tě tři úkoly.",
     tasks: [
       {
-        taskNumber: 9,
-        description:
-          "Na tomto stanovišti a v jeho okolí to musíš dobře prozkoumat. Možná si po cestě viděl nějaké malé lesní stavby pro skřítky, nebo jen tak pro radost.",
+        taskNumber: 8,
         question:
-          "Po cestě od horního kamene dál do kopce najdi velký betonový prvek, který v lese působí nezvykle. K čemu myslíš, že sloužil?",
+          `Hledej v okolí velký
+            betonový prvek, který v lese působí nezvykle. K
+            čemu asi sloužil?`,
         options: [
           {
             text: "Základna obranné věže na ochranu Berouna",
@@ -232,17 +242,18 @@ export const forestStations: ForestStation[] = [
           },
           {
             text: "Základna pro stožár elektrického vedení",
-            letter: "V",
+            letter: "I",
           },
         ],
         hasImage: true,
+        imageUrl: "/task-8-9.png",
       },
       {
-        taskNumber: 10,
+        taskNumber: 9,
         question:
-          "Pod betonovým základem je ďolík, jáma nebo propadlina. Co se na tom místě mohlo dříve nacházet?",
-        description:
-          "A viděl si křížek na zemi a u něj svíčky? Naštěstí pouze na baterky a v uzavřených nádobách. Slyšeli jsme, že tady odpočívá pejsek, který tady často chodil a měl to tady rád.",
+          `Pod betonovým základem
+            je ďolík. Co se zde dříve mohlo
+            nacházet?`,
         options: [
           {
             text: "Trilobiti (zkameněliny), ví se, že Beroun na ně byl bohatý a tady jich bylo minimálně tolik, kolik tu bylo draků",
@@ -250,7 +261,7 @@ export const forestStations: ForestStation[] = [
           },
           {
             text: "Voda – tůňka spojená se studnou výše v lese, ale když přišla studna o vodu, přišla o ní i tato tůňka",
-            letter: "A",
+            letter: "V",
           },
           {
             text: "Lanýže, ale rychle se vysbíraly",
@@ -258,28 +269,30 @@ export const forestStations: ForestStation[] = [
           },
         ],
         hasImage: true,
+        imageUrl: "/task-8-9.png",
       },
       {
-        taskNumber: 11,
+        taskNumber: 10,
         question:
           "Přes cestu uvidíš výběhy. Už to bude skoro 30 let, co k této oblasti patří koně a výběhy pro koně. Věděl bys, co se z dále uvedených možností nesmí u koní dělat?",
         description:
           "Poznal si, že správná odpověď jsou hned dvě z uvedených možností? Tak to si zkušený! Každopádně doplň jen jedno písmeno na pozici 11 tajenky.",
         options: [
           {
-            text: "Zamávat na koně, přestože koně neumí zamávat nazpět a bylo by to neslušné",
+            text: "Zamávat na koně – protože by mu bylo líto, že nemůže zamávat zpátky ",
             letter: "R",
           },
           {
             text: "Vstupovat do ohrad, protože v ohradách jsou koně, kteří si zaslouží svůj bezpečný prostor a s jejich váhou i kolem 500 kg mohou nepříjemně překvapit",
-            letter: "V",
+            letter: "A",
           },
           {
-            text: "Krmit koně, protože mohou být alergičtí – stejně jako lidé – a například i obyčejná mrkev, nebo pečivo je může také zabít",
+            text: "Krmit koně, protože mohou být alergičtí – stejně jako lidé – a například i obyčejná mrkev, nebo pečivo je může zabít",
             letter: "V",
           },
         ],
-        hasImage: false,
+        hasImage: true,
+        imageUrl: "/task-10.png",
       },
     ],
   },
@@ -290,18 +303,19 @@ export const forestStations: ForestStation[] = [
     coordinatesDisplay: "49.9648061N, 14.0434572E",
     tasks: [
       {
-        taskNumber: 12,
+        taskNumber: 11,
         question:
-          "Blížíme se k památnému dubu, který poznáš podle značky Památný strom. Jak starý tento dub přibližně je? Řeknu ti jen, že památným stromem byl tento dub vyhlášen v roce 1978, tedy již tenkrát musel být starší než kdokoli z tvé rodiny.",
+          "Blížíme se k památnému dubu, který poznáš podle značky Památný strom. Jak starý tento dub přibližně je? Řeknu ti jen, že památným stromem byl tento dub vyhlášen v roce 1978.",
         options: [
           { text: "100 let", letter: "M" },
-          { text: "250 let", letter: "P" },
+          { text: "250 let", letter: "V" },
           { text: "500 let", letter: "I" },
         ],
         hasImage: true,
+        imageUrl: "/task-11.png",
       },
       {
-        taskNumber: 13,
+        taskNumber: 12,
         question:
           "Stoupni si k dubu, a když vás bude víc, zkuste ho obejmout. Pak se otoč, uvidíš kládu na sezení. Nad ní vede cesta shora, která kládu obchází z obou stran. Věř nebo ne, na té cestě nahoru je mnoho překážek a vede až na Děd. K čemu asi slouží?",
         options: [
@@ -311,14 +325,36 @@ export const forestStations: ForestStation[] = [
           },
           {
             text: "Závodnímu houbaření. Protože houbařů je stále více a hub méně, tak se tady běhá známý berounský závod s houbařským košíkem",
-            letter: "P",
+            letter: "V",
           },
           {
             text: "Cyklokrosové sjezdy. Terén si oblíbili cyklokrosaři, výše vybudovali překážky a sjíždí z Dědu. Dávej pozor, aby tě nezaskočilo letící kolo!",
+            letter: "P",
+          },
+        ],
+        hasImage: true,
+        imageUrl: "/task-12.png",
+      },
+      {
+        taskNumber: 13,
+        question:
+          "Tady u památného dubu je již po staletí křižovatka cest mezi městem, statkem a Dědem. Víš, odkdy je na tomto místě statek, který dnes podle místa nese jméno Statek U Dubu?",
+        options: [
+          {
+            text: "Od roku 1926",
+            letter: "M",
+          },
+          {
+            text: "Od roku 1800",
+            letter: "U",
+          },
+          {
+            text: "Je pravděpodobné, že zde statek byl již před třicetiletou válkou (tedy před rokem 1618), každopádně již dříve zde bylo zázemí pro zdejší vinice, od kterých pochází také název této lokality",
             letter: "V",
           },
         ],
         hasImage: true,
+        imageUrl: "/task-13.png",
       },
     ],
   },

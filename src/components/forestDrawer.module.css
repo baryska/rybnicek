@@ -23,6 +23,18 @@
   font-family: monospace;
 }
 
+.stationIntro {
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: #346f70;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  padding: 0.75rem 1rem;
+  background: #e8f0f0;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
 .taskSection {
   margin-bottom: 2rem;
   padding-bottom: 2rem;
