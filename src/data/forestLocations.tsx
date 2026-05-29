@@ -89,10 +89,10 @@ export const forestStations: ForestStation[] = [
       {
         taskNumber: 3,
         question:
-          "Napravo do cesty najdi trojitý strom. Do jaké skupiny stromů tento strom patří?",
+          "Napravo od cesty najdi trojitý strom. Do jaké skupiny stromů tento strom patří?",
         options: [
           {
-            text: "Začarovaných – je to tříhlavý drak, který se ve strom proměnil kouzlem. Přitom tři vysoké kmeny značí tři vysoké krky dračí",
+            text: "Začarovaných – byl to tříhlavý drak, který byl ve strom proměněn kouzlem. Přitom tři vysoké kmeny značí tři vysoké krky dračí",
             letter: "K",
           },
           {
@@ -110,7 +110,7 @@ export const forestStations: ForestStation[] = [
       {
         taskNumber: 4,
         question:
-          "V kopci na levé straně za trojitým stromem hledej něco, co se skrývý výše v lese. Co to je, co bys v lese nečekal?",
+          "V kopci na levé straně za trojitým stromem hledej něco, co se skrývá výše v lese. Co to je, co bys v lese nečekal?",
         options: [
           {
             text: "Dračí sluj v nadzemním provedení",
@@ -277,7 +277,7 @@ export const forestStations: ForestStation[] = [
         question:
           "Přes cestu uvidíš výběhy. Už to bude skoro 30 let, co k této oblasti patří koně a výběhy pro koně. Věděl bys, co se z dále uvedených možností nesmí u koní dělat?",
         description:
-          "Poznal si, že správná odpověď jsou hned dvě z uvedených možností? Tak to si zkušený! Každopádně doplň jen jedno písmeno na pozici 11 tajenky.",
+          "Poznal jsi, že správná odpověď jsou hned dvě z uvedených možností? Tak to jsi zkušený! Každopádně doplň jen jedno písmeno na pozici 10 tajenky.",
         options: [
           {
             text: "Zamávat na koně – protože by mu bylo líto, že nemůže zamávat zpátky ",

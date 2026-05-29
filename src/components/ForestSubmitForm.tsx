@@ -8,7 +8,7 @@ const ForestSubmitForm = () => {
     
 
       <p className={formStyles.formDescription}>
-        Pošlete nám vyluštěnou tajenku, zprávu nebo fotku e-mailem:
+        Vyluštěnou tajenku, fotku lesního domečku nebo zprávu nám můžete poslat přes:
       </p>
 
       <div className={formStyles.contactSection}>
@@ -30,9 +30,8 @@ const ForestSubmitForm = () => {
         </p>
       </div>
         <p className={formStyles.formDescription}>
-        Jestli nám chcete něco vzkázat, budeme moc rádi za zpětnou vazbu pro
-        naši další práci pro děti. Stejně tak nám můžete poslat fotku lesního
-        domečku, který jste postavili.
+        Budeme moc rádi za zpětnou vazbu pro naši další práci pro děti, případně za sledování našeho profilu.
+
       </p>
     </div>
   );

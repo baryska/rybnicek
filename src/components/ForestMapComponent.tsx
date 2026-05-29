@@ -179,7 +179,7 @@ const ForestMapComponent = () => {
             <li>Nekřičíme (pokud to není o pomoc)</li>
             <li>Nepoškozujeme stromy (pokud nejsme zajíc, co potřebuje obrousit zuby)</li>
             <li>Nekrmíme žádná zvířata (kromě svých)</li>
-            <li>Nenecháváme po sobě v lese odpadky</li>
+            <li>Nenecháváme po sobě v lese odpadky (ať se les nestane skládkou)</li>
           </ul>
         </div>
 
