@@ -17,7 +17,7 @@ export default function HomePage() {
             <source srcSet="/banner_mobil.png" media="(max-width: 768px)" />
             <img src="/banner.png" alt="Banner" className={styles.bannerImage} />
           </picture>
-          <FloatingLink />
+          {/* <FloatingLink /> */}
         </section>
         <section>
           <p className={`${styles.fadeIn} ${styles.gradientText}`}>Budujeme komunitu lidí, kteří se zajímají o dění v Berouně a okolí.</p>

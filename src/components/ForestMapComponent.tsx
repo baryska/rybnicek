@@ -159,7 +159,9 @@ const ForestMapComponent = () => {
           vám ukážeme, až budete mít všechna písmena sesbíraná.
         </p>
         <p className={styles.infoText}>
-          Kliknutím na stanoviště v mapě si můžete přečíst úkoly. Odpověď se vám kliknutím automaticky zapíše do tajenky zde na webu, případně si ji vyplňte do své papírové tajenky.
+          Kliknutím na stanoviště v mapě si můžete přečíst úkoly. Odpověď se vám kliknutím automaticky zapíše do tajenky zde na webu, případně si{" "}
+            <a href="/lesní hra Vinice.pdf" download style={{ textDecoration: "underline" }}>stáhněte hru v PDF</a>{" "}
+            a vyplňte si ji na papíře.
         </p>
         <p className={styles.infoText} style={{ textAlign: "left", marginTop: "3rem" }}>
           Tato hra vznikla ve spolupráci s berounským spolkem{" "}

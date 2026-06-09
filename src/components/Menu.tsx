@@ -33,11 +33,11 @@ const Menu = () => {
           <span></span>
         </button>
         <ul className={`${styles.menuList} ${isOpen ? styles.open : ''}`}>
-          {/* <li>
+          <li>
             <Link href="/vinice" onClick={() => setIsOpen(false)}>
-              Lesní hra
+              Lesní hra Vinice
             </Link>
-          </li> */}
+          </li>
           <li>
             <Link href="/advent" onClick={() => setIsOpen(false)}>
               Adventní kalendář
