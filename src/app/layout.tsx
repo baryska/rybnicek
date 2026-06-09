@@ -28,7 +28,7 @@ export default function RootLayout({
         <Menu />
         {children}
         <footer className={styles.footer}>
-          © 2025 Berounský rybníček
+          © 2026 Berounský rybníček
         </footer>
       </body>
       <GoogleAnalytics gaId="G-BQ1PQX5JRT" />
