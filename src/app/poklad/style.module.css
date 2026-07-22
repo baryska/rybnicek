@@ -1,0 +1,22 @@
+.main {
+  background: #ebe8e4;
+  position: relative;
+  padding-bottom: 2rem;
+  min-height: 100vh;
+}
+
+.main>* {
+  position: relative;
+  z-index: 1;
+}
+
+.main::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('/Vrstevnice.svg') no-repeat bottom right;
+  background-size: cover;
+  opacity: 0.2;
+  pointer-events: none;
+  z-index: 0;
+}

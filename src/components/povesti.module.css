@@ -1,0 +1,779 @@
+/* Stezka berounských pověstí — světlý svěží styl podle Letní šifrovačky
+   (pozadí #ebe8e4, petrolejová #346f70, text #1b4a4c); odlišení hry nese
+   korálový akcent #e5816d (mapa, písmena tajenky, úkoly). */
+
+.container {
+  /* šířka obsahu jako u tajenky na stránce šifry (1000px) */
+  max-width: 62.5rem;
+  margin: 0 auto;
+  padding: 1rem 1.25rem 3rem;
+  color: #1b4a4c;
+}
+
+.header {
+  text-align: center;
+  padding: 1rem 0 0.5rem;
+}
+
+.title {
+  font-size: 3rem;
+  line-height: 1.15;
+  color: #346f70;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+}
+
+@media (max-width: 1024px) {
+  .title {
+    font-size: 2rem;
+  }
+}
+
+.progressBadge {
+  display: inline-block;
+  background: rgba(52, 111, 112, 0.08);
+  border: 1px solid rgba(52, 111, 112, 0.4);
+  color: #346f70;
+  border-radius: 999px;
+  padding: 0.35rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.welcome {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: #346f70;
+  font-weight: bold;
+  margin: 1.25rem 0 0;
+}
+
+.intro {
+  font-size: 1.35rem;
+  line-height: 1.6;
+  margin: 1.5rem 0;
+}
+
+.intro p {
+  margin-bottom: 1rem;
+}
+
+/* ======================= Mapa ======================= */
+
+.mapWrapper {
+  position: relative;
+  max-width: 32rem;
+  margin: 1rem auto 0;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #faf8f5 0%, #f0ede7 100%);
+  border: 1px solid rgba(52, 111, 112, 0.25);
+  box-shadow: 0 10px 28px rgba(27, 74, 76, 0.14);
+  overflow: hidden;
+}
+
+.mapWrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('/Vrstevnice.svg') no-repeat bottom right;
+  background-size: cover;
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+.mapSvg {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.mapCaption {
+  text-align: center;
+  font-size: 0.95rem;
+  color: rgba(27, 74, 76, 0.6);
+  margin-top: 0.75rem;
+}
+
+/* dekorace */
+.mapDeco path {
+  fill: none;
+  stroke: rgba(52, 111, 112, 0.18);
+  stroke-width: 2;
+}
+
+.mapDeco .mapRiver {
+  stroke: rgba(111, 168, 169, 0.35);
+  stroke-width: 22;
+  stroke-linecap: round;
+}
+
+.mapStar {
+  fill: rgba(52, 111, 112, 0.45);
+  animation: povestiTwinkle 3.2s ease-in-out infinite;
+}
+
+.mapStar:nth-of-type(odd) {
+  animation-delay: 1.6s;
+}
+
+.mapCompass circle {
+  fill: none;
+  stroke: rgba(52, 111, 112, 0.4);
+  stroke-width: 1.5;
+}
+
+.mapCompass text {
+  fill: rgba(52, 111, 112, 0.6);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.mapCompassNeedle {
+  fill: rgba(229, 129, 109, 0.85);
+  stroke: none;
+}
+
+/* cesta */
+.legLocked {
+  fill: none;
+  stroke: rgba(52, 111, 112, 0.3);
+  stroke-width: 3;
+  stroke-dasharray: 2 9;
+  stroke-linecap: round;
+}
+
+.legSolved {
+  fill: none;
+  stroke: #e5816d;
+  stroke-width: 3.5;
+  stroke-dasharray: 1 8;
+  stroke-linecap: round;
+  animation: povestiPathFlow 1.6s linear infinite;
+}
+
+@keyframes povestiPathFlow {
+  to {
+    stroke-dashoffset: -9;
+  }
+}
+
+/* uzly */
+.marker {
+  outline: none;
+}
+
+.markerUnlocked {
+  cursor: pointer;
+}
+
+.markerUnlocked:hover .nodeCurrent,
+.markerUnlocked:focus-visible .nodeCurrent,
+.markerUnlocked:hover .nodeSolved,
+.markerUnlocked:focus-visible .nodeSolved,
+.markerUnlocked:hover .nodeFinale,
+.markerUnlocked:focus-visible .nodeFinale {
+  stroke-width: 4;
+  stroke: #1b4a4c;
+}
+
+.markerLocked {
+  opacity: 0.55;
+}
+
+.nodeLocked {
+  fill: rgba(52, 111, 112, 0.06);
+  stroke: rgba(52, 111, 112, 0.4);
+  stroke-width: 2;
+  stroke-dasharray: 4 4;
+}
+
+.nodeCurrent {
+  fill: #e5816d;
+  stroke: #ffffff;
+  stroke-width: 3;
+  filter: drop-shadow(0 4px 8px rgba(27, 74, 76, 0.3));
+}
+
+.nodeSolved {
+  fill: #346f70;
+  stroke: #ffffff;
+  stroke-width: 3;
+  filter: drop-shadow(0 4px 7px rgba(27, 74, 76, 0.25));
+}
+
+.nodeFinale {
+  fill: #d9a441;
+  stroke: #ffffff;
+  stroke-width: 3;
+  filter: drop-shadow(0 4px 10px rgba(27, 74, 76, 0.3));
+}
+
+.halo {
+  animation: povestiPulse 1.9s ease-in-out infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+  pointer-events: none;
+}
+
+@keyframes povestiPulse {
+  0%,
+  100% {
+    transform: scale(0.85);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.25);
+    opacity: 0.9;
+  }
+}
+
+@keyframes povestiTwinkle {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.markerEmoji {
+  font-size: 22px;
+  fill: #346f70;
+  font-weight: 700;
+  pointer-events: none;
+  user-select: none;
+}
+
+.markerNumber {
+  fill: rgba(27, 74, 76, 0.6);
+  font-size: 12px;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.markerLabel {
+  fill: #1b4a4c;
+  font-size: 12.5px;
+  font-weight: 600;
+  pointer-events: none;
+  paint-order: stroke;
+  stroke: rgba(250, 248, 245, 0.9);
+  stroke-width: 3px;
+}
+
+.markerLocked .markerLabel {
+  fill: rgba(27, 74, 76, 0.55);
+}
+
+.checkBadge {
+  fill: #9fd6ad;
+  stroke: #ffffff;
+  stroke-width: 1.5;
+}
+
+.checkMark {
+  fill: #1b4a4c;
+  font-size: 11px;
+  font-weight: 800;
+  pointer-events: none;
+}
+
+.letterBadge {
+  fill: #e5816d;
+  stroke: #ffffff;
+  stroke-width: 2;
+  filter: drop-shadow(0 2px 4px rgba(27, 74, 76, 0.35));
+}
+
+.letterBadgeText {
+  fill: #1b4a4c;
+  font-size: 14px;
+  font-weight: 800;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ======================= Modál ======================= */
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  /* nad sticky menu (z-index 1000) */
+  z-index: 1100;
+  background: rgba(27, 74, 76, 0.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  /* modál začíná až pod úrovní headeru, ať je lišta se zavíráním vždy vidět */
+  padding-top: 6rem;
+  animation: povestiFadeIn 0.2s ease-out;
+}
+
+.modal {
+  background: linear-gradient(180deg, #faf8f5 0%, #ebe8e4 100%);
+  border: 1px solid rgba(52, 111, 112, 0.3);
+  border-radius: 24px 24px 0 0;
+  width: 100%;
+  max-width: 42rem;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 -12px 48px rgba(27, 74, 76, 0.35);
+  animation: povestiSlideUp 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  color: #1b4a4c;
+}
+
+@keyframes povestiFadeIn {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes povestiSlideUp {
+  from {
+    transform: translateY(6%);
+    opacity: 0;
+  }
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem 0.5rem;
+  flex-shrink: 0;
+}
+
+.modalTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #346f70;
+}
+
+.modalClose {
+  background: rgba(52, 111, 112, 0.08);
+  border: 1px solid rgba(52, 111, 112, 0.4);
+  color: #346f70;
+  border-radius: 999px;
+  width: 2.75rem;
+  height: 2.75rem;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.modalClose:hover {
+  background: rgba(229, 129, 109, 0.25);
+  color: #1b4a4c;
+}
+
+.modalBody {
+  overflow-y: auto;
+  padding: 0 1.25rem 1.5rem;
+  overscroll-behavior: contain;
+}
+
+@media (min-width: 768px) {
+  .modalOverlay {
+    align-items: center;
+    padding: 6rem 2rem 2rem;
+  }
+
+  .modal {
+    border-radius: 24px;
+    max-height: 100%;
+  }
+}
+
+/* ======================= Karta zastavení ======================= */
+
+.cardContent {
+  padding-top: 0.25rem;
+}
+
+.stationTitle {
+  font-size: 1.6rem;
+  line-height: 1.2;
+  color: #346f70;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.stationPlace {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: rgba(27, 74, 76, 0.7);
+  margin-bottom: 1rem;
+}
+
+/* mini-mapa „kde to je" */
+.placeMapToggle {
+  background: rgba(52, 111, 112, 0.08);
+  border: 1px solid rgba(52, 111, 112, 0.4);
+  color: #346f70;
+  border-radius: 999px;
+  padding: 0.5rem 1.1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.placeMapToggle:hover {
+  background: rgba(52, 111, 112, 0.16);
+}
+
+.placeMap {
+  border: 1px solid rgba(52, 111, 112, 0.4);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 4px 12px rgba(27, 74, 76, 0.15);
+}
+
+.placeMapInner {
+  height: 260px;
+  width: 100%;
+}
+
+.placeMapLoading {
+  color: #346f70;
+  padding: 0.5rem 0 1rem;
+}
+
+.placeMarkerIcon {
+  font-size: 30px;
+  line-height: 36px;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
+}
+
+/* Fotka jako knižní ilustrace: obtékaná textem pověsti, klepnutím se
+   zvětší na celou šířku (a dalším klepnutím zase zmenší). */
+.photo {
+  float: right;
+  width: min(45%, 14rem);
+  aspect-ratio: 1 / 1;
+  position: relative;
+  margin: 0.2rem 0 0.75rem 1rem;
+  padding: 0;
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: zoom-in;
+  box-shadow: 0 4px 12px rgba(27, 74, 76, 0.25);
+}
+
+.photoExpanded {
+  float: none;
+  width: 100%;
+  margin: 0 0 1rem;
+  cursor: zoom-out;
+}
+
+.legend {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  /* obsáhne plovoucí fotku, ať nepřetéká do dalších sekcí */
+  display: flow-root;
+}
+
+.sectionLabel {
+  display: block;
+  color: #346f70;
+  margin-bottom: 0.5rem;
+}
+
+.legend p {
+  margin-bottom: 1rem;
+}
+
+.task {
+  background: rgba(229, 129, 109, 0.14);
+  border-radius: 12px;
+  padding: 1rem;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  margin: 1.25rem 0;
+}
+
+.answerForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.input {
+  padding: 0.9rem 1rem;
+  background: linear-gradient(135deg, #dfdbd3 0%, #bccccd 100%);
+  border-radius: 12px;
+  width: 100%;
+  border: solid 1px #346f70;
+  font-size: 1.15rem;
+  color: #1b4a4c;
+}
+
+.input::placeholder {
+  color: #346f70;
+  opacity: 1;
+}
+
+.button {
+  padding: 0.9rem 1.5rem;
+  background-color: #346f70;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(27, 74, 76, 0.25);
+  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+  min-height: 3.25rem;
+}
+
+.button:hover:enabled {
+  background-color: #2c5f60;
+  box-shadow: 0 6px 14px rgba(27, 74, 76, 0.3);
+}
+
+.button:active:enabled {
+  transform: scale(0.97);
+}
+
+.button:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.wrong {
+  color: #b3442e;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.unlockMessage {
+  background: rgba(52, 111, 112, 0.1);
+  border: 1px solid rgba(52, 111, 112, 0.45);
+  border-radius: 12px;
+  padding: 1rem;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  margin: 1.25rem 0;
+}
+
+.unlockCheck {
+  color: #2e7d32;
+}
+
+/* ======================= Písmena tajenky ======================= */
+
+@keyframes povestiLetterReveal {
+  0% {
+    transform: scale(0.2) rotate(-12deg);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.25) rotate(3deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.lettersLabel {
+  font-size: 1.05rem;
+  color: #346f70;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.letters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.letterTile {
+  width: 2.4rem;
+  height: 2.8rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+  background: linear-gradient(160deg, #e5816d 0%, #d76a55 100%);
+  border: 1.5px solid #ffffff;
+  color: #1b4a4c;
+  box-shadow: 0 3px 8px rgba(27, 74, 76, 0.25);
+}
+
+.letterReward {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 0 0 1.25rem;
+}
+
+.letterRewardLabel {
+  font-size: 1.05rem;
+  color: #346f70;
+  font-weight: 600;
+}
+
+.letterRewardTile {
+  width: 2.75rem;
+  height: 3.25rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.9rem;
+  font-weight: 800;
+  background: linear-gradient(160deg, #e5816d 0%, #d76a55 100%);
+  border: 2px solid #ffffff;
+  color: #1b4a4c;
+  box-shadow: 0 4px 10px rgba(27, 74, 76, 0.3);
+  animation: povestiLetterReveal 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.fieldLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #346f70;
+}
+
+/* ======================= Finále ======================= */
+
+.finaleTitle {
+  font-size: 2rem;
+  color: #346f70;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.finaleText {
+  font-size: 1.2rem;
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+}
+
+.rafflePlaceholder {
+  font-size: 1.05rem;
+  color: rgba(27, 74, 76, 0.65);
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.consentLabel {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.consentLabel input {
+  width: 1.4rem;
+  height: 1.4rem;
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+  accent-color: #346f70;
+}
+
+.sent {
+  color: #2e7d32;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.error {
+  color: #b3442e;
+  font-size: 1.05rem;
+}
+
+/* ======================= Reset ======================= */
+
+.resetContainer {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+.resetLink {
+  background: none;
+  border: none;
+  color: rgba(27, 74, 76, 0.55);
+  text-decoration: underline;
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.resetLink:hover {
+  color: #e5816d;
+}
+
+.loading {
+  text-align: center;
+  padding: 3rem 0;
+  color: #346f70;
+}
+
+/* Responzivní škála textu: úvod na stránce > texty v modálech. */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .intro {
+    font-size: 1.2rem;
+  }
+
+  .legend,
+  .task,
+  .unlockMessage,
+  .finaleText {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .intro {
+    font-size: 1rem;
+  }
+
+  .legend,
+  .task,
+  .unlockMessage,
+  .finaleText {
+    font-size: 0.92rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .halo,
+  .mapStar,
+  .legSolved,
+  .letterRewardTile {
+    animation: none;
+  }
+}
