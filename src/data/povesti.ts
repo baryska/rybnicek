@@ -64,8 +64,7 @@ Za živa to byl berounský purkmistr. Když město za jedné z válek obsadili n
 Jeho plastiku najdete ve vstupní chodbě radnice.`,
     task: "Na budově radnice je vpravo od vchodu památná deska. Kolik občanů města Berouna bylo odsouzeno a uvězněno komunistickým režimem v politckých procesech?",
     answerHashes: [
-      "eb1e33e8a81b697b75855af6bfcdbcbf7cbbde9f94962ceaec1ed8af21f5a50f", // 31
-      "b41ed31b893063a07033718ad5757944c34492ba44196c7f8891a44cbf988a75", // trinact
+      "eb1e33e8a81b697b75855af6bfcdbcbf7cbbde9f94962ceaec1ed8af21f5a50f", 
     ],
     unlockMessage:
       "Správně! Klepáček zaklepal a dal vám první písmeno. **Teď se postavte zády k radnici a vydejte se ulicí po levé ruce, jmenuje se Na Klášteře.** A to jméno není náhoda.",
@@ -153,7 +152,7 @@ A kostelní okna umí i varovat. Čtrnáct dní před nejničivějším požáre
     title: "Ohnivý Beha",
     legend: `Berounem se prý za nocí prohání děsivý přízrak: muž v hořícím kočáře, ulicemi, po střechách, ba i po nebi - a bičem z blesku pohání spřežení koní s plamennou hřívou. V určité dny koná objížďku od bývalého hřbitova při kostele sv. Jakuba k někdejšímu popravišti pod Městskou horou na Plzence, kde stával sloup Božích muk, a odtud se vrací k Behovskému domu u Horní, tedy Plzeňské brány. A kdo ho zahlédne, ví, že se blíží neštěstí: zjevení ohnivého Behy je předzvěstí požáru.
 
-O tom, kdo Beha byl, se vyprávějí dvě verze. Podle první to byl berounský rychtář, který odsoudil k smrti nevinného mladíka - a když svůj strašlivý omyl prohlédl, oběsil se na půdě svého domu. Ve skutečnosti však Mates Rudolf zvaný Beha rychtářem nikdy nebyl: patřil k řeznickému cechu a po velkém požáru města roku 1735 zešílel a vzal si život. Jeho podivná smrt, spojovaná s nejničivějším ohněm, jaký kdy Beroun postihl, zapůsobila na měšťany tak mocně, že z ní vyrostla legenda o ohnivém jezdci.`,
+Podle pověsti byl Beha berounský rychtář, který odsoudil k smrti nevinného mladíka - a když svůj strašlivý omyl prohlédl, oběsil se na půdě svého domu. Ve skutečnosti však Mates Rudolf zvaný Beha rychtářem nikdy nebyl: patřil k řeznickému cechu a po velkém požáru města roku 1735 zešílel a vzal si život. Jeho podivná smrt, spojovaná s nejničivějším ohněm, jaký kdy Beroun postihl, zapůsobila na měšťany tak mocně, že z ní vyrostla legenda o ohnivém jezdci.`,
     task: "Když projdete kolem Plzeňské brány vlevo kolem proslulého řeznictví, uvidíte nad sebou reklamní ceduli. Jaké je poslední slovo na ceduli (začíná velkým písmenem)?",
     // [MOCK: odpověď - čp. Behovského domu ověřit na místě; pokud dům nelze
     // jednoznačně určit, počítat objekty na trase. Bez konkrétní hodnoty
@@ -197,7 +196,7 @@ Když se pak stařec dozvěděl, že byl jeho milovaný kníže zavražděn, roz
       "7931aa2a1bed855457d1ddf6bc06ab4406a9fba0579045a4d6ff78f9c07c440f", // 2013
     ],
     unlockMessage:
-      "Správně! **Předposlední zastavení vede za město, k ruině**, o které se v Berouně vypráví, že v ní nikdy není tak prázdno, jak vypadá. [MOCK: směr/přístup k usedlosti Na Ptáku]",
+      "Správně! **Předposlední zastavení vede za město, k ruině**, o které se v Berouně vypráví, že v ní nikdy není tak prázdno, jak vypadá.",
     tajenkaLetter: "É",
     coords: [49.9645761, 14.0773856], // Berounka u mostu - orientační, ověřit
     imageSlot: "/8_poklad.jpg",

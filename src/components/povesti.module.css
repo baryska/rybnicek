@@ -97,45 +97,6 @@
   margin-top: 0.75rem;
 }
 
-/* dekorace */
-.mapDeco path {
-  fill: none;
-  stroke: rgba(52, 111, 112, 0.18);
-  stroke-width: 2;
-}
-
-.mapDeco .mapRiver {
-  stroke: rgba(111, 168, 169, 0.35);
-  stroke-width: 22;
-  stroke-linecap: round;
-}
-
-.mapStar {
-  fill: rgba(52, 111, 112, 0.45);
-  animation: povestiTwinkle 3.2s ease-in-out infinite;
-}
-
-.mapStar:nth-of-type(odd) {
-  animation-delay: 1.6s;
-}
-
-.mapCompass circle {
-  fill: none;
-  stroke: rgba(52, 111, 112, 0.4);
-  stroke-width: 1.5;
-}
-
-.mapCompass text {
-  fill: rgba(52, 111, 112, 0.6);
-  font-size: 11px;
-  font-weight: 700;
-}
-
-.mapCompassNeedle {
-  fill: rgba(229, 129, 109, 0.85);
-  stroke: none;
-}
-
 /* cesta */
 .legLocked {
   fill: none;
@@ -227,16 +188,6 @@
   50% {
     transform: scale(1.25);
     opacity: 0.9;
-  }
-}
-
-@keyframes povestiTwinkle {
-  0%,
-  100% {
-    opacity: 0.2;
-  }
-  50% {
-    opacity: 0.8;
   }
 }
 
@@ -771,7 +722,6 @@
 
 @media (prefers-reduced-motion: reduce) {
   .halo,
-  .mapStar,
   .legSolved,
   .letterRewardTile {
     animation: none;

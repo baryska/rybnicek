@@ -8,17 +8,17 @@ const FINALE_ORDER = STATION_COUNT + 1;
 
 /** Pozice zastavení na stylizované mapě (viewBox 400 × 800). */
 const POSITIONS: Record<number, { x: number; y: number }> = {
-  1: { x: 70, y: 78 },
-  2: { x: 302, y: 118 },
-  3: { x: 104, y: 188 },
-  4: { x: 312, y: 250 },
-  5: { x: 96, y: 318 },
-  6: { x: 300, y: 382 },
-  7: { x: 102, y: 448 },
-  8: { x: 308, y: 512 },
-  9: { x: 98, y: 580 },
-  10: { x: 296, y: 644 },
-  [FINALE_ORDER]: { x: 160, y: 726 },
+  1: { x: 84, y: 70 },
+  2: { x: 236, y: 112 },
+  3: { x: 328, y: 196 },
+  4: { x: 176, y: 232 },
+  5: { x: 66, y: 316 },
+  6: { x: 208, y: 372 },
+  7: { x: 330, y: 442 },
+  8: { x: 190, y: 510 },
+  9: { x: 74, y: 566 },
+  10: { x: 236, y: 640 },
+  [FINALE_ORDER]: { x: 330, y: 726 },
 };
 
 const EMOJIS: Record<number, string> = {
@@ -95,25 +95,7 @@ const PovestiMap = ({ unlockedOrder, finished, onSelect }: Props) => {
           </radialGradient>
         </defs>
 
-        {/* dekorace — kopce, řeka, hvězdy, kompas */}
-        <g className={styles.mapDeco} aria-hidden="true">
-          <path d="M -10 780 Q 60 740 130 775 Q 200 805 270 772 Q 340 742 410 780" />
-          <path d="M -10 745 Q 80 710 170 742" />
-          <path d="M 225 -10 Q 200 90 245 190 Q 290 290 230 400 Q 175 500 235 610 Q 268 670 250 740 Q 244 770 250 810" className={styles.mapRiver} />
-          <circle cx="40" cy="640" r="1.6" className={styles.mapStar} />
-          <circle cx="360" cy="60" r="1.6" className={styles.mapStar} />
-          <circle cx="190" cy="28" r="1.3" className={styles.mapStar} />
-          <circle cx="350" cy="330" r="1.3" className={styles.mapStar} />
-          <circle cx="28" cy="260" r="1.3" className={styles.mapStar} />
-          <circle cx="205" cy="470" r="1.3" className={styles.mapStar} />
-          <circle cx="42" cy="512" r="1.4" className={styles.mapStar} />
-          <circle cx="356" cy="586" r="1.4" className={styles.mapStar} />
-          <g className={styles.mapCompass} transform="translate(352, 736)">
-            <circle r="20" />
-            <path d="M 0 -14 L 4 4 L 0 0 L -4 4 Z" className={styles.mapCompassNeedle} />
-            <text y="-24" textAnchor="middle">S</text>
-          </g>
-        </g>
+        {/* žádná dekorace — podkladem je jen textura vrstevnic z .mapWrapper */}
 
         {/* cesta mezi zastaveními */}
         {nodes.slice(0, -1).map((order) => {
