@@ -30,9 +30,13 @@ export const povestiWelcome = `**Vítejte** u další berounské letní šifrova
 
 export const povestiIntro = `Beroun je město, kde se to strašidly jen hemží: skřítek na radnici, bílá paní na náměstí, ohnivý kočár v ulicích, povraždění mniši za rohem. 
 
-**Deset skutečných berounských pověstí na vás čeká na deseti místech.** U každého si přečtete příběh a najdete na místě jeden údaj, ten vám odemkne cestu k dalšímu zastavení a jedno písmeno tajenky. Kdo posbírá všech deset písmen, rozluští, co vlastně střeží berounský Klepáček a může **vyhrát v letním slosování (pro odpovědi odeslané do 31. srpna)**.
+**Deset skutečných berounských pověstí na vás čeká na deseti místech.** U každého si přečtete příběh a najdete na místě jeden údaj, ten vám odemkne cestu k dalšímu zastavení a jedno písmeno tajenky. Kdo posbírá všech deset písmen, rozluští, co vlastně střeží berounský Klepáček a může **vyhrát v letním slosování o tématické ceny (pro odpovědi odeslané do 31. srpna)**.
 
 **Hrát můžete kdykoli přes léto**, najednou i na etapy - web si váš postup pamatuje.
+
+Pokud chcete zažít tu pravou tajemnou atmosféru, projděte si stezku až **po setmění**. Třeba cestou potkáte nějaké berounské strašidlo 👻
+
+Stezka měří cca **5 km** a je sjízdná pro kočárky i kola. Jen je občas trochu do kopce.
 
 **Start: radnice na Husově náměstí.**`;
 
@@ -118,9 +122,9 @@ V existenci pokladu se pak věřilo po celé generace tak pevně, že se dům U 
 Kdysi manželka bohatého majitele domu vyslechla varovné proroctví potulné cikánky: její děti se do roka utopí. Zděšená matka hned nakázala, že se děti nesmějí přiblížit k řece ani k rybníku, a hlídala je na každém kroku. Přišel poslední den roku, který se už tehdy slavil hojností jídla a pití, a v domě panoval velký ruch. Když šla služebná do sklepa pro pivo, nevšimla si, že za ní vklouzly i zvědavé děti. Při odchodu za sebou pečlivě zamkla, jak měla nakázáno. Děti zůstaly ve tmě, jejich volání v hluku oslavy nikdo neslyšel - a jak tápaly kolem stěn, přepadly přes roubení do hluboké studny. Krutá věštba se naplnila.
 
 Služka byla za svou nedbalost odsouzena a popravena. A právě její prokletý duch od té doby bloudí koncem roku Jenštejnským domem, se svazkem klíčů, kterými tenkrát zamkla.`,
-    task: "Nad vchodovými dveřmi je vlevo i vpravo latinský nápis. Jakým písmenem začíná nápis vlevo?",
+    task: "Nad vchodovými dveřmi je vlevo i vpravo latinský nápis. Jaká jsou první tři písmena nápisu vlevo?",
     answerHashes: [
-      "3e23e8160039594a33894f6564e1b1348bbd7a0088d42c4acb73eeaed59c009d", // b
+      "6700869c8ff7480e34a70a708b028700dbaa3a033b5652b903afe89f49a31456", // ben
     ],
     unlockMessage:
       "Správně! **Jen pár kroků odsud stojí kostel sv. Jakuba.** Za dne obyčejný kostel, ale jeho okna umí vyprávět.",
@@ -136,9 +140,8 @@ Služka byla za svou nedbalost odsouzena a popravena. A právě její prokletý 
 
 A kostelní okna umí i varovat. Čtrnáct dní před nejničivějším požárem v dějinách města, roku 1735, měl berounský děkan Jiří František Procházka děsivý sen: viděl v něm planoucí Beroun tak živě, že při ranní pobožnosti prosil věřící, aby se modlili za odvrácení zhouby. Nikdo mu nevěřil - a požár přišel, dokonce vypukl přesně tam, kde ho děkan ve snu viděl. Snad právě odtud pochází pověst, že má-li Beroun postihnout požár, rozsvítí se po půlnoci všechna okna kostela, jako by uvnitř plály stovky svící, ačkoli je prázdný.`,
     task: "Ze strany od náměstí je na průčelí kostela socha ukřižovaného Krista. Pod ním je nápis s letopočtem v římských číslicích. Jaký je to letopočet?",
-    // [MOCK: odpověď „2"]
     answerHashes: [
-      "8ffe8459134b46975acd31df13a50c51dbeacf1c19a764bf1602ba7c73ffc8fb", // 1818
+      "33afd662cef42c907d9b9a13796a954d5c9675b7c6f1e3f92914df1bcc79929b", // 1848
     ],
     unlockMessage:
       "Správně! A teď pozor, od tohoto kostela vyjíždí na svou objížďku nejohnivější berounské strašidlo. **Vydejte se směrem k Plzeňce, přesně po jeho trase.**",
