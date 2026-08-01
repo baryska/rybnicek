@@ -23,7 +23,7 @@ const POSITIONS: Record<number, { x: number; y: number }> = {
 
 const EMOJIS: Record<number, string> = {
   1: "🔨",
-  2: "👣",
+  2: "🙏",
   3: "👑",
   4: "🗝️",
   5: "🕯️",
@@ -32,7 +32,7 @@ const EMOJIS: Record<number, string> = {
   8: "🎣",
   9: "🦅",
   10: "💧",
-  [FINALE_ORDER]: "💰",
+  [FINALE_ORDER]: "💎",
 };
 
 /** Krátké popisky pro mapu (plný název je v modálu). */
