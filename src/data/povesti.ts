@@ -30,7 +30,7 @@ export const povestiWelcome = `**Vítejte** u další berounské letní šifrova
 
 export const povestiIntro = `Beroun je město, kde se to strašidly jen hemží: skřítek na radnici, bílá paní na náměstí, ohnivý kočár v ulicích, povraždění mniši za rohem. 
 
-**Deset skutečných berounských pověstí na vás čeká na deseti místech.** U každého si přečtete příběh a najdete na místě jeden údaj, ten vám odemkne cestu k dalšímu zastavení a jedno písmeno tajenky. Kdo posbírá všech deset písmen, rozluští, co vlastně střeží berounský Klepáček a může **vyhrát v letním slosování o tématické ceny (pro odpovědi odeslané do 31. srpna)**.
+**Deset skutečných berounských pověstí na vás čeká na deseti místech.** U každého si přečtete příběh a najdete na místě jeden údaj, ten vám odemkne cestu k dalšímu zastavení a jedno písmeno tajenky. Kdo posbírá všech deset písmen, rozluští, co vlastně střeží berounský Klepáček, a může **vyhrát v letním slosování o tématické ceny (pro odpovědi odeslané do 31. srpna)**.
 
 **Hrát můžete kdykoli přes léto**, najednou i na etapy - web si váš postup pamatuje.
 
