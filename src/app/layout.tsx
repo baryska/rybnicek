@@ -28,7 +28,10 @@ export default function RootLayout({
         <Menu />
         {children}
         <footer className={styles.footer}>
-          © 2026 Berounský rybníček
+          <a href="mailto:info@berounskyrybnicek.cz" className={styles.footerEmail}>
+            info@berounskyrybnicek.cz
+          </a>
+          <div>© 2026 Berounský rybníček</div>
         </footer>
       </body>
       <GoogleAnalytics gaId="G-BQ1PQX5JRT" />

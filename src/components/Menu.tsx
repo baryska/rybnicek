@@ -33,13 +33,11 @@ const Menu = () => {
           <span></span>
         </button>
         <ul className={`${styles.menuList} ${isOpen ? styles.open : ''}`}>
-          {/* Dokud hra není veřejná, je odkaz skrytý. Až se spustí, odkomentovat.
           <li>
             <Link href="/poklad" onClick={() => setIsOpen(false)}>
               Berounský poklad
             </Link>
           </li>
-          */}
           <li>
             <Link href="/vinice" onClick={() => setIsOpen(false)}>
               Lesní hra Vinice
