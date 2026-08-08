@@ -154,6 +154,9 @@ const ForestMapComponent = () => {
           odpovídající písmeno si zapíšete do tajenky.
         </p>
         <p className={styles.infoText}>
+          <strong>Délka trasy:</strong> cca 1 km &nbsp;·&nbsp; <strong>Doba hry:</strong>  1–1,5 hodiny
+        </p>
+        <p className={styles.infoText}>
           Až projdete všechna stanoviště, vyjde vám <strong>zašifrovaná tajenka</strong>, která
           souvisí s tímto místem. Ještě budete potřebovat <strong>šifrovací klíč</strong>, který
           vám ukážeme, až budete mít všechna písmena sesbíraná.
